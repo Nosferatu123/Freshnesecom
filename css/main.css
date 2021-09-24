@@ -318,6 +318,7 @@
     padding: 6.5px 12px;
     margin-top: 15px;
 
+
 }
 .card-banner-text5{
     font-family: Poppins;
@@ -728,14 +729,16 @@
 .view-card{
     border:1px solid #D1D1D1;
     border-radius: 12px;
-    max-height: 280px;
+    max-height: 332px;
     margin-bottom: 32px;
-
-
+    padding:16px;
 
 }
 .view-box {
     display: flex;
+}
+.box{
+    flex-direction: column;
 }
 .position{
     justify-content: space-between;
@@ -775,12 +778,12 @@
 }
 .part-one{
     width: 269px;
-    margin-left:32px;
-    margin-right: 96px;
+
 }
 .part-two{
-    width: 164px;
-    margin-right: 32px;
+    width: 269px;
+    margin-top: -40px;
+
 }
 .view-text1{
     font-family: Open Sans;
@@ -934,4 +937,9 @@ input[type='range']::-webkit-slider-thumb {
 
 
 /*}*/
-
+ .hide{
+     display: none;
+ }
+ .margin{
+     margin-right: 16px;
+ }
