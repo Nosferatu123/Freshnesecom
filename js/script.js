@@ -96,7 +96,7 @@ let carrot=document.querySelector('.carrot');
 if (!carrot==0) {
 
     carrot.onclick = function () {
-        window.location.href = 'Descriptioncarrot.html';
+        window.location.href = 'descriptionCarrot.html';
     }
 }
 
