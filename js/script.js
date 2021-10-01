@@ -119,3 +119,29 @@ if (!addToCart==0){
 
 
 }
+
+let apply=document.querySelector('.apply');
+if (!apply==0) {
+    apply.onclick = function () {
+        let minField = document.querySelector("#min-field").value;
+        let maxField = document.querySelector("#max-field").value;
+        document.querySelector("#min-range").value = minField;
+        document.querySelector("#max-range").value = maxField;
+
+
+        let reset = document.querySelector('.reset');
+        if (!reset == 0) {
+            reset.onclick = function () {
+
+                document.querySelector("#min-field").value='0';
+                document.querySelector("#max-field").value='1000';
+                document.querySelector("#min-range").value = '250'
+                document.querySelector("#max-range").value = '550';
+
+            }
+
+        }
+    }
+}
+
+

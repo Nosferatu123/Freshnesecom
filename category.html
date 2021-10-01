@@ -255,12 +255,35 @@
         </div>
 
      <div>
+
        <p class="categories-text">Price</p>
        <div>
-         <input  type="range"   min="0" max="1000" step="30" value="130" >
-         <input  type="range"   min="0" max="1000" step="30" value="530" >
+         <input  id="min-range" type="range"   min="0" max="1000" step="25" value="250" >
+         <input  id="max-range" type="range"   min="0" max="1000" step="25" value="550" >
        </div>
+
+       <div class="view-box min-max-box">
+         <div>
+           <div>Min</div>
+           <input id="min-field" type="number" value="0">
+         </div>
+
+         <div>
+           <div>Max</div>
+           <input id="max-field"type="number" value="1000">
+         </div>
+
+       </div>
+
+
+       <div>
+         <button class="apply">Apply</button>
+         <button class="reset">Reset</button>
+       </div>
+
      </div>
+
+
 
     </div>
 
