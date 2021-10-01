@@ -6,7 +6,8 @@
   <title>Title</title>
   <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-  <script src="js/test.js"></script>
+  <script defer="defer" src="js/test.js"></script>
+
 </head>
 <body>
 <header class="header">
@@ -51,8 +52,15 @@
 
       <div class="header-item">
         <div class="icon-box"><img src="img/user.png"  width="24" height="24" alt=".."></div>
-        <div class="icon-box"><img src="img/basket.png"  width="24" height="24" alt=".."></div>
+
+        <div class="icon-box view-box basket-relative">
+          <div class="hide basket">1</div>
+          <img src="img/basket.png"  width="24" height="24" alt="..">
+        </div>
+
+
       </div>
+
 
     </div>
   </div>
@@ -67,7 +75,7 @@
         <img src="img/vector.png" alt="..">
       </div>
 
-      <div class="menu-box">
+      <div class="menu-box ">
         <a href="category.html"><p >Fruit and vegetables</p></a>
         <img src="img/vector.png" alt="..">
       </div>
@@ -107,23 +115,29 @@
 
 <section>
   <div class="container">
+    <div class="breadcrumbs">
+      <p class="breadcrumbs-text"><span class="gray">Homepage &nbsp/
+      </span>&nbsp Fruits and vegetables &nbsp</p>
+    </div>
+  </div>
+</section>
+
+<section>
+
+  <div class="container">
     <div class="fruit-vegetable-contain">
       <p class="fruit-vegetable-text">Fruit and vegetables</p>
       <div class="list-group">
 
-
-<!--          <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>-->
-<!--          <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button>-->
           <div class="button-box">
             <div ><img src="img/grid.png"  width="24" height="24" alt=".."></div>
-            <button class="btn " onclick="gridView()"> Grid view</button>
+            <button class="btn" id="grid-view" > Grid view</button>
           </div>
 
          <div class="button-box">
            <div ><img src="img/list.png"  width="24" height="24" alt=".."></div>
-           <button class="btn" onclick="listView()"> List view</button>
+           <button class="btn" id="list-view" > List view</button>
          </div>
-
 
       <p class="list-group-item category-name-number">117</p>
       <p class="list-group-item">products</p>
@@ -261,104 +275,12 @@
 
           <div class="view-box card box">
 
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
-
-              <div class="part-one">
-
-               <div>
-                    <p class="categories-text">Product title</p>
-                    <p class="view-text2 minus-margin2">Space for a small product description </p>
-
-                    <div class="rating-area">
-                      <input type="radio" id="star-5" name="rating" value="5">
-                      <label for="star-5" title="Оценка «5»"></label>
-                      <input type="radio" id="star-4" name="rating" value="4">
-                      <label for="star-4" title="Оценка «4»"></label>
-                      <input type="radio" id="star-3" name="rating" value="3">
-                      <label for="star-3" title="Оценка «3»"></label>
-                      <input type="radio" id="star-2" name="rating" value="2">
-                      <label for="star-2" title="Оценка «2»"></label>
-                      <input type="radio" id="star-1" name="rating" value="1">
-                      <label for="star-1" title="Оценка «1»"></label>
-                    </div>
-
-               </div>
-
-                <div class="hidden hide">
-
-                  <div class=" view-box  view-text1 ">
-                    <span class="position2">Fresheness</span>
-                    <span> <span class="color-text">New</span> (Extra fresh)</span>
-                  </div>
-
-                  <div class=" view-box  view-text1">
-                    <span class="position2">Farm</span>
-                    <span>Grocery Tarm Fields</span>
-                  </div>
-
-                  <div class=" view-box  view-text1">
-                    <span class="position2">Delivery</span>
-                    <span>Europe</span>
-                  </div>
-
-                  <div class=" view-box  view-text1">
-                    <span class="position2">Stock</span>
-                    <span class="color-text">320 pcs</span>
-                  </div>
-
-                </div>
-
-            </div>
-
-            <div class="part-two">
-
-                 <div class="view-box position">
-                   <div >
-                     <p class="categories-text">36.99 USD</p>
-                     <p class="view-text2 minus-margin2"><del>48.56</del></p>
-                   </div>
-                   <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
-                 </div>
-
-                <div class="hidden hide">
-
-                  <div>
-                    <p class="view-text2">Free shipping</p>
-                    <p class="view-text2 minus-margin">Delivery in 1 day</p>
-                  </div>
-
-                  <div class="button-box product-detail">
-                    <p  >Product detail</p>
-                    <img src="img/vector3.png" width="15"  height="15" alt="..">
-                  </div>
-
-                  <div class="button-box wish-list">
-                    <img src="img/love.png" width="13.33"  height="11.47" alt="..">
-                    <p >Add to wish list</p>
-                  </div>
-
-                </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="column">
-
-        <div class=" view-card">
-
-          <div class="view-box card box">
-
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
+            <img src="img/carrot1.png" class="image" width="236" height="180" alt="...">
 
             <div class="part-one">
 
               <div>
-                <p class="categories-text">Product title</p>
+                <p class="categories-text">Carrot</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
                 <div class="rating-area">
@@ -406,8 +328,289 @@
 
               <div class="view-box position">
                 <div >
-                  <p class="categories-text">36.99 USD</p>
-                  <p class="view-text2 minus-margin2"><del>48.56</del></p>
+                  <p class="categories-text">1.99 USD</p>
+                  <p class="view-text2 minus-margin2"><del>2.99</del></p>
+                </div>
+                <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
+              </div>
+
+              <div class="hidden hide">
+
+                <div>
+                  <p class="view-text2">Free shipping</p>
+                  <p class="view-text2 minus-margin">Delivery in 1 day</p>
+                </div>
+
+                <div class="button-box product-detail carrot" >
+                  <!--                  <a  href="Descriptioncarrot.html"><p>Product detail</p></a>-->
+                  <p>Product detail</p>
+                  <img src="img/vector3.png" width="15"  height="15" alt="..">
+
+                </div>
+
+
+                <div class="button-box wish-list">
+                  <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                  <p >Add to wish list</p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="column">
+
+        <div class=" view-card">
+
+          <div class="view-box card box">
+
+            <img src="img/beet.png" class="image" width="236" height="180" alt="...">
+
+            <div class="part-one">
+
+              <div>
+                <p class="categories-text">Beet</p>
+                <p class="view-text2 minus-margin2">Space for a small product description </p>
+
+                <div class="rating-area">
+                  <input type="radio" id="star-5" name="rating" value="5">
+                  <label for="star-5" title="Оценка «5»"></label>
+                  <input type="radio" id="star-4" name="rating" value="4">
+                  <label for="star-4" title="Оценка «4»"></label>
+                  <input type="radio" id="star-3" name="rating" value="3">
+                  <label for="star-3" title="Оценка «3»"></label>
+                  <input type="radio" id="star-2" name="rating" value="2">
+                  <label for="star-2" title="Оценка «2»"></label>
+                  <input type="radio" id="star-1" name="rating" value="1">
+                  <label for="star-1" title="Оценка «1»"></label>
+                </div>
+
+              </div>
+
+              <div class="hidden hide">
+
+                <div class=" view-box  view-text1 ">
+                  <span class="position2">Fresheness</span>
+                  <span> <span class="color-text">New</span> (Extra fresh)</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Farm</span>
+                  <span>Grocery Tarm Fields</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Delivery</span>
+                  <span>Europe</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Stock</span>
+                  <span class="color-text">320 pcs</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="part-two">
+
+              <div class="view-box position">
+                <div >
+                  <p class="categories-text">1.49 USD</p>
+                  <p class="view-text2 minus-margin2"><del>1.99</del></p>
+                </div>
+                <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
+              </div>
+
+              <div class="hidden hide">
+
+                <div>
+                  <p class="view-text2">Free shipping</p>
+                  <p class="view-text2 minus-margin">Delivery in 1 day</p>
+                </div>
+
+                <div class="button-box product-detail">
+                  <p>Product detail</p>
+                  <img src="img/vector3.png" width="15"  height="15" alt="..">
+                </div>
+
+                <div class="button-box wish-list">
+                  <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                  <p >Add to wish list</p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="column">
+
+        <div class=" view-card">
+
+          <div class="view-box card box">
+
+               <img src="img/potato.png"  class="image" width="236" height="180" alt="...">
+
+            <div class="part-one">
+
+              <div>
+                <p class="categories-text">Potato</p>
+                <p class="view-text2 minus-margin2">Space for a small product description </p>
+
+                <div class="rating-area">
+                  <input type="radio" id="star-5" name="rating" value="5">
+                  <label for="star-5" title="Оценка «5»"></label>
+                  <input type="radio" id="star-4" name="rating" value="4">
+                  <label for="star-4" title="Оценка «4»"></label>
+                  <input type="radio" id="star-3" name="rating" value="3">
+                  <label for="star-3" title="Оценка «3»"></label>
+                  <input type="radio" id="star-2" name="rating" value="2">
+                  <label for="star-2" title="Оценка «2»"></label>
+                  <input type="radio" id="star-1" name="rating" value="1">
+                  <label for="star-1" title="Оценка «1»"></label>
+                </div>
+
+              </div>
+
+              <div class="hidden hide">
+
+                <div class=" view-box  view-text1 ">
+                  <span class="position2">Fresheness</span>
+                  <span> <span class="color-text">New</span> (Extra fresh)</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Farm</span>
+                  <span>Grocery Tarm Fields</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Delivery</span>
+                  <span>Europe</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Stock</span>
+                  <span class="color-text">320 pcs</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="part-two">
+
+              <div class="view-box position">
+                <div >
+                  <p class="categories-text">0.99 USD</p>
+                  <p class="view-text2 minus-margin2"><del>1.99</del></p>
+                </div>
+                <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
+              </div>
+
+              <div class="hidden hide">
+
+                <div>
+                  <p class="view-text2">Free shipping</p>
+                  <p class="view-text2 minus-margin">Delivery in 1 day</p>
+                </div>
+
+                <div class="button-box product-detail">
+                  <p  >Product detail</p>
+                  <img src="img/vector3.png" width="15"  height="15" alt="..">
+                </div>
+
+                <div class="button-box wish-list">
+                  <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                  <p >Add to wish list</p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="column">
+
+        <div class=" view-card">
+
+          <div class="view-box card box">
+
+            <img src="img/pepper.png" class="image" width="236" height="180" alt="...">
+
+            <div class="part-one">
+
+              <div>
+                <p class="categories-text">Pepper</p>
+                <p class="view-text2 minus-margin2">Space for a small product description </p>
+
+                <div class="rating-area">
+                  <input type="radio" id="star-5" name="rating" value="5">
+                  <label for="star-5" title="Оценка «5»"></label>
+                  <input type="radio" id="star-4" name="rating" value="4">
+                  <label for="star-4" title="Оценка «4»"></label>
+                  <input type="radio" id="star-3" name="rating" value="3">
+                  <label for="star-3" title="Оценка «3»"></label>
+                  <input type="radio" id="star-2" name="rating" value="2">
+                  <label for="star-2" title="Оценка «2»"></label>
+                  <input type="radio" id="star-1" name="rating" value="1">
+                  <label for="star-1" title="Оценка «1»"></label>
+                </div>
+
+              </div>
+
+              <div class="hidden hide">
+
+                <div class=" view-box  view-text1 ">
+                  <span class="position2">Fresheness</span>
+                  <span> <span class="color-text">New</span> (Extra fresh)</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Farm</span>
+                  <span>Grocery Tarm Fields</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Delivery</span>
+                  <span>Europe</span>
+                </div>
+
+                <div class=" view-box  view-text1">
+                  <span class="position2">Stock</span>
+                  <span class="color-text">320 pcs</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="part-two">
+
+              <div class="view-box position">
+                <div >
+                  <p class="categories-text">1.99 USD</p>
+                  <p class="view-text2 minus-margin2"><del>2.49</del></p>
                 </div>
                 <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
               </div>
@@ -445,12 +648,12 @@
 
           <div class="view-box card box">
 
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
+            <img src="img/cucumber.png" class="image" width="236" height="180" alt="...">
 
             <div class="part-one">
 
               <div>
-                <p class="categories-text">Product title</p>
+                <p class="categories-text">Cucumber</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
                 <div class="rating-area">
@@ -498,8 +701,8 @@
 
               <div class="view-box position">
                 <div >
-                  <p class="categories-text">36.99 USD</p>
-                  <p class="view-text2 minus-margin2"><del>48.56</del></p>
+                  <p class="categories-text">1.49 USD</p>
+                  <p class="view-text2 minus-margin2"><del>1.99</del></p>
                 </div>
                 <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
               </div>
@@ -537,12 +740,12 @@
 
           <div class="view-box card box">
 
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
+            <img src="img/pumpkin.png" class="image" width="236" height="180" alt="...">
 
             <div class="part-one">
 
               <div>
-                <p class="categories-text">Product title</p>
+                <p class="categories-text">Pumpkin</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
                 <div class="rating-area">
@@ -590,8 +793,8 @@
 
               <div class="view-box position">
                 <div >
-                  <p class="categories-text">36.99 USD</p>
-                  <p class="view-text2 minus-margin2"><del>48.56</del></p>
+                  <p class="categories-text">0.99 USD</p>
+                  <p class="view-text2 minus-margin2"><del>1.99</del></p>
                 </div>
                 <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
               </div>
@@ -629,12 +832,12 @@
 
           <div class="view-box card box">
 
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
+            <img src="img/corn.png" class="image" width="236" height="180" alt="...">
 
             <div class="part-one">
 
               <div>
-                <p class="categories-text">Product title</p>
+                <p class="categories-text">Corn</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
                 <div class="rating-area">
@@ -682,8 +885,8 @@
 
               <div class="view-box position">
                 <div >
-                  <p class="categories-text">36.99 USD</p>
-                  <p class="view-text2 minus-margin2"><del>48.56</del></p>
+                  <p class="categories-text">0.99 USD</p>
+                  <p class="view-text2 minus-margin2"><del>1.99</del></p>
                 </div>
                 <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
               </div>
@@ -721,12 +924,12 @@
 
           <div class="view-box card box">
 
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
+            <img src="img/tomato.png" class="image" width="236" height="180" alt="...">
 
             <div class="part-one">
 
               <div>
-                <p class="categories-text">Product title</p>
+                <p class="categories-text">Tomato</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
                 <div class="rating-area">
@@ -774,8 +977,8 @@
 
               <div class="view-box position">
                 <div >
-                  <p class="categories-text">36.99 USD</p>
-                  <p class="view-text2 minus-margin2"><del>48.56</del></p>
+                  <p class="categories-text">1.49 USD</p>
+                  <p class="view-text2 minus-margin2"><del>1.99</del></p>
                 </div>
                 <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
               </div>
@@ -813,12 +1016,12 @@
 
           <div class="view-box card box">
 
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
+            <img src="img/onion.png" class="image" width="236" height="180" alt="...">
 
             <div class="part-one">
 
               <div>
-                <p class="categories-text">Product title</p>
+                <p class="categories-text">Onion</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
                 <div class="rating-area">
@@ -866,192 +1069,8 @@
 
               <div class="view-box position">
                 <div >
-                  <p class="categories-text">36.99 USD</p>
-                  <p class="view-text2 minus-margin2"><del>48.56</del></p>
-                </div>
-                <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
-              </div>
-
-              <div class="hidden hide">
-
-                <div>
-                  <p class="view-text2">Free shipping</p>
-                  <p class="view-text2 minus-margin">Delivery in 1 day</p>
-                </div>
-
-                <div class="button-box product-detail">
-                  <p  >Product detail</p>
-                  <img src="img/vector3.png" width="15"  height="15" alt="..">
-                </div>
-
-                <div class="button-box wish-list">
-                  <img src="img/love.png" width="13.33"  height="11.47" alt="..">
-                  <p >Add to wish list</p>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="column">
-
-        <div class=" view-card">
-
-          <div class="view-box card box">
-
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
-
-            <div class="part-one">
-
-              <div>
-                <p class="categories-text">Product title</p>
-                <p class="view-text2 minus-margin2">Space for a small product description </p>
-
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
-                </div>
-
-              </div>
-
-              <div class="hidden hide">
-
-                <div class=" view-box  view-text1 ">
-                  <span class="position2">Fresheness</span>
-                  <span> <span class="color-text">New</span> (Extra fresh)</span>
-                </div>
-
-                <div class=" view-box  view-text1">
-                  <span class="position2">Farm</span>
-                  <span>Grocery Tarm Fields</span>
-                </div>
-
-                <div class=" view-box  view-text1">
-                  <span class="position2">Delivery</span>
-                  <span>Europe</span>
-                </div>
-
-                <div class=" view-box  view-text1">
-                  <span class="position2">Stock</span>
-                  <span class="color-text">320 pcs</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="part-two">
-
-              <div class="view-box position">
-                <div >
-                  <p class="categories-text">36.99 USD</p>
-                  <p class="view-text2 minus-margin2"><del>48.56</del></p>
-                </div>
-                <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
-              </div>
-
-              <div class="hidden hide">
-
-                <div>
-                  <p class="view-text2">Free shipping</p>
-                  <p class="view-text2 minus-margin">Delivery in 1 day</p>
-                </div>
-
-                <div class="button-box product-detail">
-                  <p  >Product detail</p>
-                  <img src="img/vector3.png" width="15"  height="15" alt="..">
-                </div>
-
-                <div class="button-box wish-list">
-                  <img src="img/love.png" width="13.33"  height="11.47" alt="..">
-                  <p >Add to wish list</p>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="column">
-
-        <div class=" view-card">
-
-          <div class="view-box card box">
-
-            <img src="img/view.png" id="image" width="236" height="180" alt="...">
-
-            <div class="part-one">
-
-              <div>
-                <p class="categories-text">Product title</p>
-                <p class="view-text2 minus-margin2">Space for a small product description </p>
-
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
-                </div>
-
-              </div>
-
-              <div class="hidden hide">
-
-                <div class=" view-box  view-text1 ">
-                  <span class="position2">Fresheness</span>
-                  <span> <span class="color-text">New</span> (Extra fresh)</span>
-                </div>
-
-                <div class=" view-box  view-text1">
-                  <span class="position2">Farm</span>
-                  <span>Grocery Tarm Fields</span>
-                </div>
-
-                <div class=" view-box  view-text1">
-                  <span class="position2">Delivery</span>
-                  <span>Europe</span>
-                </div>
-
-                <div class=" view-box  view-text1">
-                  <span class="position2">Stock</span>
-                  <span class="color-text">320 pcs</span>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="part-two">
-
-              <div class="view-box position">
-                <div >
-                  <p class="categories-text">36.99 USD</p>
-                  <p class="view-text2 minus-margin2"><del>48.56</del></p>
+                  <p class="categories-text">0.99 USD</p>
+                  <p class="view-text2 minus-margin2"><del>1.49</del></p>
                 </div>
                 <figcaption class="card-banner-text4 margin hidden2 " >Buy now</figcaption>
               </div>

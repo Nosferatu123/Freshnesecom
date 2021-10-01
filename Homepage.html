@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script defer="defer" src="js/slider.js"></script>
 </head>
 <body>
 <header class="header">
@@ -46,12 +47,19 @@
           </div>
       </div>
 
-       <div class="header-item">
-        <div class="icon-box"><img src="img/user.png"  width="24" height="24" alt=".."></div>
-        <div class="icon-box"><img src="img/basket.png"  width="24" height="24" alt=".."></div>
-      </div>
+           <div class="header-item">
+               <div class="icon-box"><img src="img/user.png"  width="24" height="24" alt=".."></div>
 
-    </div>
+               <div class="icon-box view-box basket-relative">
+                   <div class="hide basket">1</div>
+                   <img src="img/basket.png"  width="24" height="24" alt="..">
+               </div>
+
+
+           </div>
+
+
+       </div>
   </div>
 </header>
 
@@ -64,7 +72,7 @@
                  <img src="img/vector.png" alt="..">
             </div>
 
-            <div class="menu-box">
+            <div class="menu-box ">
                 <a href="category.html"><p >Fruit and vegetables</p></a>
                 <img src="img/vector.png" alt="..">
             </div>
@@ -97,11 +105,11 @@
             <div class="menu-box">
                 <a href="#"><p >Pharmacy</p></a>
                <img src="img/vector.png" alt="..">
-             <div>
+             </div>
         </div>
     </div>
-   </div>
 </section>
+
 
 <section>
     <div class="container">
@@ -109,7 +117,7 @@
          <div class="banner">
          <div class="caption">
            <p class="caption-text">Category menu</p>
-           <a href="#>"<p>Bakery</p></a>
+           <a href="#"><p>Bakery</p></a>
            <a href="#"><p>Fruit and vegetables</p></a>
            <a href="#"><p>Meat and fish</p></a>
            <a href="#"><p>Drinks</p></a>
@@ -268,6 +276,7 @@
 
 <section>
     <div class="container">
+
         <div class="customers-content">
             <div class="headline">
              <p class="headline-text">Our customers says</p>
@@ -277,50 +286,65 @@
              </div>
            </div>
 
-       <div class="customer-quotes">
 
-        <div class="text-box-customers">
-        <p>
-            “This is an super space for your customers qoute.
-            Don’t worry it works smooth as pie.
-            You will get all what you need by writing a text here“
-        </p>
-            <span class="name-surname"> Name and Surname</span>
-            <img class="customer-img"src="img/customer1.png"  width="48"  height="48" alt="">
+
+
+
+       <div class="view-box buttons">
+           <button class="back left-button"><</button>
+         <div class="modal-block">
+
+             <div class="customer-quotes">
+
+                 <div class="text-box-customers">
+                     <p>
+                         “This is an super space for your customers qoute.
+                         Don’t worry it works smooth as pie.
+                         You will get all what you need by writing a text here“
+                     </p>
+                     <span class="name-surname"> Name and Surname</span>
+                     <img class="customer-img"src="img/customer1.png"  width="48"  height="48" alt="">
+                 </div>
+
+                 <div class="text-box-customers">
+                     <p>
+                         “This is an super space for your customers qoute.
+                         Don’t worry it works smooth as pie.
+                         You will get all what you need by writing a text here“
+                     </p>
+                     <span class="name-surname"> Name and Surname</span>
+                     <img class="customer-img"src="img/customer2.png"  width="48"  height="48" alt="">
+                 </div>
+
+                 <div class="text-box-customers">
+                     <p >
+                         “This is an super space for your customers qoute.
+                         Don’t worry it works smooth as pie.
+                         You will get all what you need by writing a text here“
+                     </p>
+                     <span class="name-surname"> Name and Surname</span>
+                     <img class="customer-img"src="img/customer3.png"  width="48"  height="48" alt="">
+                 </div>
+
+                 <div class="text-box-customers">
+                     <p>
+                         “This is an super space for your customers qoute.
+                         Don’t worry it works smooth as pie.
+                         You will get all what you need by writing a text here“
+                     </p>
+                     <span class="name-surname"> Name and Surname</span>
+                     <img class="customer-img"src="img/customer4.png"  width="48"  height="48" alt="">
+
+                 </div>
+
+            </div>
+
+          </div>
+           <button class="forward right-button">></button>
         </div>
 
-        <div class="text-box-customers">
-        <p>
-            “This is an super space for your customers qoute.
-            Don’t worry it works smooth as pie.
-            You will get all what you need by writing a text here“
-        </p>
-            <span class="name-surname"> Name and Surname</span>
-            <img class="customer-img"src="img/customer2.png"  width="48"  height="48" alt="">
-        </div>
+     </div>
 
-        <div class="text-box-customers">
-        <p >
-            “This is an super space for your customers qoute.
-            Don’t worry it works smooth as pie.
-            You will get all what you need by writing a text here“
-        </p>
-            <span class="name-surname"> Name and Surname</span>
-            <img class="customer-img"src="img/customer3.png"  width="48"  height="48" alt="">
-        </div>
-        <div class="text-box-customers">
-        <p>
-            “This is an super space for your customers qoute.
-            Don’t worry it works smooth as pie.
-            You will get all what you need by writing a text here“
-        </p>
-            <span class="name-surname"> Name and Surname</span>
-            <img class="customer-img"src="img/customer4.png"  width="48"  height="48" alt="">
-        </div>
-
-      </div>
-
-   </div>
  </div>
 </section>
 
@@ -475,6 +499,7 @@
             </div>
         </div>
     </div>
+
 </section>
 <footer >
  <div class="container">
@@ -543,5 +568,6 @@
    </div>
  </div>
 </footer>
+
 </body>
 </html>
