@@ -90,7 +90,7 @@ if (!gridView==0) {
 
     }
 }
-
+//добавление товаров в корзину
 let carrot=document.querySelector('.carrot');
 
 if (!carrot==0) {
@@ -119,10 +119,11 @@ if (!addToCart==0){
 
 
 }
-
+//ползунци цены
 let apply=document.querySelector('.apply');
 if (!apply==0) {
     apply.onclick = function () {
+
         let minField = document.querySelector("#min-field").value;
         let maxField = document.querySelector("#max-field").value;
         document.querySelector("#min-range").value = minField;
@@ -131,17 +132,71 @@ if (!apply==0) {
 
         let reset = document.querySelector('.reset');
         if (!reset == 0) {
-            reset.onclick = function () {
+            reset.onclick = resetAll;
+        }
+        let column=document.querySelectorAll(".column");
+        let cards = document.querySelectorAll(".search-price");
+        let cardsNumber = [];
 
-                document.querySelector("#min-field").value='0';
-                document.querySelector("#max-field").value='1000';
-                document.querySelector("#min-range").value = '250'
-                document.querySelector("#max-range").value = '550';
+        cards.forEach(function (element) {
 
+            let number = parseFloat(element.textContent);
+            cardsNumber.push(number);
+            return cardsNumber;
+        })
+
+        for (let i = 0; i < cardsNumber.length; i++) {
+            if (!(cardsNumber[i] >= minField && cardsNumber[i] <= maxField)) {
+                 column[i].classList.add("hide");
             }
 
         }
+
+
+    }
+}
+function resetAll(){
+    document.querySelector("#min-field").value='0';
+    document.querySelector("#max-field").value='1000';
+    document.querySelector("#min-range").value = '0'
+    document.querySelector("#max-range").value = '1000';
+    document.querySelectorAll(".column").forEach(function(element){
+        element.classList.remove("hide");
+    })
+
+
+}
+
+let minRange=document.querySelector('#min-range');
+if (!minRange==0){
+    minRange.oninput=function(){
+
+        let minField=document.querySelector("#min-field");
+         minField.value=minRange.value;
+
+        let reset = document.querySelector('.reset');
+        if (!reset == 0) {
+            reset.onclick =  resetAll;
+        }
+
+    }
+}
+
+let maxRange=document.querySelector('#max-range');
+if (!maxRange==0){
+    maxRange.oninput=function(){
+
+        let maxField=document.querySelector("#max-field");
+        maxField.value=maxRange.value;
+
+        let reset = document.querySelector('.reset');
+        if (!reset == 0) {
+            reset.onclick =  resetAll;
+        }
+
     }
 }
 
 
+
+//------
