@@ -119,10 +119,20 @@ if (!addToCart==0){
 
 
 }
-//ползунци цены
+//ползунки цены
 let apply=document.querySelector('.apply');
+
 if (!apply==0) {
-    apply.onclick = function () {
+    apply.onclick = applyAll;
+    let count=0;
+    function applyAll(){
+
+        count+=1;
+        if (count>=1){
+            document.querySelectorAll(".column").forEach(function(element){
+                element.classList.remove("hide");
+            })
+        }
 
         let minField = document.querySelector("#min-field").value;
         let maxField = document.querySelector("#max-field").value;
@@ -155,6 +165,8 @@ if (!apply==0) {
 
     }
 }
+
+
 function resetAll(){
     document.querySelector("#min-field").value='0';
     document.querySelector("#max-field").value='1000';
@@ -196,7 +208,6 @@ if (!maxRange==0){
 
     }
 }
-
 
 
 //------
