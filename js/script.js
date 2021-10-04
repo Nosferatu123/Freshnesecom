@@ -210,4 +210,87 @@ if (!maxRange==0){
 }
 
 
-//------
+//-----------------выбор фильтров рейтинга------
+let par = document.querySelectorAll('.stars');
+
+
+
+let select=document.querySelectorAll(".select");
+
+select.forEach(function(element){
+   element.onchange=function(element){
+
+       let myTarget = element.target;
+
+       if (myTarget.checked==true){
+           switch (true){
+                   case myTarget.classList.contains("five-stars"):
+                       par.forEach( function (element){
+                           let active = element.querySelectorAll('.active').length;
+                           if (active!=5){
+
+                               let selected=element.closest(".column");
+                              console.log(selected);
+
+                           }
+                       });
+                       break;
+                   case myTarget.classList.contains("four-stars"):
+                       par.forEach( function (element){
+                           let active = element.querySelectorAll('.active').length;
+                           if (active==4){
+                               console.log(element);
+                           }
+                       });
+                       break;
+                   case myTarget.classList.contains("three-stars"):
+                       console.log('case 3');
+                       break;
+                   case myTarget.classList.contains("two-stars"):
+                       console.log('case 2');
+                       break;
+                   case myTarget.classList.contains("one-stars"):
+                       console.log('case 1');
+                       break;
+
+               }
+       } else {
+           console.log("delete");
+       }
+
+
+   // if (myTarget.classList.contains("five-stars")){
+   //     console.log ('case 5');
+   // } else if ( myTarget.checked==false){
+   //     console.log("delete");
+   //
+   // }
+
+
+
+       // switch (myTarget.checked){
+       //     case myTarget.classList.contains("five-stars"):
+       //         console.log('case 5');
+       //
+       //         break;
+       //     case myTarget.classList.contains("four-stars"):
+       //         console.log('case 4');
+       //
+       //         break;
+       //     case myTarget.classList.contains("three-stars"):
+       //         console.log('case 3');
+       //
+       //         break;
+       //     case myTarget.classList.contains("two-stars"):
+       //         console.log('case 2');
+       //
+       //         break;
+       //     case myTarget.classList.contains("one-stars"):
+       //         console.log('case 1');
+       //
+       //         break;
+       //
+       // }
+
+   }
+})

@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
   <script defer="defer" src="js/script.js"></script>
+  <script defer="defer" src="js/stars.js"></script>
 
 </head>
 <body>
@@ -180,22 +181,22 @@
           </label>
 
           <label class="checkbox">
-          <input type="checkbox" checked="checked">
+          <input  type="checkbox" checked="checked">
           <span>Filtre by brand item</span>
           </label>
 
           <label class="checkbox">
-            <input type="checkbox" checked="checked">
+            <input  type="checkbox" checked="checked">
             <span>Filtre by brand item</span>
           </label>
 
           <label class="checkbox">
-            <input type="checkbox" >
+            <input  type="checkbox" >
             <span>Filtre by brand item</span>
           </label>
 
           <label class="checkbox">
-            <input type="checkbox" >
+            <input  type="checkbox" >
             <span>Filtre by brand item</span>
           </label>
 
@@ -207,43 +208,43 @@
 
           <form >
             <label class="checkbox">
-              <input type="checkbox" >
+              <input class="select five-stars" type="checkbox" >
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
-              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".." ></span>
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
-              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".." ></span>
-              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".." ></span>
+              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
+              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
+              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
             </label>
 
             <label class="checkbox">
-              <input type="checkbox" >
+              <input  class="select four-stars"  type="checkbox" >
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
-              <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
-            </label>
-
-            <label class="checkbox">
-              <input type="checkbox" >
-              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
-              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
-              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
-              <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
             </label>
 
             <label class="checkbox">
-              <input type="checkbox" >
+              <input class="select three-stars" type="checkbox" >
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
-              <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
+              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
             </label>
 
             <label class="checkbox">
-              <input type="checkbox" >
+              <input class="select two-stars"  type="checkbox" >
+              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
+              <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
+              <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
+              <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
+              <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
+            </label>
+
+            <label class="checkbox">
+              <input class="select one-stars"  type="checkbox" >
               <span><img src="img/fullstar.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
               <span><img src="img/star.png" width="13.39" height="12.77" alt=".."></span>
@@ -307,17 +308,12 @@
                 <p class="categories-text">Carrot</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars" >
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
                 </div>
 
               </div>
@@ -402,18 +398,14 @@
                 <p class="categories-text">Beet</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars">
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
                 </div>
+
 
               </div>
 
@@ -494,19 +486,14 @@
               <div>
                 <p class="categories-text">Potato</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
-
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars" >
+                  <span class="star active ">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star ">★</span>
                 </div>
+
 
               </div>
 
@@ -588,18 +575,14 @@
                 <p class="categories-text">Pepper</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars" >
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
                 </div>
+
 
               </div>
 
@@ -680,18 +663,14 @@
                 <p class="categories-text">Cucumber</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars" >
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
                 </div>
+
 
               </div>
 
@@ -772,17 +751,12 @@
                 <p class="categories-text">Pumpkin</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars" >
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
                 </div>
 
               </div>
@@ -864,18 +838,14 @@
                 <p class="categories-text">Corn</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars" >
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
                 </div>
+
 
               </div>
 
@@ -956,17 +926,12 @@
                 <p class="categories-text">Tomato</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars" >
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
                 </div>
 
               </div>
@@ -1048,17 +1013,12 @@
                 <p class="categories-text">Onion</p>
                 <p class="view-text2 minus-margin2">Space for a small product description </p>
 
-                <div class="rating-area">
-                  <input type="radio" id="star-5" name="rating" value="5">
-                  <label for="star-5" title="Оценка «5»"></label>
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4" title="Оценка «4»"></label>
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3" title="Оценка «3»"></label>
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2" title="Оценка «2»"></label>
-                  <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1" title="Оценка «1»"></label>
+                <div class="stars" >
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star active">★</span>
+                  <span class="star">★</span>
                 </div>
 
               </div>
