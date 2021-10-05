@@ -122,15 +122,20 @@ if (!addToCart==0){
 //ползунки цены
 let apply=document.querySelector('.apply');
 
+
+
+
 if (!apply==0) {
     apply.onclick = applyAll;
     let count=0;
     function applyAll(){
 
+
         count+=1;
         if (count>=1){
             document.querySelectorAll(".column").forEach(function(element){
                 element.classList.remove("hide");
+                element.style.removeProperty("display");
             })
         }
 
@@ -145,38 +150,54 @@ if (!apply==0) {
             reset.onclick = resetAll;
         }
         let column=document.querySelectorAll(".column");
+        //получаем массив всех цен карточек
         let cards = document.querySelectorAll(".search-price");
         let cardsNumber = [];
 
         cards.forEach(function (element) {
-
             let number = parseFloat(element.textContent);
             cardsNumber.push(number);
             return cardsNumber;
         })
-
+        //находим цены подходящие под параметры
         for (let i = 0; i < cardsNumber.length; i++) {
             if (!(cardsNumber[i] >= minField && cardsNumber[i] <= maxField)) {
                  column[i].classList.add("hide");
             }
 
         }
+        //скрываем карточки при выборе checkbox
+        let notSelected=document.querySelectorAll(".column:not(.selected)");
+        notSelected.forEach(function(element){
+            element.style.display="none";
+        })
 
 
     }
 }
-
+let reset = document.querySelector('.reset');
+if (!reset == 0) {
+    reset.onclick = resetAll;
+}
 
 function resetAll(){
+    document.querySelectorAll(".column").forEach(function(element){
+        element.classList.remove("hide","selected");
+        element.style.removeProperty("display");
+    })
+
+
+    let uncheck=document.getElementsByTagName('input');
+    for(let i=0;i<uncheck.length;i++) {
+        if(uncheck[i].type=='checkbox') {
+            uncheck[i].checked=false;
+        }
+    }
+
     document.querySelector("#min-field").value='0';
     document.querySelector("#max-field").value='1000';
     document.querySelector("#min-range").value = '0'
     document.querySelector("#max-range").value = '1000';
-    document.querySelectorAll(".column").forEach(function(element){
-        element.classList.remove("hide");
-    })
-
-
 }
 
 let minRange=document.querySelector('#min-range');
@@ -216,81 +237,105 @@ let par = document.querySelectorAll('.stars');
 
 
 let select=document.querySelectorAll(".select");
-
+document.createElement("selected");
 select.forEach(function(element){
    element.onchange=function(element){
 
        let myTarget = element.target;
 
        if (myTarget.checked==true){
-           switch (true){
-                   case myTarget.classList.contains("five-stars"):
-                       par.forEach( function (element){
-                           let active = element.querySelectorAll('.active').length;
-                           if (active!=5){
 
-                               let selected=element.closest(".column");
-                              console.log(selected);
+       }
+           switch (true) {
 
-                           }
-                       });
-                       break;
-                   case myTarget.classList.contains("four-stars"):
-                       par.forEach( function (element){
-                           let active = element.querySelectorAll('.active').length;
-                           if (active==4){
-                               console.log(element);
-                           }
-                       });
-                       break;
-                   case myTarget.classList.contains("three-stars"):
-                       console.log('case 3');
-                       break;
-                   case myTarget.classList.contains("two-stars"):
-                       console.log('case 2');
-                       break;
-                   case myTarget.classList.contains("one-stars"):
-                       console.log('case 1');
-                       break;
+               case myTarget.classList.contains("five-stars"):
+                   par.forEach(function (element) {
 
-               }
-       } else {
-           console.log("delete");
+                       let active = element.querySelectorAll('.active').length;
+                       if (active == 5) {
+                           let selected = element.closest(".column");
+                           selected.classList.add("selected");
+                       }
+
+                       let fiveStarsCheck=document.querySelector('[name="five-stars"]');
+                       if (!fiveStarsCheck.checked==true && active==5){
+                           let selected = element.closest(".column");
+                           selected.classList.remove("selected");
+                       }
+                   });
+                   break;
+
+
+               case myTarget.classList.contains("four-stars"):
+                   par.forEach(function (element) {
+                       let active = element.querySelectorAll('.active').length;
+
+                       if (active == 4) {
+                           let selected = element.closest(".column");
+                           selected.classList.add("selected");
+                       }
+
+                       let fourStarsCheck=document.querySelector('[name="four-stars"]');
+                       if (!fourStarsCheck.checked==true &&active==4){
+                           let selected = element.closest(".column");
+                           selected.classList.remove("selected");
+                       }
+                   });
+                   break;
+
+               case myTarget.classList.contains("three-stars"):
+                   par.forEach(function (element) {
+
+                       let active = element.querySelectorAll('.active').length;
+                       if (active == 3) {
+                           let selected = element.closest(".column");
+                           selected.classList.add("selected");
+                       }
+
+                       let threeStarsCheck=document.querySelector('[name="three-stars"]');
+                       if (!threeStarsCheck.checked==true &&active==3){
+                           let selected = element.closest(".column");
+                           selected.classList.remove("selected");
+                       }
+                   });
+                   break;
+
+               case myTarget.classList.contains("two-stars"):
+                   par.forEach(function (element) {
+
+                       let active = element.querySelectorAll('.active').length;
+                       if (active == 2) {
+                           let selected = element.closest(".column");
+                           selected.classList.add("selected");
+                       }
+
+                       let twoStarsCheck=document.querySelector('[name="two-stars"]');
+                       if (!twoStarsCheck.checked==true &&active==2){
+                           let selected = element.closest(".column");
+                           selected.classList.remove("selected");
+                       }
+                   });
+                   break;
+
+               case myTarget.classList.contains("one-stars"):
+                   par.forEach(function (element) {
+
+                       let active = element.querySelectorAll('.active').length;
+                       if (active == 1) {
+                           let selected = element.closest(".column");
+                           selected.classList.add("selected");
+                       }
+
+                       let oneStarsCheck=document.querySelector('[name="one-stars"]');
+                       if (!oneStarsCheck.checked==true &&active==1){
+                           let selected = element.closest(".column");
+                           selected.classList.remove("selected");
+                       }
+                   });
+                   break;
+                 }
+
        }
 
 
-   // if (myTarget.classList.contains("five-stars")){
-   //     console.log ('case 5');
-   // } else if ( myTarget.checked==false){
-   //     console.log("delete");
-   //
-   // }
-
-
-
-       // switch (myTarget.checked){
-       //     case myTarget.classList.contains("five-stars"):
-       //         console.log('case 5');
-       //
-       //         break;
-       //     case myTarget.classList.contains("four-stars"):
-       //         console.log('case 4');
-       //
-       //         break;
-       //     case myTarget.classList.contains("three-stars"):
-       //         console.log('case 3');
-       //
-       //         break;
-       //     case myTarget.classList.contains("two-stars"):
-       //         console.log('case 2');
-       //
-       //         break;
-       //     case myTarget.classList.contains("one-stars"):
-       //         console.log('case 1');
-       //
-       //         break;
-       //
-       // }
-
-   }
 })

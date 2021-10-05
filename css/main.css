@@ -570,6 +570,8 @@
 }
 /*--------------------------------*/
 /*caption one-----------------------------------------------------*/
+.selected{
+}
 .star {
 
     color:burlywood;
@@ -586,7 +588,6 @@
 .stars{
     margin-bottom: 27px;
     cursor:pointer;
-
 }
 
 .caption-content {
@@ -1189,7 +1190,4 @@ table{
 }
 .description-img{
     border-radius: 15px;
-}
-.selected{
-background: red;
 }
