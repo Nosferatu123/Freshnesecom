@@ -614,19 +614,24 @@ ul{
 .selected{
 }
 
-.star {
-   color:sandybrown;
+.star2{
+    color:orange;
+    font-size:20px;
+}
+ .star {
     transition: all .5s ease;
-
+     font-size:20px;
 }
 
 .star.active {
-    color:black;
+    color:orange;
+}
+.far{
+    color:orange;
 }
 
 .stars{
     cursor:pointer;
-    font-size: 24px;
 }
 
 .caption-content {

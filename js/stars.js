@@ -3,14 +3,28 @@ let parentItems = document.querySelectorAll('.stars');
 
 // Функция проверяет куда нажали и меняет классы
 let cStars = function(nowPos,child) {
+console.log(nowPos);
+
     // Убираем у всех элементов active
     for (let i = 0; i <child.length ; i++) {
         child[i].classList.remove('active');
+        child[i].classList.remove("far");//пустая звезда
+
     }
     // Добавляет активный класс всем элементам до выбранного, включая выбранный
     for (let i = 0; i <nowPos + 1; i++) {
         child[i].classList.toggle('active');
+        child[i].classList.add('fas');//цельная звезда
     }
+
+     for (let i=child.length-1;i>=nowPos+1;i--){
+
+         child[i].classList.remove('fas');
+         child[i].classList.add('far');
+         console.log(child[i]);
+     }
+
+
 }
 
 
