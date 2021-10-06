@@ -1,6 +1,3 @@
-// Get the elements with class="column"
-let elements = document.getElementsByClassName('column');
-//console.log(elements);
 
 // List View
 
@@ -9,9 +6,8 @@ let listView=document.querySelector('#list-view');
 if (!listView==0) {
 
     listView.onclick = function listView() {
-        for (let i = 0; i < elements.length; i++) {
-            elements[i].style.width = "100%";
-        }
+
+
         document.querySelectorAll('.hidden').forEach(function (element) {
             element.classList.remove('hide');
         });
@@ -19,30 +15,24 @@ if (!listView==0) {
         document.querySelectorAll('.card').forEach(function (element) {
             element.classList.remove('box');
         });
-        document.querySelectorAll('.image').forEach(function (element) {
-            element.style.width = "268px";
-            element.style.height = "280px";
-        });
-        document.querySelectorAll('.view-card').forEach(function (element) {
-            element.style.padding = '0';
-            element.style.maxHeight = '280px';
-        });
-        document.querySelectorAll('.part-one').forEach(function (element) {
-            element.style.marginLeft = '32px';
-            element.style.marginRight = '96px';
-        });
-        document.querySelectorAll('.part-two').forEach(function (element) {
-            element.style.width = '164px';
-            element.style.marginRight = '32px';
-            element.style.marginTop = '0';
-        });
-        document.querySelectorAll('.margin').forEach(function (element) {
-            element.style.marginRight = '0';
-        });
-        document.querySelectorAll('.hidden2').forEach(function (element) {
-            element.classList.add('hide');
+
+        document.querySelectorAll('.column').forEach(function(element){
+            element.classList.remove("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+            element.classList.add("col-xs-12", "col-sm-12", "col-md-12", "col-lg-12","col-xl-12");
         });
 
+        document.querySelector(".view-content").style.flexWrap="nowrap";
+
+
+        document.querySelectorAll('.equal-part').forEach(function(element){
+            element.classList.add("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+
+        });
+
+
+        document.querySelectorAll('.hide-two').forEach(function (element) {
+            element.classList.add('hide');
+        });
 
     }
 }
@@ -53,10 +43,12 @@ if (!gridView==0) {
 
 
     gridView.onclick = function gridView() {
-        for (let i = 0; i < elements.length; i++) {
-            elements[i].style.width = "30%";
-        }
 
+
+        document.querySelectorAll('.column').forEach(function(element){
+            element.classList.remove("col-xs-12", "col-sm-12", "col-md-12", "col-lg-12","col-xl-12");
+            element.classList.add("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+        });
 
         document.querySelectorAll('.hidden').forEach(function (element) {
             element.classList.add('hide');
@@ -64,28 +56,13 @@ if (!gridView==0) {
         document.querySelectorAll('.card').forEach(function (element) {
             element.classList.add('box');
         });
-        document.querySelectorAll('.image').forEach(function (element) {
-            element.style.width = "236px";
-            element.style.height = "180px";
-        });
-        document.querySelectorAll('.view-card').forEach(function (element) {
-            element.style.padding = '16px';
-            element.style.maxHeight = '332px';
-        });
-        document.querySelectorAll('.part-one').forEach(function (element) {
-            element.style.marginLeft = '0';
-            element.style.marginRight = '0';
-        });
-        document.querySelectorAll('.part-two').forEach(function (element) {
-            element.style.width = '269px';
-            element.style.marginRight = '0';
-            element.style.marginTop = '-40px';
-        });
-        document.querySelectorAll('.margin').forEach(function (element) {
-            element.style.marginRight = '16px';
-        });
-        document.querySelectorAll('.hidden2').forEach(function (element) {
+
+        document.querySelectorAll('.hide-two').forEach(function (element) {
             element.classList.remove('hide');
+        });
+
+        document.querySelectorAll('.equal-part').forEach(function(element){
+            element.classList.remove("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
         });
 
     }
@@ -141,6 +118,7 @@ if (!apply==0) {
 
         let minField = document.querySelector("#min-field").value;
         let maxField = document.querySelector("#max-field").value;
+
         document.querySelector("#min-range").value = minField;
         document.querySelector("#max-range").value = maxField;
 
@@ -150,6 +128,7 @@ if (!apply==0) {
             reset.onclick = resetAll;
         }
         let column=document.querySelectorAll(".column");
+
         //получаем массив всех цен карточек
         let cards = document.querySelectorAll(".search-price");
         let cardsNumber = [];
