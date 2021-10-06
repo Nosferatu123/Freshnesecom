@@ -3,7 +3,7 @@ let parentItems = document.querySelectorAll('.stars');
 
 // Функция проверяет куда нажали и меняет классы
 let cStars = function(nowPos,child) {
-console.log(nowPos);
+
 
     // Убираем у всех элементов active
     for (let i = 0; i <child.length ; i++) {
@@ -21,7 +21,7 @@ console.log(nowPos);
 
          child[i].classList.remove('fas');
          child[i].classList.add('far');
-         console.log(child[i]);
+
      }
 
 

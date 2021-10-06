@@ -793,6 +793,7 @@ ul{
 .columns{
     display: flex;
     flex-wrap: wrap;
+    max-height: 305px;
 }
 
 .view-card{
