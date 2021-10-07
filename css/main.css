@@ -511,7 +511,6 @@ ul{
 
 /*footer---------------------------------------------------------*/
 .footer-content{
-    padding-left: 25px;
     padding-top: 64px;
     padding-bottom: 64px;
 }
@@ -788,6 +787,7 @@ ul{
 .view-content{
     padding-top: 64px;
     display: flex;
+    min-height: 950px;
 }
 
 .columns{
