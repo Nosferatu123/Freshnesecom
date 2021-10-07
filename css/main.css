@@ -382,10 +382,9 @@ ul{
 
 .blog-content{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 20px;
-    padding-left:20px;
+    align-content: space-between;
 }
 
 @media screen and (max-width: 1200px){
@@ -638,6 +637,7 @@ ul{
     justify-content: space-between;
     flex-wrap: wrap;
     min-height: 410px;
+    padding-top: 57px;
 }
 
 .section-height{
