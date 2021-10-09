@@ -34,6 +34,19 @@ ul{
     margin-left: -40px;
     margin-right: 20px;
 }
+.content{
+ align-items: center;
+}
+
+.visually-hidden{
+    opacity: 0;
+}
+.select{
+    cursor:pointer;
+}
+
+
+
 
 /*header-----------------------------------------------------------------------*/
 .header{
@@ -187,6 +200,9 @@ ul{
     margin-right:17px;
 }
 /*menu---------------------------------------------------------*/
+#fruitVegetables{
+    cursor: pointer;
+}
 .menu-content{
     display: flex;
     flex-wrap: wrap;
@@ -195,11 +211,11 @@ ul{
     margin-top: 178px;
 
 }
-@media screen and (max-width: 756px){
-    .menu-content{
-        margin-top: 226px;
-    }
-}
+/*@media screen and (max-width: 756px){*/
+/*    .menu-content{*/
+/*        margin-top: 226px;*/
+/*    }*/
+/*}*/
 .menu-background{
     background: #F9F9F9;
 }
@@ -207,14 +223,14 @@ ul{
 .menu-box{
     display: flex;
     align-items: center;
-    margin-right:34px;
+    margin-right:40px;
 
 }
-@media screen and (max-width:756px){
-    .menu-box{
-        width: 33%;
-    }
-}
+/*@media screen and (max-width:756px){*/
+/*    .menu-box{*/
+/*        width: 33%;*/
+/*    }*/
+/*}*/
 
 .menu-box a {
     text-decoration: none;
@@ -240,6 +256,7 @@ ul{
 .gray{
     color: #A9A9A9;
 }
+
 /*section customers-------------------------------------------------*/
 
 .modal-block{
@@ -543,6 +560,7 @@ ul{
 .footer-tags{
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .footer-tag{
@@ -557,6 +575,7 @@ ul{
     border-radius:12px ;
     background:#F5F5F5;
     padding: 4px 10px;
+    align-content: center;
 }
 
 .product-tags-text{
@@ -578,6 +597,9 @@ ul{
 }
 /*page 2 category----------------------------------*/
 /*fruit-vegetable-----------------------------------*/
+.fruitVegetables{
+    cursor:pointer;
+}
 .fruit-vegetable-contain{
     display: flex;
     justify-content: space-between;
@@ -603,16 +625,20 @@ ul{
     line-height: 16px;
     color: #151515;
 }
-
-.list-group-item{
-    margin-right: 24px;
+.filter {
+    font-size: 20px;
+    margin-right: 5px;
+    color: #6A983C;
+    cursor: pointer;
 }
+
 /*--------------------------------*/
 /*caption one-----------------------------------------------------*/
 .selected{
+
 }
 
-.star2{
+.star-rating{
     color:orange;
     font-size:20px;
 }
@@ -629,6 +655,7 @@ ul{
 }
 
 .stars{
+    margin-top: 10px;
     cursor:pointer;
 }
 
@@ -787,22 +814,19 @@ ul{
 .view-content{
     padding-top: 64px;
     display: flex;
-    min-height: 950px;
 }
 
 .columns{
     display: flex;
     flex-wrap: wrap;
-    max-height: 305px;
+    align-content: flex-start;
 }
 
 .view-card{
     border:1px solid #D1D1D1;
     border-radius: 12px;
-    max-height: 332px;
     margin-bottom: 32px;
     padding:16px;
-    background: white;
 
 }
 
@@ -814,6 +838,10 @@ ul{
     font-size: 18px;
     line-height: 27px;
     color: #151515;
+    margin-top: 10px;
+}
+.hide-two{
+    margin-top: 10px;
 }
 
 .category-name{
@@ -856,11 +884,10 @@ ul{
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
+    color: #575757;
     font-size: 12px;
     line-height: 16px;
-    color: #575757;
 }
-
 
 
 .product-detail{
@@ -907,10 +934,15 @@ ul{
 
 
 /*выбор брендов */
+.side-bar{
+    transition: all .5s ease;
+}
+
 .checkbox{
     display: block;
     user-select: none;
     margin-left: -5px;
+    cursor: pointer;
 }
 
 input[type=checkbox] {
@@ -1001,10 +1033,6 @@ input[type='range']::-webkit-slider-thumb {
 
 
 
-
-
-
-
 .apply{
     width: 78px;
     height: 48px;
@@ -1061,7 +1089,8 @@ input[type='range']::-webkit-slider-thumb {
     padding: 12px 16px;
     background-color: white;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 12px;
+    margin-right: 5px;
 }
 
 .btn:hover {
@@ -1082,6 +1111,7 @@ input[type='range']::-webkit-slider-thumb {
     height: 100%;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 
@@ -1203,3 +1233,26 @@ table{
     border-radius: 15px;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 1000px) {
+    .view-text1{
+        font-size: 20px;
+    }
+    .view-text2{
+        font-size: 20px;
+    }
+    .product-detail{
+        font-size:21px;
+    }
+    .wish-list{
+        font-size: 21px;
+    }
+    .categories-text{
+        font-size: 24px;
+    }
+    .star{
+        font-size: 22px;
+    }
+}
+
+

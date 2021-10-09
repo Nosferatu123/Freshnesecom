@@ -57,10 +57,9 @@
         <div class="icon-box"><img src="img/user.png"  width="24" height="24" alt=".."></div>
 
         <div class="icon-box view-box basket-relative">
-          <div class="hide basket">1</div>
+          <div class="hide basket"></div>
           <img src="img/basket.png"  width="24" height="24" alt="..">
         </div>
-
 
       </div>
 
@@ -78,8 +77,8 @@
         <img src="img/vector.png" alt="..">
       </div>
 
-      <div class="menu-box ">
-        <a href="category.html"><p >Fruit and vegetables</p></a>
+      <div class="menu-box fruitVegetables">
+        <p>Fruit and vegetables</p>
         <img src="img/vector.png" alt="..">
       </div>
 
@@ -119,31 +118,26 @@
 <section>
   <div class="container">
     <div class="breadcrumbs">
-      <p class="breadcrumbs-text"><span class="gray">Homepage &nbsp/
-      </span>&nbsp Fruits and vegetables &nbsp</p>
+      <p class="breadcrumbs-text">
+        <span class="gray">Homepage &nbsp/</span>
+        <span class="fruitVegetables">&nbsp Fruits and vegetables &nbsp</span>
+        <span class="hide">/&nbsp Carrots from Tommisy Farm</span>
+      </p>
     </div>
   </div>
 </section>
 
-<section>
-
+<section class="vegetable">
   <div class="container">
     <div class="fruit-vegetable-contain">
       <p class="fruit-vegetable-text">Fruit and vegetables</p>
-      <div class="list-group">
+        <div class=" list-group view-box content">
 
-          <div class="button-box">
-            <div ><img src="img/grid.png"  width="24" height="24" alt=".."></div>
-            <button class="btn" id="grid-view" > Grid view</button>
-          </div>
+            <span class=" filter fas fa-filter"></span>
+          <button class="btn" id="grid-view" > <span class="view-box content"><img src="img/grid.png"  width="24" height="24" alt=".."> &nbsp Grid view</span></button>
+          <button class="btn " id="list-view" >  <span class="view-box content"><img src="img/list.png"  width="24" height="24" alt=".."> &nbsp List view</span></button>
+            <div > <span class="category-name-number ">117</span> Products</div>
 
-         <div class="button-box">
-           <div ><img src="img/list.png"  width="24" height="24" alt=".."></div>
-           <button class="btn" id="list-view" > List view</button>
-         </div>
-
-      <p class="list-group-item category-name-number">117</p>
-      <p class="list-group-item">products</p>
       </div>
     </div>
   </div>
@@ -151,9 +145,189 @@
 
 <section>
   <div class="container">
-    <div class="  view-content">
 
-       <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+    <div class=" view-content">
+
+      <div class="description-content " style="display:none">
+        <div class="description col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+
+          <div class="cover">
+            <img class="description-img" src="img/carrot1.png"  alt="...">
+          </div>
+
+          <div class="cover">
+            <img class="description-img" src="img/carrot2.png"  alt="...">
+          </div>
+
+          <div class="cover">
+            <img class="description-img" src="img/carrot3.png"  alt="...">
+          </div>
+
+        </div>
+
+        <div class="carrot-box col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+
+          <div class="carrot-text">Carrots from Tomissy Farm</div>
+
+          <p class="carrot-text2">Carrots from Tomissy Farm are one of the best on the market.
+            Tomisso and his family are giving a full love to his Bio products.
+            Tomisso&#39s carrots are growing on the fields naturally.
+          </p>
+
+          <div class="view-box description-text">
+            <div class="description">
+
+              <div class="view-box  ">
+                <p class="gray position2">SKU:</p>
+                <p>76645</p>
+              </div>
+
+              <div class="view-box " >
+                <p class="gray position2">Category:</p>
+                <p><u>Vegetables</u></p>
+              </div>
+
+              <div class="view-box ">
+                <p class="gray position2">Stock:</p>
+                <p class="green"><u>In Stock</u></p>
+              </div>
+
+              <div class="view-box " >
+                <p class="gray position2">Farm</p>
+                <p>Grocery Tarm Fields</p>
+              </div>
+
+
+            </div>
+
+            <div class="description">
+
+              <div class="view-box">
+                <p class="gray position2">Freshness:</p>
+                <p>1 days old</p>
+              </div >
+
+              <div class="view-box">
+                <p class="gray position2">Buy by:</p>
+                <p>pcs, kgs, box, pack</p>
+              </div>
+
+              <div class="view-box">
+                <p class="gray position2">Delivery:</p>
+                <p>in 2 days</p>
+              </div>
+
+              <div class="view-box">
+                <p class="gray position2">Delivery area</p>
+                <p>Czech republic</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="view-box position description-price">
+
+            <div class="description-price-text">
+              <p><span class="description-price-text1">1.99 USD</span></br>
+                <del><span class="description-price-text2">2.99 USD</span></del></p>
+            </div>
+
+            <div class="view-box ">
+
+              <select class="description-option " >
+                <option >Pcs</option>
+                <option >kgs</option>
+                <option >Box</option>
+                <option >Pack</option>
+              </select>
+
+              <button class="description-button ">+ Add to cart</button>
+
+            </div>
+
+          </div>
+
+          <div class="view-box description-text-wishlist ">
+
+            <div class="view-box item-center right-margin">
+              <img src="img/like.png" width="13px" height="11px" alt="...">
+              <p>Add to my wish list</p>
+            </div>
+
+            <div class="view-box item-center">
+              <img src="img/compare.png" width="13px" height="11px" alt="...">
+              <p>Compare</p>
+            </div>
+
+          </div>
+
+
+          <div>
+            <p class="description-text2">Origins</p>
+            <p class="description-text3">We work hard to ensure that the fruit and vegetables we sell are fresh and high in quality.
+              If we don&#39t grow them ourselves, we source them from carefully chosen suppliers,
+              preferring to buy locally whenever possible.
+            </p>
+            <p class="description-text2" >How to cook</p>
+            <p class="description-text3">From roasts, salads and soups to casseroles and cakes, Carrots will lend sweetness,
+              texture and colour to an enormous number of recipes.</p>
+            <p class="description-text2">Full of Vitamins!</p>
+          </div>
+
+          <table >
+            <tr id="line">
+              <td class="line">Vitamins</td>
+              <td class="line">Quantity</td>
+              <td class="line">% DV</td>
+            </tr>
+            <tr>
+              <td >Vitamin A equiv.</td>
+              <td >735 mg</td>
+              <td >104 %</td>
+            </tr>
+            <tr>
+              <td >Thiamine (B1)</td>
+              <td >0.066 mg</td>
+              <td >6 %</td>
+            </tr>
+            <tr>
+              <td >Niacin (B3)</td>
+              <td >0.983 mg</td>
+              <td >7 %</td>
+            </tr>
+            <tr>
+              <td >Folate (Bg)</td>
+              <td >19 mg</td>
+              <td >5 %</td>
+            </tr>
+            <tr>
+              <td >Vitamin C</td>
+              <td >5.9 mg</td>
+              <td >7 %</td>
+            </tr>
+            <tr>
+              <td >Vitamin E</td>
+              <td >0.66 mg</td>
+              <td >4 %</td>
+            </tr>
+            <tr>
+              <td >Vitamin K</td>
+              <td >13.2 mg</td>
+              <td >13 %</td>
+            </tr>
+
+
+          </table>
+
+
+
+        </div>
+
+
+      </div>
+
+       <div class=" side-bar col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
 
          <div class="categories">
            <p class="categories-text">Categories</p>
@@ -213,47 +387,47 @@
           <form >
             <label class="checkbox">
               <input class="select five-stars" type="checkbox" name="five-stars"  >
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
             </label>
 
             <label class="checkbox">
               <input  class="select four-stars"  type="checkbox" name="four-stars">
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 far fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
             </label>
 
             <label class="checkbox">
               <input class="select three-stars" type="checkbox" name="three-stars">
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 far fa-star"></span>
-              <span class=" star2 far fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
             </label>
 
             <label class="checkbox">
               <input class="select two-stars"  type="checkbox" name="two-stars">
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 far fa-star"></span>
-              <span class=" star2 far fa-star"></span>
-              <span class=" star2 far fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
             </label>
 
             <label class="checkbox">
               <input class="select one-stars"  type="checkbox" name="one-stars">
-              <span class=" star2 fas fa-star"></span>
-              <span class=" star2 far fa-star"></span>
-              <span class=" star2 far fa-star"></span>
-              <span class=" star2 far fa-star"></span>
-              <span class=" star2 far fa-star"></span>
+              <span class=" star-rating fas fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
+              <span class=" star-rating far fa-star"></span>
             </label>
 
           </form>
@@ -291,14 +465,13 @@
 
             <div class="columns">
 
-
-              <div class="column   col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
                   <div class="view-box card box">
 
-                    <div class=" cover equal-part ">
+                    <div class="cover equal-part carrot">
                       <img src="img/carrot1.png"   alt="...">
                     </div>
 
@@ -346,11 +519,11 @@
                     <div class="equal-part">
 
                       <div class="view-box position">
-                        <div >
+                        <div>
                           <div class="categories-text search-price">1.99 USD</div>
-                          <div class="view-text2 "><del>2.99</del></div>
+                          <div class="view-text2"><del>2.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two ">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -382,7 +555,7 @@
 
              </div>
 
-              <div class="column   col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
@@ -473,7 +646,7 @@
 
               </div>
 
-              <div class="column   col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
@@ -564,8 +737,7 @@
               </div>
 
 
-
-              <div class="column   col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                  <div class=" view-card">
 
@@ -655,7 +827,7 @@
 
                </div>
 
-              <div class="column   col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
@@ -745,7 +917,7 @@
 
               </div>
 
-              <div class="column  col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
@@ -836,8 +1008,7 @@
               </div>
 
 
-
-              <div class="column   col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                  <div class=" view-card">
 
@@ -927,7 +1098,7 @@
 
                </div>
 
-              <div class="column   col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                  <div class=" view-card">
 
@@ -1017,7 +1188,7 @@
 
                </div>
 
-              <div class="column   col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
 
                 <div class=" view-card">
@@ -1108,6 +1279,821 @@
 
               </div>
 
+<!--------------------------------------------------------------------------------------------->
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class="cover equal-part carrot">-->
+<!--                      <img src="img/carrot1.png"   alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Carrot</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars " >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div>-->
+<!--                          <div class="categories-text search-price">1.99 USD</div>-->
+<!--                          <div class="view-text2"><del>2.99</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two ">Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class="equal-part cover">-->
+<!--                      <img src="img/potato.png"  alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Potato</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars " >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div >-->
+<!--                          <div class="categories-text search-price">0.99 USD</div>-->
+<!--                          <div class="view-text2 "><del>1.99</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class="equal-part cover">-->
+<!--                      <img src="img/pumpkin.png"   alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Pumpkin</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars " >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div >-->
+<!--                          <div class="categories-text search-price">2.99 USD</div>-->
+<!--                          <div class="view-text2 "><del>3.49</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class=" cover equal-part ">-->
+<!--                      <img src="img/cucumber.jpg"   alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Cucumber</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars " >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div >-->
+<!--                          <div class="categories-text search-price">0.99 USD</div>-->
+<!--                          <div class="view-text2 "><del>1.99</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class="equal-part cover">-->
+<!--                      <img src="img/onion.png"  alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Onion</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars" >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star  far fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div >-->
+<!--                          <div class="categories-text search-price">0.99 USD</div>-->
+<!--                          <div class="view-text2 "><del>1.99</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class="equal-part cover">-->
+<!--                      <img src="img/beet.png"  alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Beet</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars " >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div >-->
+<!--                          <div class="categories-text search-price">2.99 USD</div>-->
+<!--                          <div class="view-text2 "><del>3.99</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class=" cover equal-part ">-->
+<!--                      <img src="img/pepper.jpg"   alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Pepper</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars " >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div >-->
+<!--                          <div class="categories-text search-price">3.99 USD</div>-->
+<!--                          <div class="view-text2 "><del>4.99</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class=" cover equal-part ">-->
+<!--                      <img src="img/corn.jpg"   alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Corn</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars " >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div >-->
+<!--                          <div class="categories-text search-price">0.99 USD</div>-->
+<!--                          <div class="view-text2 "><del>1.49</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
+
+<!--              <div class="column   col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">-->
+
+
+<!--                <div class=" view-card">-->
+
+<!--                  <div class="view-box card box">-->
+
+<!--                    <div class="equal-part cover">-->
+<!--                      <img src="img/tomato.png"  alt="...">-->
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div>-->
+
+<!--                        <div class="categories-text">Tomato</div>-->
+<!--                        <div class="view-text2 ">Space for a small product description </div>-->
+
+<!--                        <div class="stars " >-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star active fas fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star"></span>-->
+<!--                          <span class="star  far fa-star "></span>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div class="view-box ">-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li>Fresheness</li>-->
+<!--                            <li>Farm</li>-->
+<!--                            <li>Delivery</li>-->
+<!--                            <li>Stoc</li>-->
+<!--                          </ul>-->
+
+<!--                          <ul class="view-text1">-->
+<!--                            <li> <span class="color-text">New</span> (Extra fresh)</li>-->
+<!--                            <li>Grocery Tarm Fields </li>-->
+<!--                            <li> Europe</li>-->
+<!--                            <li> <span class="color-text">320 pcs</span></li>-->
+<!--                          </ul>-->
+
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="equal-part">-->
+
+<!--                      <div class="view-box position">-->
+<!--                        <div >-->
+<!--                          <div class="categories-text search-price">0.99 USD</div>-->
+<!--                          <div class="view-text2 "><del>1.99</del></div>-->
+<!--                        </div>-->
+<!--                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>-->
+<!--                      </div>-->
+
+<!--                      <div class="hidden hide">-->
+
+<!--                        <div>-->
+<!--                          <div class="view-text2">Free shipping</div>-->
+<!--                          <div class="view-text2 ">Delivery in 1 day</div>-->
+<!--                        </div>-->
+
+<!--                        <div >-->
+<!--                          <div class="button-box product-detail carrot" >-->
+<!--                            <p>Product detail</p>-->
+<!--                            <img src="img/vector3.png" width="15"  height="15" alt="..">-->
+<!--                          </div>-->
+
+<!--                          <div class="button-box wish-list">-->
+<!--                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">-->
+<!--                            <p >Add to wish list</p>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                  </div>-->
+
+<!--                </div>-->
+
+<!--              </div>-->
 
             </div>
 
@@ -1117,6 +2103,16 @@
 
 
 </section>
+
+<!--<section>-->
+<!--  <div class="container">-->
+<!--    <button>1</button>-->
+<!--    <button>2</button>-->
+<!--    <button>3</button>-->
+<!--    <button>4</button>-->
+<!--    <button class="more-products">Show more products</button>-->
+<!--  </div>-->
+<!--</section>-->
 
 <footer >
   <div class="container">

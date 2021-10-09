@@ -1,3 +1,19 @@
+// скрытие сайд-бара
+    let sideBar=document.querySelector(".side-bar");
+    document.querySelector(".filter").onclick=function sideBarVisible(){
+
+            if (sideBar.classList.contains("hide")){
+                sideBar.classList.remove("hide");
+                setTimeout(function(){
+                    sideBar.classList.remove("visually-hidden");
+                },20);
+            } else {
+                sideBar.classList.add("visually-hidden");
+                    sideBar.classList.add("hide");
+            }
+    }
+
+
 
 // List View
 
@@ -6,8 +22,6 @@ let listView=document.querySelector('#list-view');
 if (!listView==0) {
 
     listView.onclick = function listView() {
-
-        document.querySelector('.columns').style.maxHeight="100%";
 
 
         document.querySelectorAll('.hidden').forEach(function (element) {
@@ -46,9 +60,6 @@ if (!gridView==0) {
 
     gridView.onclick = function gridView() {
 
-
-        document.querySelector('.columns').style.maxHeight="305px";
-
         document.querySelectorAll('.column').forEach(function(element){
             element.classList.remove("col-xs-12", "col-sm-12", "col-md-12", "col-lg-12","col-xl-12");
             element.classList.add("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
@@ -71,35 +82,86 @@ if (!gridView==0) {
 
     }
 }
-//добавление товаров в корзину
-let carrot=document.querySelector('.carrot');
+//переход к описанию товара
+let carrot=document.querySelectorAll('.carrot');
 
 if (!carrot==0) {
 
-    carrot.onclick = function () {
-        window.location.href = 'descriptionCarrot.html';
-    }
+   carrot.forEach(function(element){
+       element.onclick=function(){
+           document.querySelector(".side-bar").classList.add("hide");
+           document.querySelector(".vegetable").classList.add("hide");
+           document.querySelector(".columns").style.display="none";
+           document.querySelector('.description-content').style.display="";
+           breadcrumbsText.children[breadcrumbsText.children.length-1].classList.remove("hide");
+           breadcrumbsText.children[breadcrumbsText.children.length-2].classList.add("gray");
+       }
+   })
 }
 
+
+//добавление товаров в корзину
 let addToCart=document.querySelector('.description-button');
+let numberCart=document.querySelector('.basket');
+let clicksBasket=0;
 if (!addToCart==0){
 
-
-        let numberCart=document.querySelector('.basket');
-
-        addToCart.onclick = add;
-        let clicks=0;
-        function add(){
+        addToCart.onclick = function() {
             numberCart.classList.remove('hide');
-            clicks+=1;
-            numberCart.innerHTML=clicks;
-
+            clicksBasket+=1;
+            numberCart.innerHTML=clicksBasket;
         }
-
-
-
-
 }
+
+
+//переход на страницу category
+let breadcrumbsText=document.querySelector(".breadcrumbs-text");
+let fruitVegetables=document.querySelectorAll(".fruitVegetables").forEach(function(element){
+    element.onclick = function () {
+
+        document.querySelector('.description-content').style.display="none";
+        document.querySelector(".side-bar").classList.remove("hide", "visually-hidden");
+        document.querySelector(".vegetable").classList.remove("hide");
+        document.querySelector(".columns").style.display="";
+
+        breadcrumbsText.children[breadcrumbsText.children.length-1].classList.add("hide");
+        breadcrumbsText.children[breadcrumbsText.children.length-2].classList.remove("gray");
+
+    }
+})
+
+
+
+// let columns=document.querySelectorAll(".column");
+// for (let i=0;i<columns.length;i++){
+//
+//    if (i>8){
+//        columns[i].classList.add("hide");
+//    }
+//
+// }
+// let countHide=0;
+// document.querySelector(".more-products").onclick=function(){
+//     for (let i=0;i<columns.length;i++){
+//         if(  columns[i].classList.contains("hide")){
+//            countHide++;
+//         }
+//         console.log(countHide);
+//         if (countHide==12) {
+//             document.querySelector(".columns").style.minHeight = "";
+//             document.querySelector(".columns").style.minHeight = "";
+//         }
+//         if (i>8 &&i<18){
+//             columns[i].classList.remove("hide");
+//         }
+//         if (i==17){
+//             document.querySelector(".view-content").style.minHeight="950+305+305+305+px";
+//         }
+//
+//     }
+//     countHide=0;
+// }
+
 //ползунки цены
 let apply=document.querySelector('.apply');
 let countChecked=0;
@@ -122,7 +184,6 @@ function deleteSelected() {
                 let selected = element.closest(".column");
                 selected.classList.remove("selected");
             });
-            console.log('delete selected');
         }
     }
     countFalse = 0;
@@ -160,7 +221,6 @@ if (!apply==0) {
         //скрываем карточки при выборе checkbox
         let notSelected=document.querySelectorAll(".column:not(.selected)");
         notSelected.forEach(function(element){
-            console.log(element);
             element.style.display="none";
         })
 
@@ -357,3 +417,5 @@ select.forEach(function(element){
 
 
 })
+
+
