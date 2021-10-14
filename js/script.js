@@ -89,6 +89,7 @@ if (!carrot==0) {
 
    carrot.forEach(function(element){
        element.onclick=function(){
+           window.scroll(0,0);
            document.querySelector(".side-bar").classList.add("hide");
            document.querySelector(".vegetable").classList.add("hide");
            document.querySelector(".columns").style.display="none";
@@ -131,38 +132,8 @@ let fruitVegetables=document.querySelectorAll(".fruitVegetables").forEach(functi
 })
 
 
-
-// let columns=document.querySelectorAll(".column");
-// for (let i=0;i<columns.length;i++){
-//
-//    if (i>8){
-//        columns[i].classList.add("hide");
-//    }
-//
-// }
-// let countHide=0;
-// document.querySelector(".more-products").onclick=function(){
-//     for (let i=0;i<columns.length;i++){
-//         if(  columns[i].classList.contains("hide")){
-//            countHide++;
-//         }
-//         console.log(countHide);
-//         if (countHide==12) {
-//             document.querySelector(".columns").style.minHeight = "";
-//             document.querySelector(".columns").style.minHeight = "";
-//         }
-//         if (i>8 &&i<18){
-//             columns[i].classList.remove("hide");
-//         }
-//         if (i==17){
-//             document.querySelector(".view-content").style.minHeight="950+305+305+305+px";
-//         }
-//
-//     }
-//     countHide=0;
-// }
-
 //ползунки цены
+
 let apply=document.querySelector('.apply');
 let countChecked=0;
 let countApply=0;
@@ -189,12 +160,22 @@ function deleteSelected() {
     countFalse = 0;
 }
 
-
+// подвтерждение выбранных фильтров
 if (!apply==0) {
     apply.onclick = applyAll;
     function applyAll(){
 
+        //проверка пустые ли input
+        if (document.querySelector("#min-field").value == ""){
+            document.querySelector("#min-field").value = "0";
+        }
+
+        if (document.querySelector("#max-field").value == ""){
+            document.querySelector("#max-field").value = "1000";
+        }
+
         countApply++;
+
         document.querySelectorAll(".column").forEach(function(element){
             element.classList.remove("hide");
         })
@@ -230,8 +211,8 @@ if (!apply==0) {
         let minField = document.querySelector("#min-field").value;
         let maxField = document.querySelector("#max-field").value;
 
-        document.querySelector("#min-range").value = minField;
-        document.querySelector("#max-range").value = maxField;
+            document.querySelector("#min-range").value = minField;
+            document.querySelector("#max-range").value = maxField;
 
         let card=document.querySelectorAll(".column");
 
@@ -261,7 +242,7 @@ let reset = document.querySelector('.reset');
 if (!reset == 0) {
     reset.onclick = resetAll;
 }
-
+//cбрасывает все фильтры
 function resetAll(){
     document.querySelectorAll(".column").forEach(function(element){
         element.classList.remove("hide","selected");
@@ -311,6 +292,41 @@ if (!maxRange==0){
 
     }
 }
+//удаляет число при фокусировке на input
+
+document.querySelector("#min-field").addEventListener("mouseover",function mouseOver(element){
+    element.target.onfocus=function(){
+        document.querySelector("#min-field").value="";
+    }
+})
+
+document.querySelector("#min-field").addEventListener("mouseout",function mouseOut(element){
+    element.target.onblur=function(){
+        if (document.querySelector("#min-field").value==""){
+            document.querySelector("#min-field").value=0;
+
+        }
+    }
+})
+
+document.querySelector("#max-field").addEventListener("mouseover",function mouseOver(element){
+element.target.onfocus=function(){
+    document.querySelector("#max-field").value="";
+}
+
+})
+document.querySelector("#max-field").addEventListener("mouseout",function mouseOut(element){
+    element.target.onblur=function(){
+        if (document.querySelector("#max-field").value==""){
+            document.querySelector("#max-field").value=1000;
+        }
+    }
+})
+
+
+
+
+
 
 
 //-----------------выбор фильтров рейтинга------
@@ -418,4 +434,21 @@ select.forEach(function(element){
 
 })
 
+//переход на другие страницы товаров
+// document.querySelector("#page-one").onclick=function(){
+//     document.querySelectorAll(".second-page").forEach(function(element){
+//         element.classList.add("hide");
+//     })
+//     document.querySelectorAll(".first-page").forEach(function(element){
+//         element.classList.remove("hide");
+//     })
+// }
+// document.querySelector("#page-two").onclick=function(){
+//     document.querySelectorAll(".first-page").forEach(function(element){
+//         element.classList.add("hide");
+//     })
+//     document.querySelectorAll(".second-page").forEach(function(element){
+//         element.classList.remove("hide");
+//     })
+// }
 

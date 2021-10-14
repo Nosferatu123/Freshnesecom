@@ -261,7 +261,8 @@ ul{
 
 .modal-block{
     /*width: 1238px;*/
-    width:95%;
+    /*width:95%;*/
+    width: 1000px;
     min-height: 275px;
     /*border: 1px solid black;*/
     position:relative;
@@ -274,10 +275,14 @@ ul{
     flex-wrap: nowrap;
     justify-content:center;
     align-content: center;
-    transition: all ease 1s;
-    min-height: 275px;
-    width:95%;
+    min-height: 300px;
+    /*width:95%;*/
+    width:1500px;
+}
 
+.animate{
+    transition:all ease 1s;
+    transition-property: transform;
 }
 
 .buttons{
@@ -317,7 +322,8 @@ ul{
     margin-left:16px;
     padding:24px 32px 0 32px;
     text-align: center;
-    width: 25%;
+    width: 250px;
+    transform: translate(-250px);
     box-sizing: border-box;
 
 }
@@ -389,7 +395,6 @@ ul{
 /*blog-----------------------------------------------------------------*/
 .blog-part{
     position: relative;
-    margin-right: 32px;
     margin-bottom: 32px;
 }
 
@@ -401,24 +406,23 @@ ul{
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    align-content: space-between;
 }
 
-@media screen and (max-width: 1200px){
-    .blog-content{
-        justify-content: center;
-    }
-   #focus{
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: center;
-   }
-   .box-blog{
-       margin-right: 20px;
-   }
+/*@media screen and (max-width: 1200px){*/
+/*    .blog-content{*/
+/*        justify-content: center;*/
+/*    }*/
+/*   #focus{*/
+/*       display: flex;*/
+/*       flex-wrap: wrap;*/
+/*       justify-content: center;*/
+/*   }*/
+/*   .box-blog{*/
+/*       margin-right: 20px;*/
+/*   }*/
 
 
-}
+/*}*/
 .box-blog{
     display:flex;
     justify-content: space-between;
@@ -661,21 +665,18 @@ ul{
 
 .caption-content {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    min-height: 410px;
     padding-top: 57px;
-}
-
-.section-height{
     min-height:460px;
+    justify-content: space-between;
+}
+.column2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.banner{
-    margin-top: 20px;
-    margin-left: 20px;
 
-}
 /*.caption{*/
 /*    width:269px ;*/
 /*}*/
@@ -729,9 +730,10 @@ ul{
     position: relative;
     border: 1px solid #D1D1D1;
     border-radius: 12px;
-    height: 300px;
+    height: 315px;
     min-width: 237px;
     padding: 16px;
+    margin:20px 10px 20px 10px;
 }
 
 .left-corner{
@@ -822,12 +824,13 @@ ul{
     align-content: flex-start;
 }
 
+
 .view-card{
     border:1px solid #D1D1D1;
     border-radius: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     padding:16px;
-
+    background:#F9F9F9;
 }
 
 
