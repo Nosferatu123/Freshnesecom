@@ -281,7 +281,7 @@ ul{
 }
 
 .animate{
-    transition:all ease 1s;
+    transition: ease 0.4s;
     transition-property: transform;
 }
 
