@@ -117,7 +117,7 @@ if (!addToCart==0){
 
 //переход на страницу category
 let breadcrumbsText=document.querySelector(".breadcrumbs-text");
-let fruitVegetables=document.querySelectorAll(".fruitVegetables").forEach(function(element){
+document.querySelectorAll(".fruitVegetables").forEach(function(element){
     element.onclick = function () {
 
         document.querySelector('.description-content').style.display="none";
@@ -242,7 +242,7 @@ let reset = document.querySelector('.reset');
 if (!reset == 0) {
     reset.onclick = resetAll;
 }
-//cбрасывает все фильтры
+//сбрасывает все фильтры
 function resetAll(){
     document.querySelectorAll(".column").forEach(function(element){
         element.classList.remove("hide","selected");
@@ -262,71 +262,53 @@ function resetAll(){
     document.querySelector("#min-range").value = '0'
     document.querySelector("#max-range").value = '1000';
 }
-
+//ползуное минимальной цены
 let minRange=document.querySelector('#min-range');
-if (!minRange==0){
+
     minRange.oninput=function(){
-
         let minField=document.querySelector("#min-field");
-         minField.value=minRange.value;
+        if (Number(minRange.value) < Number(maxRange.value)) {
+            minField.value = minRange.value;
+        } else {
+            minField.value = Number(maxRange.value) - 1;
+            minRange.value = Number(maxRange.value) - 1;
+        }
+    }
 
-        let reset = document.querySelector('.reset');
-        if (!reset == 0) {
-            reset.onclick =  resetAll;
+//ползунок максимальной цены
+let maxRange=document.querySelector('#max-range');
+
+    maxRange.oninput=function(){
+        let maxField=document.querySelector("#max-field");
+        if (Number(maxRange.value) > Number(minRange.value)) {
+            maxField.value = maxRange.value;
+        } else {
+            maxField.value = Number(minRange.value) + 1;
+            maxRange.value = Number(minRange.value) + 1;
         }
 
-    }
-}
-
-let maxRange=document.querySelector('#max-range');
-if (!maxRange==0){
-    maxRange.oninput=function(){
-
-        let maxField=document.querySelector("#max-field");
         maxField.value=maxRange.value;
 
-        let reset = document.querySelector('.reset');
-        if (!reset == 0) {
-            reset.onclick =  resetAll;
-        }
-
     }
-}
-//удаляет число при фокусировке на input
 
-document.querySelector("#min-field").addEventListener("mouseover",function mouseOver(element){
-    element.target.onfocus=function(){
-        document.querySelector("#min-field").value="";
-    }
-})
+//сохраняет последнее число в input при mouseout
+
 
 document.querySelector("#min-field").addEventListener("mouseout",function mouseOut(element){
-    element.target.onblur=function(){
-        if (document.querySelector("#min-field").value==""){
-            document.querySelector("#min-field").value=0;
 
-        }
-    }
-})
+            document.querySelector("#min-field").value=element.currentTarget.value;
+            if (element.currentTarget.value===""){
+                document.querySelector("#min-field").value=0;
+            }
+});
 
-document.querySelector("#max-field").addEventListener("mouseover",function mouseOver(element){
-element.target.onfocus=function(){
-    document.querySelector("#max-field").value="";
-}
 
-})
 document.querySelector("#max-field").addEventListener("mouseout",function mouseOut(element){
-    element.target.onblur=function(){
-        if (document.querySelector("#max-field").value==""){
-            document.querySelector("#max-field").value=1000;
-        }
+    document.querySelector("#max-field").value=element.currentTarget.value;;
+    if (element.currentTarget.value===""){
+        document.querySelector("#max-field").value=1000;
     }
 })
-
-
-
-
-
 
 
 //-----------------выбор фильтров рейтинга------
