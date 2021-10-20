@@ -1,0 +1,139 @@
+
+.modal-wrap{
+
+    display: flex;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
+    justify-content: center;
+    align-items:center ;
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,.7);
+
+}
+
+.modal{
+    width: 500px;
+    height: 350px;
+    box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y:auto;
+    border-radius: 4px;
+
+}
+.close-x {
+    font-size: 24px;
+    cursor: pointer;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+.close-x:hover{
+    opacity:0.8;
+}
+
+.hide{
+    display:none;
+}
+.cart-text{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+}
+.close-text{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color:#D1D1D1;
+    margin-right: 10px;
+}
+.cart-text2{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    border:none;
+    background: #FFFFFF;
+    cursor:pointer;
+}
+.cart-text3{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    border:none;
+    color: #FFFFFF;
+    background: #6A983C;
+    /*border: 1px solid #46760A;*/
+    cursor:pointer;
+    border-radius: 12px;
+    padding: 12px 12px;
+}
+.cart-text4{
+    margin-top: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+    border:none;
+    background: #FFFFFF;
+}
+
+.view-box-cart{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+
+
+.top-border{
+    border-top: 1px solid #EBEBEB;
+    padding: 15px 0 5px 0;
+
+}
+.fa-shopping-basket{
+    font-size: 120px;
+    color:#EBEBEB;
+}
+.empty-basket{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.chips{
+    border-bottom:1px solid #EBEBEB;
+    padding: 15px 0;
+
+}
+/*.mini-image{*/
+/*    width: 60px;*/
+/*    height: 60px;*/
+/*    border: 1px solid black;*/
+/*}*/
+
+.product{
+    margin-right: 10px;
+}
+.fa-trash-alt{
+    cursor:pointer;
+}

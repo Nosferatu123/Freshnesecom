@@ -327,13 +327,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
 
                        let active = element.querySelectorAll('.active').length;
-                       if (active == 5) {
+                       if (active === 5) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let fiveStarsCheck=document.querySelector('[name="five-stars"]');
-                       if (!fiveStarsCheck.checked==true && active==5){
+                       if (!fiveStarsCheck.checked===true && active===5){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }
@@ -345,13 +345,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
                        let active = element.querySelectorAll('.active').length;
 
-                       if (active == 4) {
+                       if (active === 4) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let fourStarsCheck=document.querySelector('[name="four-stars"]');
-                       if (!fourStarsCheck.checked==true &&active==4){
+                       if (!fourStarsCheck.checked===true &&active===4){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }
@@ -362,13 +362,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
 
                        let active = element.querySelectorAll('.active').length;
-                       if (active == 3) {
+                       if (active === 3) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let threeStarsCheck=document.querySelector('[name="three-stars"]');
-                       if (!threeStarsCheck.checked==true &&active==3){
+                       if (!threeStarsCheck.checked===true &&active===3){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }
@@ -379,13 +379,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
 
                        let active = element.querySelectorAll('.active').length;
-                       if (active == 2) {
+                       if (active === 2) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let twoStarsCheck=document.querySelector('[name="two-stars"]');
-                       if (!twoStarsCheck.checked==true &&active==2){
+                       if (!twoStarsCheck.checked===true &&active===2){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }
@@ -396,13 +396,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
 
                        let active = element.querySelectorAll('.active').length;
-                       if (active == 1) {
+                       if (active === 1) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let oneStarsCheck=document.querySelector('[name="one-stars"]');
-                       if (!oneStarsCheck.checked==true &&active==1){
+                       if (!oneStarsCheck.checked===true &&active===1){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }

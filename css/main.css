@@ -56,7 +56,7 @@ ul{
     top:0;
     left:0;
     right: 0;
-    box-shadow: 0px 0px 16px rgba(38, 38, 38, 0.16);
+    box-shadow: 0 0 16px rgba(38, 38, 38, 0.16);
     z-index: 1;
 
 }
@@ -125,14 +125,16 @@ ul{
 
 .header-item{
     display: flex;
-    margin-right: 10px;
+
 
 
 }
 
 .icon-box{
     margin-left: 20px;
+    display: flex;
     align-items: center;
+
 }
 
 .basket{
@@ -145,10 +147,14 @@ ul{
     position: absolute;
     margin-top: 15px;
     margin-left: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .basket-relative{
     position: relative;
+    cursor: pointer;
 }
 
 .search-input{
@@ -982,26 +988,29 @@ input[type='range'] {
     -webkit-appearance: none;
     background:#EBEBEB;
     outline: none;
-    opacity: 0.7;
-    height: 6px;
+    height:6px;
     position: absolute;
     pointer-events: none;
     cursor: pointer;
     width: 160px;
+    opacity: 0.7;
+
 
 }
 
 input[type='range']::-webkit-slider-thumb {
+
     -webkit-appearance: none;
     height: 20px;
     width: 20px;
     border: 1px solid rgba(209, 209, 209, 1);
-    border-radius: 50%;
+    border-radius: 100%;
     pointer-events: all;
     position: relative;
     z-index: 1;
     outline: 0;
     background:#EBEBEB;
+    /*background: #6A983C;*/
     cursor: pointer;
 }
 
