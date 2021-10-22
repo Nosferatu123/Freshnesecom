@@ -14,15 +14,15 @@
     }
 
 
-
-// List View
-
 let listView=document.querySelector('#list-view');
+let gridView=document.querySelector('#grid-view');
+// List View
+    listView.onclick = function () {
 
-if (!listView==0) {
-
-    listView.onclick = function listView() {
-
+        document.querySelector('.fa-bars').style.color="#6A983C";
+        document.querySelector('.fa-border-all').style.color="#A9A9A9";
+        listView.classList.add("btn-active");
+        gridView.classList.remove("btn-active");
 
         document.querySelectorAll('.hidden').forEach(function (element) {
             element.classList.remove('hide');
@@ -39,26 +39,24 @@ if (!listView==0) {
 
         document.querySelector(".view-content").style.flexWrap="nowrap";
 
-
         document.querySelectorAll('.equal-part').forEach(function(element){
             element.classList.add("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
 
         });
-
 
         document.querySelectorAll('.hide-two').forEach(function (element) {
             element.classList.add('hide');
         });
 
     }
-}
 
 // Grid View
-let gridView=document.querySelector('#grid-view');
-if (!gridView==0) {
+    gridView.onclick = function () {
 
-
-    gridView.onclick = function gridView() {
+        document.querySelector('.fa-bars').style.color="#A9A9A9";
+        document.querySelector('.fa-border-all').style.color="#6A983C";
+        listView.classList.remove("btn-active");
+        gridView.classList.add("btn-active");
 
         document.querySelectorAll('.column').forEach(function(element){
             element.classList.remove("col-xs-12", "col-sm-12", "col-md-12", "col-lg-12","col-xl-12");
@@ -81,7 +79,7 @@ if (!gridView==0) {
         });
 
     }
-}
+
 //переход к описанию товара
 let carrot=document.querySelectorAll('.carrot');
 
@@ -160,17 +158,17 @@ function deleteSelected() {
     countFalse = 0;
 }
 
-// подвтерждение выбранных фильтров
+// подтверждение выбранных фильтров
 if (!apply==0) {
     apply.onclick = applyAll;
     function applyAll(){
 
         //проверка пустые ли input
-        if (document.querySelector("#min-field").value == ""){
+        if (document.querySelector("#min-field").value === ""){
             document.querySelector("#min-field").value = "0";
         }
 
-        if (document.querySelector("#max-field").value == ""){
+        if (document.querySelector("#max-field").value === ""){
             document.querySelector("#max-field").value = "1000";
         }
 
@@ -185,12 +183,12 @@ if (!apply==0) {
 
         //проверка если все чекбоксы не выбраны
         for (let i=0;i<=select.length-1;i++){
-            if (select[i].checked==true){
+            if (select[i].checked===true){
 
             } else {
                 countChecked++;
             }
-            if (countChecked==select.length){
+            if (countChecked===select.length){
                 par.forEach(function (element) {
                     let selected = element.closest(".column");
                     selected.classList.add("selected");
@@ -327,13 +325,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
 
                        let active = element.querySelectorAll('.active').length;
-                       if (active == 5) {
+                       if (active === 5) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let fiveStarsCheck=document.querySelector('[name="five-stars"]');
-                       if (!fiveStarsCheck.checked==true && active==5){
+                       if (!fiveStarsCheck.checked===true && active===5){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }
@@ -345,13 +343,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
                        let active = element.querySelectorAll('.active').length;
 
-                       if (active == 4) {
+                       if (active === 4) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let fourStarsCheck=document.querySelector('[name="four-stars"]');
-                       if (!fourStarsCheck.checked==true &&active==4){
+                       if (!fourStarsCheck.checked===true &&active===4){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }
@@ -362,13 +360,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
 
                        let active = element.querySelectorAll('.active').length;
-                       if (active == 3) {
+                       if (active === 3) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let threeStarsCheck=document.querySelector('[name="three-stars"]');
-                       if (!threeStarsCheck.checked==true &&active==3){
+                       if (!threeStarsCheck.checked===true &&active===3){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }
@@ -379,13 +377,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
 
                        let active = element.querySelectorAll('.active').length;
-                       if (active == 2) {
+                       if (active === 2) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let twoStarsCheck=document.querySelector('[name="two-stars"]');
-                       if (!twoStarsCheck.checked==true &&active==2){
+                       if (!twoStarsCheck.checked===true &&active===2){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }
@@ -396,13 +394,13 @@ select.forEach(function(element){
                    par.forEach(function (element) {
 
                        let active = element.querySelectorAll('.active').length;
-                       if (active == 1) {
+                       if (active === 1) {
                            let selected = element.closest(".column");
                            selected.classList.add("selected");
                        }
 
                        let oneStarsCheck=document.querySelector('[name="one-stars"]');
-                       if (!oneStarsCheck.checked==true &&active==1){
+                       if (!oneStarsCheck.checked===true &&active===1){
                            let selected = element.closest(".column");
                            selected.classList.remove("selected");
                        }

@@ -5,16 +5,68 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/modal.css">
   <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.css">
   <script defer="defer" src="js/script.js"></script>
   <script defer="defer" src="js/stars.js"></script>
+  <script defer="defer" src="js/modal.js"></script>
   <script  src="https://kit.fontawesome.com/43d7cb34d7.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
 <header class="header">
-  <div class="container">
+  <div class="container ">
+    <div class="modal-wrap hide">
+      <div class="modal hide " id="sign-id">
+        <div >
+
+          <div class="view-box-cart">
+            <div class="cart-text">Shopping cart</div>
+            <div >
+              <!--                <button class="modal-close close-text" data-modal="#sign-id">close</button>-->
+              <button class="modal-close close-x " data-modal="#sign-id">
+                <span class="close-text">close</span>
+                <span class="fas fa-times"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="empty-basket">
+            <div class="fas fa-shopping-basket"></div>
+            <div class="cart-text4">Shopping cart is empty!</div>
+
+            <div class="chips hide view-box position">
+
+              <div class="cover-cart col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"> </div>
+              <div class="product col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+              <div class="quantity_inner col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                  <button class="bt-minus"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                  <input type="number" value="1"  class="quantity" >
+                  <button class="bt-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                </div>
+              <div class="total-price col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">total:</div>
+              <div  class="fas fa-trash-alt col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+
+            </div>
+          </div>
+
+          <div class="if-empty-basket hide"></div>
+
+        </div>
+
+        <div class="view-box-cart top-border">
+          <button class="cart-text2">
+            Continue shopping
+          </button>
+          <button class="cart-text3">
+            Go to Checkout
+          </button>
+
+        </div>
+
+      </div>
+    </div>
     <div  class="header-part-one header-content">
 
       <div  class="header-left-part-one header-item">
@@ -53,11 +105,11 @@
         </div>
       </div>
 
-      <div class="header-item">
+      <div class="header-item " id="fix">
         <div class="icon-box"><img src="img/user.png"  width="24" height="24" alt=".."></div>
 
-        <div class="icon-box view-box basket-relative">
-          <div class="hide basket"></div>
+        <div class="icon-box view-box basket-relative modal-show" data-modal="#sign-id">
+          <div class="hide basket" ></div>
           <img src="img/basket.png"  width="24" height="24" alt="..">
         </div>
 
@@ -65,6 +117,7 @@
 
 
     </div>
+
   </div>
 </header>
 
@@ -133,10 +186,10 @@
       <p class="fruit-vegetable-text">Fruit and vegetables</p>
         <div class=" list-group view-box content">
 
-            <span class=" filter fas fa-filter"></span>
-          <button class="btn" id="grid-view" > <span class="view-box content"><img src="img/grid.png"  width="24" height="24" alt=".."> &nbsp Grid view</span></button>
-          <button class="btn " id="list-view" >  <span class="view-box content"><img src="img/list.png"  width="24" height="24" alt=".."> &nbsp List view</span></button>
-            <div > <span class="category-name-number ">117</span> Products</div>
+          <button class="btn  filter"><span class="fas fa-filter"></span><span > &nbsp Filters</span></button>
+          <button class="btn btn-active" id="grid-view" ><span class="fas fa-border-all"></span> <span> &nbsp Grid view</span></button>
+          <button class="btn" id="list-view" ><span class="fas fa-bars"></span> <span>  &nbsp List view</span></button>
+            <div > <span class="total-products ">18</span> Products</div>
 
       </div>
     </div>
@@ -329,25 +382,25 @@
 
        <div class=" side-bar col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
 
-         <div class="categories">
-           <p class="categories-text">Categories</p>
-           <div class="view-box position">
-             <span class="category-name">Category name</span>
-             <span class="category-name-number">320</span>
-           </div>
-           <div class="view-box position">
-             <span class="category-name">Category name</span>
-             <span class="category-name-number">112</span>
-           </div>
-           <div class="view-box position">
-             <span class="category-name">Category name</span>
-             <span class="category-name-number">32</span>
-           </div>
-           <div class="view-box position">
-             <span class="category-name">Category name</span>
-             <span class="category-name-number">48</span>
-           </div>
-         </div>
+<!--         <div class="categories">-->
+<!--           <p class="categories-text">Categories</p>-->
+<!--           <div class="view-box position">-->
+<!--             <span class="category-name">Category name</span>-->
+<!--             <span class="category-name-number">320</span>-->
+<!--           </div>-->
+<!--           <div class="view-box position">-->
+<!--             <span class="category-name">Category name</span>-->
+<!--             <span class="category-name-number">112</span>-->
+<!--           </div>-->
+<!--           <div class="view-box position">-->
+<!--             <span class="category-name">Category name</span>-->
+<!--             <span class="category-name-number">32</span>-->
+<!--           </div>-->
+<!--           <div class="view-box position">-->
+<!--             <span class="category-name">Category name</span>-->
+<!--             <span class="category-name-number">48</span>-->
+<!--           </div>-->
+<!--         </div>-->
 
          <div >
            <p class="categories-text">Brands</p>
@@ -472,8 +525,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="cover equal-part carrot">
-                      <img src="img/carrot1.png"   alt="...">
+                    <div class="cover equal-part ">
+                      <img class="carrot"src="img/carrot1.png"   alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -524,7 +577,7 @@
                           <div class="categories-text search-price">1.99 USD</div>
                           <div class="view-text2"><del>2.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two ">Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -562,8 +615,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/potato.png"  alt="...">
+                    <div class="equal-part cover">
+                      <img class="potato" src="img/potato.png"  alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -614,7 +667,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -653,8 +706,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/pumpkin.png"   alt="...">
+                    <div class="equal-part cover">
+                      <img class="pumpkin" src="img/pumpkin.png"   alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -705,7 +758,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.49</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -744,8 +797,8 @@
 
                    <div class="view-box card box">
 
-                     <div class=" cover equal-part carrot">
-                       <img src="img/cucumber.jpg"   alt="...">
+                     <div class=" cover equal-part">
+                       <img class="cucumber" src="img/cucumber.jpg"   alt="...">
                      </div>
 
                      <div class="equal-part">
@@ -796,7 +849,7 @@
                            <div class="categories-text search-price">0.99 USD</div>
                            <div class="view-text2 "><del>1.99</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                         <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                        </div>
 
                        <div class="hidden hide">
@@ -834,8 +887,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/onion.png"  alt="...">
+                    <div class="equal-part cover ">
+                      <img class="onion" src="img/onion.png"  alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -886,7 +939,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -924,8 +977,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/beet.png"  alt="...">
+                    <div class="equal-part cover">
+                      <img class="beet" src="img/beet.png"  alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -976,7 +1029,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1015,8 +1068,8 @@
 
                    <div class="view-box card box">
 
-                     <div class=" cover equal-part carrot">
-                       <img src="img/pepper.jpg"   alt="...">
+                     <div class=" cover equal-part ">
+                       <img class="pepper" src="img/pepper.jpg"   alt="...">
                      </div>
 
                      <div class="equal-part">
@@ -1067,7 +1120,7 @@
                            <div class="categories-text search-price">3.99 USD</div>
                            <div class="view-text2 "><del>4.99</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                         <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                        </div>
 
                        <div class="hidden hide">
@@ -1105,8 +1158,8 @@
 
                    <div class="view-box card box">
 
-                     <div class=" cover equal-part carrot ">
-                       <img src="img/corn.jpg"   alt="...">
+                     <div class=" cover equal-part ">
+                       <img class="corn" src="img/corn.jpg"   alt="...">
                      </div>
 
                      <div class="equal-part">
@@ -1157,7 +1210,7 @@
                            <div class="categories-text search-price">0.99 USD</div>
                            <div class="view-text2 "><del>1.49</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                         <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                        </div>
 
                        <div class="hidden hide">
@@ -1196,8 +1249,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/tomato.png"  alt="...">
+                    <div class="equal-part cover ">
+                      <img class="tomato" src="img/tomato.png"  alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1248,7 +1301,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1288,8 +1341,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="cover equal-part carrot">
-                      <img src="img/apples.jpg"   alt="...">
+                    <div class="cover equal-part ">
+                      <img class="apple"src="img/apples.jpg"   alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1340,7 +1393,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2"><del>4.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two ">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1378,8 +1431,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/banana.jpg"  alt="...">
+                    <div class="equal-part cover ">
+                      <img class="banana" src="img/banana.jpg"  alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1430,7 +1483,7 @@
                           <div class="categories-text search-price">1.99 USD</div>
                           <div class="view-text2 "><del>2.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1469,8 +1522,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/pear.jpg"   alt="...">
+                    <div class="equal-part cover ">
+                      <img class="pear" src="img/pear.jpg"   alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1521,7 +1574,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.49</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1560,8 +1613,8 @@
 
                   <div class="view-box card box">
 
-                    <div class=" cover equal-part carrot">
-                      <img src="img/plum.jpg"   alt="...">
+                    <div class=" cover equal-part ">
+                      <img class="plum" src="img/plum.jpg"   alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1612,7 +1665,7 @@
                           <div class="categories-text search-price">1.49 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1650,8 +1703,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/peach.jpg"  alt="...">
+                    <div class="equal-part cover ">
+                      <img class="peach" src="img/peach.jpg"  alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1702,7 +1755,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1740,8 +1793,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/kiwi.jpg"  alt="...">
+                    <div class="equal-part cover ">
+                      <img class="kiwi" src="img/kiwi.jpg"  alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1792,7 +1845,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1831,8 +1884,8 @@
 
                   <div class="view-box card box ">
 
-                    <div class=" cover equal-part carrot">
-                      <img src="img/avocado.jpg"   alt="...">
+                    <div class=" cover equal-part ">
+                      <img class="avocado" src="img/avocado.jpg"   alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1883,7 +1936,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1921,8 +1974,8 @@
 
                   <div class="view-box card box">
 
-                    <div class=" cover equal-part carrot">
-                      <img src="img/watermelon.jpg"   alt="...">
+                    <div class=" cover equal-part ">
+                      <img class="watermelon" src="img/watermelon.jpg"   alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -1973,7 +2026,7 @@
                           <div class="categories-text search-price">1.99 USD</div>
                           <div class="view-text2 "><del>2.49</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -2012,8 +2065,8 @@
 
                   <div class="view-box card box">
 
-                    <div class="equal-part cover carrot">
-                      <img src="img/tangerine.jpg"  alt="...">
+                    <div class="equal-part cover ">
+                      <img class="tangerine" src="img/tangerine.jpg"  alt="...">
                     </div>
 
                     <div class="equal-part">
@@ -2064,7 +2117,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two " >Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
