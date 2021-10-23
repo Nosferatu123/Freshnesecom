@@ -52,9 +52,6 @@ document.onkeydown=function(event){
     document.body.style.paddingRight="";
     document.querySelector(".header").style.left="";
 
-
-
-
 }
 
 //создает блок товара в корзине
