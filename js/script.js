@@ -16,6 +16,14 @@
 
 let listView=document.querySelector('#list-view');
 let gridView=document.querySelector('#grid-view');
+//поставить лайк товару
+document.querySelectorAll('.wish-list').forEach(function(element){
+  element.children[0].addEventListener("click",function(element){
+    element.target.classList.toggle("far");
+      element.target.classList.toggle("fas");
+  })
+})
+
 // List View
     listView.onclick = function () {
 
@@ -39,13 +47,37 @@ let gridView=document.querySelector('#grid-view');
 
         document.querySelector(".view-content").style.flexWrap="nowrap";
 
-        document.querySelectorAll('.equal-part').forEach(function(element){
-            element.classList.add("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
-
+        document.querySelectorAll('.card').forEach(function(element){
+            element.children[0].classList.add("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+            element.children[1].classList.add("col-xs-5", "col-sm-5", "col-md-5", "col-lg-5","col-xl-5");
+            element.children[2].classList.add("col-xs-3", "col-sm-3", "col-md-3", "col-lg-3","col-xl-3");
+            // element.children[2].style.paddingLeft="20px";
         });
+
+        document.querySelectorAll('.product-detail').forEach(function(element){
+            element.classList.add("col-xs-11", "col-sm-11", "col-md-11", "col-lg-11","col-xl-11");
+        });
+        document.querySelectorAll('.wish-list').forEach(function(element){
+            element.classList.add("col-xs-11", "col-sm-11", "col-md-11", "col-lg-11","col-xl-11");
+        });
+
 
         document.querySelectorAll('.hide-two').forEach(function (element) {
             element.classList.add('hide');
+        });
+
+        document.querySelectorAll('.view-card').forEach(function (element) {
+            element.style.padding="0";
+        });
+        document.querySelectorAll('.cover img').forEach(function (element) {
+            element.style.marginLeft="-8px";
+        });
+
+        document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
+            element.style.height="220px";
+            element.style.display="flex";
+            element.style.flexDirection="column";
+            element.style.justifyContent="center";
         });
 
     }
@@ -70,14 +102,31 @@ let gridView=document.querySelector('#grid-view');
             element.classList.add('box');
         });
 
+        document.querySelectorAll('.card').forEach(function(element){
+            element.children[0].classList.remove("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+            element.children[1].classList.remove("col-xs-5", "col-sm-5", "col-md-5", "col-lg-5","col-xl-5");
+            element.children[2].classList.remove("col-xs-3", "col-sm-3", "col-md-3", "col-lg-3","col-xl-3");
+            element.children[2].style.paddingLeft="";
+        });
+
         document.querySelectorAll('.hide-two').forEach(function (element) {
             element.classList.remove('hide');
         });
 
-        document.querySelectorAll('.equal-part').forEach(function(element){
-            element.classList.remove("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+        document.querySelectorAll('.view-card').forEach(function (element) {
+            element.style.padding="16px";
         });
 
+        document.querySelectorAll('.cover img').forEach(function (element) {
+            element.style.marginLeft="";
+        });
+
+        document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
+            element.style.height="";
+            element.style.display="";
+            element.style.flexDirection="";
+            element.style.justifyContent="";
+        });
     }
 
 //переход к описанию товара

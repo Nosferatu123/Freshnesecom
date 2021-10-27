@@ -10,7 +10,7 @@
   <script defer="defer" src="js/script.js"></script>
   <script defer="defer" src="js/stars.js"></script>
   <script defer="defer" src="js/modal.js"></script>
-  <script  src="https://kit.fontawesome.com/43d7cb34d7.js" crossorigin="anonymous"></script>
+  <script defer="defer" src="https://kit.fontawesome.com/43d7cb34d7.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -94,7 +94,7 @@
 
           <div class="category-box">
             <p>All categories</p>
-            <img class="search-line" src="img/vector.png" alt="..">
+            <span class="fas fa-chevron-down"></span>
           </div>
           <form>
             <input class="search-input" type="search"  name="name" placeholder="Search Products,categories..." >
@@ -127,42 +127,42 @@
 
       <div class="menu-box">
         <a href="#"><p>Bakery</p></a>
-        <img src="img/vector.png" alt="..">
+        <span class="fas fa-chevron-down"></span>
       </div>
 
       <div class="menu-box fruitVegetables">
         <p>Fruit and vegetables</p>
-        <img src="img/vector.png" alt="..">
+        <span class="fas fa-chevron-down"></span>
       </div>
 
       <div class="menu-box">
         <a href="#"><p >Meat and fish</p></a>
-        <img src="img/vector.png" alt="..">
+        <span class="fas fa-chevron-down"></span>
       </div>
 
       <div class="menu-box">
         <a href="#"><p >Drinks</p></a>
-        <img src="img/vector.png" alt="..">
+        <span class="fas fa-chevron-down"></span>
       </div>
 
       <div class="menu-box">
         <a href="#"><p >Kitchen</p></a>
-        <img src="img/vector.png" alt="..">
+        <span class="fas fa-chevron-down"></span>
       </div>
 
       <div class="menu-box">
         <a href="#"><p >Special nutrition</p></a>
-        <img src="img/vector.png" alt="..">
+        <span class="fas fa-chevron-down"></span>
       </div>
 
       <div class="menu-box">
         <a href="#"><p >Baby</p></a>
-        <img src="img/vector.png" alt="..">
+        <span class="fas fa-chevron-down"></span>
       </div>
 
       <div class="menu-box">
         <a href="#"><p >Pharmacy</p></a>
-        <img src="img/vector.png" alt="..">
+        <span class="fas fa-chevron-down"></span>
       </div>
     </div>
   </div>
@@ -196,10 +196,9 @@
   </div>
 </section>
 
-<section>
-  <div class="container">
+<section class="container" >
 
-    <div class=" view-content">
+    <div class=" view-content ">
 
       <div class="description-content " style="display:none">
         <div class="description col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -408,27 +407,27 @@
            <form >
              <label class="checkbox">
                <input type="checkbox" >
-               <span>Filter by brand </span>
+               <span class="filter-brand">Filter by brand </span>
              </label>
 
              <label class="checkbox">
                <input  type="checkbox" >
-               <span>Filter by brand </span>
+               <span class="filter-brand">Filter by brand </span>
              </label>
 
              <label class="checkbox">
                <input  type="checkbox" >
-               <span>Filter by brand </span>
+               <span class="filter-brand">Filter by brand </span>
              </label>
 
              <label class="checkbox">
                <input  type="checkbox" >
-               <span>Filter by brand </span>
+               <span class="filter-brand">Filter by brand </span>
              </label>
 
              <label class="checkbox">
                <input  type="checkbox" >
-               <span>Filter by brand </span>
+               <span class="filter-brand">Filter by brand </span>
              </label>
            </form>
 
@@ -486,11 +485,11 @@
           </form>
         </div>
 
-         <div >
+         <div  >
 
            <p class="categories-text ">Price</p>
 
-           <div>
+           <div >
              <input  id="min-range" type="range"   min="0" max="1000" step="1" value="0" >
              <input  id="max-range" type="range"   min="0" max="1000" step="1" value="1000" >
            </div>
@@ -548,23 +547,30 @@
 
                      <div class="hidden hide">
 
-                    <div class="view-box ">
-
                        <ul class="view-text1">
-                         <li>Fresheness</li>
-                         <li>Farm</li>
-                         <li>Delivery</li>
-                         <li>Stoc</li>
-                       </ul>
+                         <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                         </li>
 
-                       <ul class="view-text1">
-                         <li> <span class="color-text">New</span> (Extra fresh)</li>
-                         <li>Grocery Tarm Fields </li>
-                         <li> Europe</li>
-                         <li> <span class="color-text">320 pcs</span></li>
-                       </ul>
+                         <li class="view-box">
+                           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                         </li>
 
-                      </div>
+                         <li class="view-box">
+                           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                         </li>
+
+                         <li class="view-box">
+                           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                         </li>
+
+                       </ul>
 
                      </div>
 
@@ -577,7 +583,7 @@
                           <div class="categories-text search-price">1.99 USD</div>
                           <div class="view-text2"><del>2.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -587,16 +593,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                       <div >
+                       <div>
+
                          <div class="button-box product-detail carrot" >
-                           <p>Product detail</p>
-                           <img src="img/vector3.png" width="15"  height="15" alt="..">
+                           <p>Product Detail</p>
+                           <span class="fas fa-chevron-right"></span>
                          </div>
 
                          <div class="button-box wish-list">
-                           <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                           <span class="far fa-heart"></span>
                            <p >Add to wish list</p>
                          </div>
+
                        </div>
 
                       </div>
@@ -638,23 +646,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -667,7 +682,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -677,14 +692,15 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot ">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
 
@@ -729,23 +745,30 @@
 
                       <div class="hidden hide">
 
-                       <div class="view-box ">
-
                         <ul class="view-text1">
-                          <li>Fresheness</li>
-                          <li>Farm</li>
-                          <li>Delivery</li>
-                          <li>Stoc</li>
-                        </ul>
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                        <ul class="view-text1">
-                          <li> <span class="color-text">New</span> (Extra fresh)</li>
-                          <li>Grocery Tarm Fields </li>
-                          <li> Europe</li>
-                          <li> <span class="color-text">320 pcs</span></li>
-                        </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                      </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
+
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -758,7 +781,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.49</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -768,16 +791,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -820,23 +845,30 @@
 
                        <div class="hidden hide">
 
-                         <div class="view-box ">
+                         <ul class="view-text1">
+                           <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                               <span class="color-text ">New</span>
+                               <span>(Extra fresh)</span>
+                             </div>
+                           </li>
 
-                           <ul class="view-text1">
-                             <li>Fresheness</li>
-                             <li>Farm</li>
-                             <li>Delivery</li>
-                             <li>Stoc</li>
-                           </ul>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                           </li>
 
-                           <ul class="view-text1">
-                             <li> <span class="color-text">New</span> (Extra fresh)</li>
-                             <li>Grocery Tarm Fields </li>
-                             <li> Europe</li>
-                             <li> <span class="color-text">320 pcs</span></li>
-                           </ul>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                           </li>
 
-                         </div>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                           </li>
+
+                         </ul>
 
                        </div>
 
@@ -849,7 +881,7 @@
                            <div class="categories-text search-price">0.99 USD</div>
                            <div class="view-text2 "><del>1.99</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                         <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                        </div>
 
                        <div class="hidden hide">
@@ -859,16 +891,18 @@
                            <div class="view-text2 ">Delivery in 1 day</div>
                          </div>
 
-                         <div >
-                           <div class="button-box product-detail carrot" >
-                             <p>Product detail</p>
-                             <img src="img/vector3.png" width="15"  height="15" alt="..">
+                         <div>
+
+                           <div class="button-box product-detail carrot">
+                             <p>Product Detail</p>
+                             <span class="fas fa-chevron-right"></span>
                            </div>
 
                            <div class="button-box wish-list">
-                             <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                             <span class="far fa-heart"></span>
                              <p >Add to wish list</p>
                            </div>
+
                          </div>
 
                        </div>
@@ -910,23 +944,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -939,7 +980,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -949,16 +990,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1000,23 +1043,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1029,7 +1079,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1039,16 +1089,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1091,23 +1143,30 @@
 
                        <div class="hidden hide">
 
-                         <div class="view-box ">
+                         <ul class="view-text1">
+                           <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                               <span class="color-text ">New</span>
+                               <span>(Extra fresh)</span>
+                             </div>
+                           </li>
 
-                           <ul class="view-text1">
-                             <li>Fresheness</li>
-                             <li>Farm</li>
-                             <li>Delivery</li>
-                             <li>Stoc</li>
-                           </ul>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                           </li>
 
-                           <ul class="view-text1">
-                             <li> <span class="color-text">New</span> (Extra fresh)</li>
-                             <li>Grocery Tarm Fields </li>
-                             <li> Europe</li>
-                             <li> <span class="color-text">320 pcs</span></li>
-                           </ul>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                           </li>
 
-                         </div>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                           </li>
+
+                         </ul>
 
                        </div>
 
@@ -1120,7 +1179,7 @@
                            <div class="categories-text search-price">3.99 USD</div>
                            <div class="view-text2 "><del>4.99</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                         <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                        </div>
 
                        <div class="hidden hide">
@@ -1130,16 +1189,18 @@
                            <div class="view-text2 ">Delivery in 1 day</div>
                          </div>
 
-                         <div >
-                           <div class="button-box product-detail carrot" >
-                             <p>Product detail</p>
-                             <img src="img/vector3.png" width="15"  height="15" alt="..">
+                         <div>
+
+                           <div class="button-box product-detail carrot">
+                             <p>Product Detail</p>
+                             <span class="fas fa-chevron-right"></span>
                            </div>
 
                            <div class="button-box wish-list">
-                             <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                             <span class="far fa-heart"></span>
                              <p >Add to wish list</p>
                            </div>
+
                          </div>
 
                        </div>
@@ -1181,23 +1242,30 @@
 
                        <div class="hidden hide">
 
-                         <div class="view-box ">
+                         <ul class="view-text1">
+                           <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                               <span class="color-text ">New</span>
+                               <span>(Extra fresh)</span>
+                             </div>
+                           </li>
 
-                           <ul class="view-text1">
-                             <li>Fresheness</li>
-                             <li>Farm</li>
-                             <li>Delivery</li>
-                             <li>Stoc</li>
-                           </ul>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                           </li>
 
-                           <ul class="view-text1">
-                             <li> <span class="color-text">New</span> (Extra fresh)</li>
-                             <li>Grocery Tarm Fields </li>
-                             <li> Europe</li>
-                             <li> <span class="color-text">320 pcs</span></li>
-                           </ul>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                           </li>
 
-                         </div>
+                           <li class="view-box">
+                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                           </li>
+
+                         </ul>
 
                        </div>
 
@@ -1210,7 +1278,7 @@
                            <div class="categories-text search-price">0.99 USD</div>
                            <div class="view-text2 "><del>1.49</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                         <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                        </div>
 
                        <div class="hidden hide">
@@ -1220,16 +1288,18 @@
                            <div class="view-text2 ">Delivery in 1 day</div>
                          </div>
 
-                         <div >
-                           <div class="button-box product-detail carrot" >
-                             <p>Product detail</p>
-                             <img src="img/vector3.png" width="15"  height="15" alt="..">
+                         <div>
+
+                           <div class="button-box product-detail carrot">
+                             <p>Product Detail</p>
+                             <span class="fas fa-chevron-right"></span>
                            </div>
 
                            <div class="button-box wish-list">
-                             <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                             <span class="far fa-heart"></span>
                              <p >Add to wish list</p>
                            </div>
+
                          </div>
 
                        </div>
@@ -1272,23 +1342,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1301,7 +1378,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1311,16 +1388,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1364,23 +1443,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1393,7 +1479,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2"><del>4.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1403,16 +1489,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1454,23 +1542,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1483,7 +1578,7 @@
                           <div class="categories-text search-price">1.99 USD</div>
                           <div class="view-text2 "><del>2.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1493,16 +1588,19 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
+                        </div>
 
                         </div>
 
@@ -1513,8 +1611,6 @@
                   </div>
 
                 </div>
-
-              </div>
 
               <div class="column second-page col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
@@ -1545,23 +1641,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1574,7 +1677,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.49</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1584,16 +1687,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1636,23 +1741,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1665,7 +1777,7 @@
                           <div class="categories-text search-price">1.49 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1675,16 +1787,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1726,23 +1840,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1755,7 +1876,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1765,16 +1886,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1816,23 +1939,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1845,7 +1975,7 @@
                           <div class="categories-text search-price">0.99 USD</div>
                           <div class="view-text2 "><del>1.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1855,16 +1985,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1907,23 +2039,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -1936,7 +2075,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -1946,16 +2085,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -1997,23 +2138,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -2026,7 +2174,7 @@
                           <div class="categories-text search-price">1.99 USD</div>
                           <div class="view-text2 "><del>2.49</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -2036,16 +2184,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -2088,23 +2238,30 @@
 
                       <div class="hidden hide">
 
-                        <div class="view-box ">
+                        <ul class="view-text1">
+                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                              <span class="color-text ">New</span>
+                              <span>(Extra fresh)</span>
+                            </div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li>Fresheness</li>
-                            <li>Farm</li>
-                            <li>Delivery</li>
-                            <li>Stoc</li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          </li>
 
-                          <ul class="view-text1">
-                            <li> <span class="color-text">New</span> (Extra fresh)</li>
-                            <li>Grocery Tarm Fields </li>
-                            <li> Europe</li>
-                            <li> <span class="color-text">320 pcs</span></li>
-                          </ul>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          </li>
 
-                        </div>
+                          <li class="view-box">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          </li>
+
+                        </ul>
 
                       </div>
 
@@ -2117,7 +2274,7 @@
                           <div class="categories-text search-price">2.99 USD</div>
                           <div class="view-text2 "><del>3.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show" data-modal="#sign-id">Buy now</figcaption>
+                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
                       </div>
 
                       <div class="hidden hide">
@@ -2127,16 +2284,18 @@
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
-                        <div >
-                          <div class="button-box product-detail carrot" >
-                            <p>Product detail</p>
-                            <img src="img/vector3.png" width="15"  height="15" alt="..">
+                        <div>
+
+                          <div class="button-box product-detail carrot">
+                            <p>Product Detail</p>
+                            <span class="fas fa-chevron-right"></span>
                           </div>
 
                           <div class="button-box wish-list">
-                            <img src="img/love.png" width="13.33"  height="11.47" alt="..">
+                            <span class="far fa-heart"></span>
                             <p >Add to wish list</p>
                           </div>
+
                         </div>
 
                       </div>
@@ -2152,9 +2311,6 @@
             </div>
 
       </div>
-
-</div>
-
 
 </section>
 
