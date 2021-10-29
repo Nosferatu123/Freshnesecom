@@ -121,23 +121,24 @@ function addCart(closest,counter,price){
     count=0;
 }
 var countBasket=0;
-let totalPrice=0;
 function addToBasket(){
+
     document.querySelector(".basket").classList.remove("hide");
     countBasket++;
     document.querySelector(".basket").innerHTML=countBasket;
     document.querySelector(".if-empty-basket").classList.remove("hide");
-    document.querySelector(".if-empty-basket").style.height="250px";
+    document.querySelector(".modal").style.height="500px";
+    document.querySelector(".if-empty-basket").style.height="360px";
     let closest=this.closest(".card");
     let message=closest.children[1].children[0].children[0].textContent.toLowerCase();
-    let totalPriceDocument=0;
+    let totalPrice=0;
     if (closest!==null) {
          this.closest(".view-box").children[0].children[0].classList.add(message+"_");
          const price=parseFloat(this.closest(".view-box").children[0].children[0].textContent);
 
         document.querySelector(".empty-basket").style.display="none";
         document.querySelector(".if-empty-basket").classList.remove("hide");
-        document.querySelector(".if-empty-basket").style.height="250px";
+        document.querySelector(".if-empty-basket").style.height="360px";
 
         switch (true){
 
@@ -151,8 +152,8 @@ function addToBasket(){
                     counter=makeCounter(Number(document.querySelector(".if-empty-basket ._carrot").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._carrot").children[2].children[1].value=counter();
 
-                    totalPriceDocument=price*(counter()-1);
-                    document.querySelector(".if-empty-basket ._carrot").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter()-1);
+                    document.querySelector(".if-empty-basket ._carrot").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                      // console.log(document.querySelector(".if-empty-basket ._carrot").children[3].textContent,
                      //     Number(document.querySelector(".if-empty-basket ._carrot").children[2].children[1].value));
                 }
@@ -167,8 +168,8 @@ function addToBasket(){
                     counter2=makeCounter(Number(document.querySelector(".if-empty-basket ._potato").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._potato").children[2].children[1].value=counter2();
 
-                    totalPriceDocument=price*(counter2()-1);
-                    document.querySelector(".if-empty-basket ._potato").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter2()-1);
+                    document.querySelector(".if-empty-basket ._potato").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
 
                 }
                 break;
@@ -183,8 +184,8 @@ function addToBasket(){
                     counter3=makeCounter(Number(document.querySelector(".if-empty-basket ._pumpkin").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._pumpkin").children[2].children[1].value=counter3();
 
-                    totalPriceDocument=price*(counter3()-1);
-                    document.querySelector(".if-empty-basket ._pumpkin").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter3()-1);
+                    document.querySelector(".if-empty-basket ._pumpkin").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
 
                 }
                 break;
@@ -199,8 +200,8 @@ function addToBasket(){
                     counter4=makeCounter(Number(document.querySelector(".if-empty-basket ._cucumber").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._cucumber").children[2].children[1].value=counter4();
 
-                    totalPriceDocument=price*(counter4()-1);
-                    document.querySelector(".if-empty-basket ._cucumber").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter4()-1);
+                    document.querySelector(".if-empty-basket ._cucumber").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -214,8 +215,8 @@ function addToBasket(){
                     counter5=makeCounter(Number(document.querySelector(".if-empty-basket ._onion").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._onion").children[2].children[1].value=counter5();
 
-                    totalPriceDocument=price*(counter5()-1);
-                    document.querySelector(".if-empty-basket ._onion").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter5()-1);
+                    document.querySelector(".if-empty-basket ._onion").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -229,8 +230,8 @@ function addToBasket(){
                     counter6=makeCounter(Number(document.querySelector(".if-empty-basket ._beet").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._beet").children[2].children[1].value=counter6();
 
-                    totalPriceDocument=price*(counter6()-1);
-                    document.querySelector(".if-empty-basket ._beet").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter6()-1);
+                    document.querySelector(".if-empty-basket ._beet").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -244,8 +245,8 @@ function addToBasket(){
                     counter7=makeCounter(Number(document.querySelector(".if-empty-basket ._pepper").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._pepper").children[2].children[1].value=counter7();
 
-                    totalPriceDocument=price*(counter7()-1);
-                    document.querySelector(".if-empty-basket ._pepper").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter7()-1);
+                    document.querySelector(".if-empty-basket ._pepper").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -259,8 +260,8 @@ function addToBasket(){
                     counter8=makeCounter(Number(document.querySelector(".if-empty-basket ._corn").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._corn").children[2].children[1].value=counter8();
 
-                    totalPriceDocument=price*(counter8()-1);
-                    document.querySelector(".if-empty-basket ._corn").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter8()-1);
+                    document.querySelector(".if-empty-basket ._corn").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -274,8 +275,8 @@ function addToBasket(){
                     counter9=makeCounter(Number(document.querySelector(".if-empty-basket ._tomato").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._tomato").children[2].children[1].value=counter9();
 
-                    totalPriceDocument=price*(counter9()-1);
-                    document.querySelector(".if-empty-basket ._tomato").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter9()-1);
+                    document.querySelector(".if-empty-basket ._tomato").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -290,8 +291,8 @@ function addToBasket(){
                     counter10=makeCounter(Number(document.querySelector(".if-empty-basket ._apple").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._apple").children[2].children[1].value=counter10();
 
-                    totalPriceDocument=price*(counter10()-1);
-                    document.querySelector(".if-empty-basket ._apple").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter10()-1);
+                    document.querySelector(".if-empty-basket ._apple").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -305,8 +306,8 @@ function addToBasket(){
                     counter11=makeCounter(Number(document.querySelector(".if-empty-basket ._banana").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._banana").children[2].children[1].value=counter11();
 
-                    totalPriceDocument=price*(counter11()-1);
-                    document.querySelector(".if-empty-basket ._banana").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter11()-1);
+                    document.querySelector(".if-empty-basket ._banana").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -320,8 +321,8 @@ function addToBasket(){
                     counter12=makeCounter(Number(document.querySelector(".if-empty-basket ._pear").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._pear").children[2].children[1].value=counter12();
 
-                    totalPriceDocument=price*(counter12()-1);
-                    document.querySelector(".if-empty-basket ._pear").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter12()-1);
+                    document.querySelector(".if-empty-basket ._pear").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -335,8 +336,8 @@ function addToBasket(){
                     counter13=makeCounter(Number(document.querySelector(".if-empty-basket ._plum").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._plum").children[2].children[1].value=counter13();
 
-                    totalPriceDocument=price*(counter13()-1);
-                    document.querySelector(".if-empty-basket ._plum").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter13()-1);
+                    document.querySelector(".if-empty-basket ._plum").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -350,8 +351,8 @@ function addToBasket(){
                     counter14=makeCounter(Number(document.querySelector(".if-empty-basket ._peach").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._peach").children[2].children[1].value=counter14();
 
-                    totalPriceDocument=price*(counter14()-1);
-                    document.querySelector(".if-empty-basket ._peach").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter14()-1);
+                    document.querySelector(".if-empty-basket ._peach").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -365,8 +366,8 @@ function addToBasket(){
                     counter15=makeCounter(Number(document.querySelector(".if-empty-basket ._kiwi").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._kiwi").children[2].children[1].value=counter15();
 
-                    totalPriceDocument=price*(counter15()-1);
-                    document.querySelector(".if-empty-basket ._kiwi").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter15()-1);
+                    document.querySelector(".if-empty-basket ._kiwi").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -380,8 +381,8 @@ function addToBasket(){
                     counter16=makeCounter(Number(document.querySelector(".if-empty-basket ._avocado").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._avocado").children[2].children[1].value=counter16();
 
-                    totalPriceDocument=price*(counter16()-1);
-                    document.querySelector(".if-empty-basket ._avocado").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter16()-1);
+                    document.querySelector(".if-empty-basket ._avocado").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -395,8 +396,8 @@ function addToBasket(){
                     counter17=makeCounter(Number(document.querySelector(".if-empty-basket ._watermelon").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._watermelon").children[2].children[1].value=counter17();
 
-                    totalPriceDocument=price*(counter17()-1);
-                    document.querySelector(".if-empty-basket ._watermelon").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter17()-1);
+                    document.querySelector(".if-empty-basket ._watermelon").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -410,8 +411,8 @@ function addToBasket(){
                     counter18=makeCounter(Number(document.querySelector(".if-empty-basket ._tangerine").children[2].children[1].value)+1);
                     document.querySelector(".if-empty-basket ._tangerine").children[2].children[1].value=counter18();
 
-                    totalPriceDocument=price*(counter18()-1);
-                    document.querySelector(".if-empty-basket ._tangerine").children[3].innerHTML=totalPriceDocument.toFixed(2)+"&nbspUSD";
+                    totalPrice=price*(counter18()-1);
+                    document.querySelector(".if-empty-basket ._tangerine").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
                 }
 
                 break;
@@ -421,7 +422,22 @@ function addToBasket(){
     }
 }
 var sumValue=0;
+var sumTotal=0;
+
 function showModal() {
+
+//     console.log(isNaN(parseFloat(document.querySelector(".total-total").textContent)));
+
+    // if (Number.isNaN(parseFloat(document.querySelector(".total-total").textContent)) ){
+    //     document.querySelector(".text-total").classList.add("hide");
+    //     console.log("hi");
+    // } else {
+    //     document.querySelector(".text-total").classList.remove("hide");
+    //     console.log("bye");
+    // }
+
+
+
     //изменение количества товара в корзине
 if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
 
@@ -586,6 +602,15 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
             countBasket=sumValue;
             document.querySelector(".basket").innerHTML=countBasket;
             sumValue=0;
+
+            document.querySelectorAll(".if-empty-basket .chips .total-price").forEach(function(element){
+                let price=parseFloat(element.textContent).toFixed(2);
+               sumTotal+=Number(price);
+
+            })
+            document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbspUSD";
+            sumTotal=0;
+
         }
 
         //    увеличение товара
@@ -739,9 +764,22 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
                     break;
 
             }
+            document.querySelectorAll(".if-empty-basket .chips .total-price").forEach(function(element){
+                let price=parseFloat(element.textContent).toFixed(2);
+                sumTotal+=Number(price);
+            })
+            document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbspUSD";
+            sumTotal=0;
 
         }
 
+
+        document.querySelectorAll(".if-empty-basket .chips .total-price").forEach(function(element){
+            let price=parseFloat(element.textContent).toFixed(2);
+            sumTotal+=Number(price);
+        })
+        document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbspUSD";
+        sumTotal=0;
     })
 
 }
@@ -826,10 +864,39 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
                     document.querySelector(".basket").classList.add("hide");
                 }
                 sumValue=0;
+
+                document.querySelectorAll(".if-empty-basket .chips .total-price").forEach(function(element){
+                    let price=parseFloat(element.textContent).toFixed(2);
+                    sumTotal+=Number(price);
+                })
+                document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbspUSD";
+                sumTotal=0;
+
+                if (parseFloat(document.querySelector(".total-total").textContent)===0){
+
+                    document.querySelector(".total-total").parentElement.style.display="none";
+                    document.querySelector(".total-total").innerHTML="1";
+                    document.querySelector(".modal").style.height="350px";
+                    document.querySelector(".empty-basket").style.height="210px";
+
+                } else {
+                    document.querySelector(".total-total").parentElement.style.display="";
+                }
             }
         })
     }
 
+    console.log(document.querySelector(".total-total").textContent);
+    if (parseFloat(document.querySelector(".total-total").textContent)===1 ){
+
+        document.querySelector(".total-total").parentElement.style.display="none";
+        document.querySelector(".total-total").innerHTML="1";
+        document.querySelector(".modal").style.height="350px";
+        document.querySelector(".empty-basket").style.height="210px";
+
+    } else {
+        document.querySelector(".total-total").parentElement.style.display="";
+    }
 
     document.body.style.overflow = 'hidden';
     let widthTwo = document.documentElement.clientWidth;

@@ -17,7 +17,8 @@
 
 .modal{
     width: 500px;
-    height: 350px;
+    /*height: 350px;*/
+    height: 500px;
     box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.15);
     padding: 15px;
     background: #FFFFFF;
@@ -30,9 +31,7 @@
 .if-empty-basket{
     overflow-y: auto;
 }
-.empty-basket{
-    height: 198px;
-}
+
 .close-x {
     font-size: 24px;
     cursor: pointer;
@@ -84,7 +83,7 @@
     border:none;
     color: #FFFFFF;
     background: #6A983C;
-    /*border: 1px solid #46760A;*/
+    border: 1px solid #46760A;
     cursor:pointer;
     border-radius: 12px;
     padding: 12px 12px;
@@ -125,7 +124,8 @@
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
-    height: 230px;
+    /*height: 230px;*/
+    height: 360px;
 }
 
 .chips{
@@ -143,13 +143,12 @@
 
 .fa-trash-alt{
     cursor:pointer;
-    color:red;
-    opacity:0.6;
+    color:grey;
     font-size: 20px;
 }
 
 .fa-trash-alt:hover{
-   opacity: 1;
+   color:#E5704B;
 }
 /*----------plus minus input-----------------------------*/
 .quantity_inner * {
@@ -211,4 +210,18 @@
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
+}
+.total-price{
+    display: flex;
+    justify-content: center;
+}
+.text-total{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+.cover-cart{
+    display: flex;
+    justify-content: center;
 }

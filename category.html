@@ -45,14 +45,18 @@
                   <input type="number" value="1"  class="quantity" >
                   <button class="bt-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
                 </div>
-              <div class="total-price col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">total:</div>
+              <div class="total-price col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></div>
               <div  class="fas fa-trash-alt col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
 
             </div>
           </div>
 
           <div class="if-empty-basket hide"></div>
-
+          <div class="text-total view-box" style="display: none" >
+            <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></span>
+            <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="display: flex;justify-content: center">Total:</span>
+            <span class="total-total col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" >1</span> </div>
+            <span class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></span>
         </div>
 
         <div class="view-box-cart top-border">
@@ -494,17 +498,25 @@
              <input  id="max-range" type="range"   min="0" max="1000" step="1" value="1000" >
            </div>
 
-           <div class="view-box   min-max-box ">
-             <div>
-               <div class="text-min-max">Min</div>
-               <input id="min-field" type="number" value="0"  oninput="validity.valid||(value='')" >
+           <div class="view-box   min-max-box " style="flex-wrap: wrap">
+
+             <div class="view-box col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <div class="text-min-max col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">Min</div>
+               <div class="text-min-max col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">Max</div>
              </div>
 
-             <div>
-               <div class="text-min-max">Max</div>
-               <input id="max-field" type="number" value="1000" oninput="validity.valid||(value='')" >
+             <div class="view-box col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                 <input class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="min-field" type="number" value="0"  oninput="validity.valid||(value='')" >
+               </div>
 
+               <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 view-box content gray" style="justify-content: center">-</div>
+
+               <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                 <input class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="max-field" type="number" value="1000"  oninput="validity.valid||(value='')" >
+               </div>
              </div>
+
            </div>
 
            <div>
