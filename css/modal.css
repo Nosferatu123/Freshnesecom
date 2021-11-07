@@ -12,14 +12,15 @@
     right:0;
     bottom:0;
     background:rgba(0,0,0,.7);
+    z-index: 10000;
 
 }
 
-.modal{
+.my-modal{
     width: 500px;
     /*height: 350px;*/
     height: 500px;
-    box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 32px rgba(0, 0, 0, 0.15);
     padding: 15px;
     background: #FFFFFF;
     display: flex;
@@ -49,14 +50,14 @@
     display:none;
 }
 .cart-text{
-    font-family: Poppins;
+    font-family:'Poppins', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 26px;
     line-height: 39px;
 }
 .close-text{
-    font-family: Open Sans;
+    font-family:'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -65,7 +66,7 @@
     margin-right: 10px;
 }
 .cart-text2{
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
@@ -75,12 +76,11 @@
     cursor:pointer;
 }
 .cart-text3{
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
     line-height: 22px;
-    border:none;
     color: #FFFFFF;
     background: #6A983C;
     border: 1px solid #46760A;
@@ -90,7 +90,7 @@
 }
 .cart-text4{
     margin-top: 10px;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
@@ -110,8 +110,8 @@
 
 .top-border{
     border-top: 1px solid #EBEBEB;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    /*padding-bottom: 15px;*/
 
 }
 .fa-shopping-basket{
@@ -130,8 +130,10 @@
 
 .chips{
     border-bottom:1px solid #EBEBEB;
-    padding-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     align-items: center;
+
 
 }
 /*.mini-image{*/
@@ -161,6 +163,8 @@
 .quantity_inner .bt-minus,
 .quantity_inner .bt-plus,
 .quantity_inner .quantity {
+    display: flex;
+    align-items: center;
     color: #BFE2FF;
     height: 25px;
     width: 25px;
@@ -200,28 +204,27 @@
 /*--------------------------------*/
 .cover-cart img{
     object-fit: cover;
-    width: 75px;
-    height: 75px;
+    max-width: 100%;
+    height: 100%;
     border-radius: 5px;
 }
 .product,
 .total-price{
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
 }
-.total-price{
+
+.total-price
+{
     display: flex;
     justify-content: center;
 }
 .text-total{
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
 }
-.cover-cart{
-    display: flex;
-    justify-content: center;
-}
+

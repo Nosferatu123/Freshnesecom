@@ -63,21 +63,24 @@ document.onkeydown=function(event){
 function chips(message,price){
      let chips=document.querySelector(".chips");
     let clone=chips.cloneNode(true);
-    clone.classList.add("_"+message);
-    clone.children[1].classList.add(message);
-    clone.children[1].innerHTML=message;
-    let img=document.querySelector("."+message);
-    let cloneImg=img.cloneNode(true);
-    clone.children[0].insertAdjacentElement("beforeend", cloneImg);
-    clone.children[3].innerHTML=price+"&nbspUSD";
+     clone.classList.add("_"+message);
+     clone.children[1].children[0].classList.add(message);
+     clone.children[1].children[0].innerHTML=message;
+     let img=document.querySelector("."+message);
+     let cloneImg=img.cloneNode(true);
+     clone.children[0].insertAdjacentElement("beforeend", cloneImg);
+     clone.children[1].children[2].innerHTML=price+"&nbsp"+"&#36";
     clone.classList.remove('hide');
+
     document.querySelector(".if-empty-basket").appendChild(clone);
+
 }
 //вставляет блок товара в корзину
 var count=0;
 function addCart(closest,counter,price){
 
     let message=closest.children[1].children[0].children[0].textContent.toLowerCase();
+
 
     let length=document.querySelector(".if-empty-basket").children.length;
 
@@ -88,7 +91,7 @@ function addCart(closest,counter,price){
 
                 for (let i=0;i<length;i++){
 
-                    if (document.querySelector(".if-empty-basket").children[i].children[1].textContent !== message) {
+                    if (document.querySelector(".if-empty-basket").children[i].children[1].children[0].textContent !== message) {
                         count++;
                         if (count===length){
 
@@ -98,11 +101,11 @@ function addCart(closest,counter,price){
                         continue;
                     }
 
-                    if (document.querySelector(".if-empty-basket").children[i].children[1].textContent!==message) {
+                    if (document.querySelector(".if-empty-basket").children[i].children[1].children[0].textContent!==message) {
                        continue;
                     }
-                    if (document.querySelector(".if-empty-basket").children[i].children[1].textContent===message){
-                        document.querySelector(".if-empty-basket").children[i].children[2].children[1].value = counter;
+                    if (document.querySelector(".if-empty-basket").children[i].children[1].children[0].textContent===message){
+                        document.querySelector(".if-empty-basket").children[i].children[1].children[1].children[1].value = counter;
                     }
 
                 }
@@ -127,13 +130,14 @@ function addToBasket(){
     countBasket++;
     document.querySelector(".basket").innerHTML=countBasket;
     document.querySelector(".if-empty-basket").classList.remove("hide");
-    document.querySelector(".modal").style.height="500px";
+    document.querySelector(".my-modal").style.height="505px";
     document.querySelector(".if-empty-basket").style.height="360px";
-    let closest=this.closest(".card");
+    let closest=this.closest(".card-card");
     let message=closest.children[1].children[0].children[0].textContent.toLowerCase();
     let totalPrice=0;
     if (closest!==null) {
          this.closest(".view-box").children[0].children[0].classList.add(message+"_");
+
          const price=parseFloat(this.closest(".view-box").children[0].children[0].textContent);
 
         document.querySelector(".empty-basket").style.display="none";
@@ -148,12 +152,11 @@ function addToBasket(){
                     addCart(closest,counter(),price);
 
                 } else {
-
-                    counter=makeCounter(Number(document.querySelector(".if-empty-basket ._carrot").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._carrot").children[2].children[1].value=counter();
+                    counter=makeCounter(Number(document.querySelector(".if-empty-basket ._carrot").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._carrot").children[1].children[1].children[1].value=counter();
 
                     totalPrice=price*(counter()-1);
-                    document.querySelector(".if-empty-basket ._carrot").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._carrot").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                      // console.log(document.querySelector(".if-empty-basket ._carrot").children[3].textContent,
                      //     Number(document.querySelector(".if-empty-basket ._carrot").children[2].children[1].value));
                 }
@@ -165,11 +168,11 @@ function addToBasket(){
                     addCart(closest,counter2(),price);
                 } else {
 
-                    counter2=makeCounter(Number(document.querySelector(".if-empty-basket ._potato").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._potato").children[2].children[1].value=counter2();
+                    counter2=makeCounter(Number(document.querySelector(".if-empty-basket ._potato").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._potato").children[1].children[1].children[1].value=counter2();
 
                     totalPrice=price*(counter2()-1);
-                    document.querySelector(".if-empty-basket ._potato").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._potato").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
 
                 }
                 break;
@@ -181,11 +184,11 @@ function addToBasket(){
 
                 } else {
 
-                    counter3=makeCounter(Number(document.querySelector(".if-empty-basket ._pumpkin").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._pumpkin").children[2].children[1].value=counter3();
+                    counter3=makeCounter(Number(document.querySelector(".if-empty-basket ._pumpkin").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._pumpkin").children[1].children[1].children[1].value=counter3();
 
                     totalPrice=price*(counter3()-1);
-                    document.querySelector(".if-empty-basket ._pumpkin").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._pumpkin").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
 
                 }
                 break;
@@ -197,11 +200,11 @@ function addToBasket(){
                 } else {
 
 
-                    counter4=makeCounter(Number(document.querySelector(".if-empty-basket ._cucumber").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._cucumber").children[2].children[1].value=counter4();
+                    counter4=makeCounter(Number(document.querySelector(".if-empty-basket ._cucumber").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._cucumber").children[1].children[1].children[1].value=counter4();
 
                     totalPrice=price*(counter4()-1);
-                    document.querySelector(".if-empty-basket ._cucumber").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._cucumber").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -212,11 +215,11 @@ function addToBasket(){
                     addCart(closest,counter5(),price);
                 } else {
 
-                    counter5=makeCounter(Number(document.querySelector(".if-empty-basket ._onion").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._onion").children[2].children[1].value=counter5();
+                    counter5=makeCounter(Number(document.querySelector(".if-empty-basket ._onion").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._onion").children[1].children[1].children[1].value=counter5();
 
                     totalPrice=price*(counter5()-1);
-                    document.querySelector(".if-empty-basket ._onion").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._onion").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -227,11 +230,11 @@ function addToBasket(){
                     addCart(closest,counter6(),price);
                 } else {
 
-                    counter6=makeCounter(Number(document.querySelector(".if-empty-basket ._beet").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._beet").children[2].children[1].value=counter6();
+                    counter6=makeCounter(Number(document.querySelector(".if-empty-basket ._beet").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._beet").children[1].children[1].children[1].value=counter6();
 
                     totalPrice=price*(counter6()-1);
-                    document.querySelector(".if-empty-basket ._beet").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._beet").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -242,11 +245,11 @@ function addToBasket(){
                     addCart(closest,counter7(),price);
                 } else {
 
-                    counter7=makeCounter(Number(document.querySelector(".if-empty-basket ._pepper").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._pepper").children[2].children[1].value=counter7();
+                    counter7=makeCounter(Number(document.querySelector(".if-empty-basket ._pepper").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._pepper").children[1].children[1].children[1].value=counter7();
 
                     totalPrice=price*(counter7()-1);
-                    document.querySelector(".if-empty-basket ._pepper").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._pepper").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -257,11 +260,11 @@ function addToBasket(){
                     addCart(closest,counter8(),price);
                 } else {
 
-                    counter8=makeCounter(Number(document.querySelector(".if-empty-basket ._corn").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._corn").children[2].children[1].value=counter8();
+                    counter8=makeCounter(Number(document.querySelector(".if-empty-basket ._corn").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._corn").children[1].children[1].children[1].value=counter8();
 
                     totalPrice=price*(counter8()-1);
-                    document.querySelector(".if-empty-basket ._corn").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._corn").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -272,11 +275,11 @@ function addToBasket(){
                     addCart(closest,counter9(),price);
                 } else {
 
-                    counter9=makeCounter(Number(document.querySelector(".if-empty-basket ._tomato").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._tomato").children[2].children[1].value=counter9();
+                    counter9=makeCounter(Number(document.querySelector(".if-empty-basket ._tomato").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._tomato").children[1].children[1].children[1].value=counter9();
 
                     totalPrice=price*(counter9()-1);
-                    document.querySelector(".if-empty-basket ._tomato").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._tomato").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -288,11 +291,11 @@ function addToBasket(){
                 } else {
 
 
-                    counter10=makeCounter(Number(document.querySelector(".if-empty-basket ._apple").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._apple").children[2].children[1].value=counter10();
+                    counter10=makeCounter(Number(document.querySelector(".if-empty-basket ._apple").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._apple").children[1].children[1].children[1].value=counter10();
 
                     totalPrice=price*(counter10()-1);
-                    document.querySelector(".if-empty-basket ._apple").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._apple").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -303,11 +306,11 @@ function addToBasket(){
                     addCart(closest,counter11(),price);
                 } else {
 
-                    counter11=makeCounter(Number(document.querySelector(".if-empty-basket ._banana").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._banana").children[2].children[1].value=counter11();
+                    counter11=makeCounter(Number(document.querySelector(".if-empty-basket ._banana").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._banana").children[1].children[1].children[1].value=counter11();
 
                     totalPrice=price*(counter11()-1);
-                    document.querySelector(".if-empty-basket ._banana").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._banana").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -318,11 +321,11 @@ function addToBasket(){
                     addCart(closest,counter12(),price);
                 } else {
 
-                    counter12=makeCounter(Number(document.querySelector(".if-empty-basket ._pear").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._pear").children[2].children[1].value=counter12();
+                    counter12=makeCounter(Number(document.querySelector(".if-empty-basket ._pear").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._pear").children[1].children[1].children[1].value=counter12();
 
                     totalPrice=price*(counter12()-1);
-                    document.querySelector(".if-empty-basket ._pear").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._pear").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -333,11 +336,11 @@ function addToBasket(){
                     addCart(closest,counter13(),price);
                 } else {
 
-                    counter13=makeCounter(Number(document.querySelector(".if-empty-basket ._plum").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._plum").children[2].children[1].value=counter13();
+                    counter13=makeCounter(Number(document.querySelector(".if-empty-basket ._plum").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._plum").children[1].children[1].children[1].value=counter13();
 
                     totalPrice=price*(counter13()-1);
-                    document.querySelector(".if-empty-basket ._plum").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._plum").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -348,11 +351,11 @@ function addToBasket(){
                     addCart(closest,counter14(),price);
                 } else {
 
-                    counter14=makeCounter(Number(document.querySelector(".if-empty-basket ._peach").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._peach").children[2].children[1].value=counter14();
+                    counter14=makeCounter(Number(document.querySelector(".if-empty-basket ._peach").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._peach").children[1].children[1].children[1].value=counter14();
 
                     totalPrice=price*(counter14()-1);
-                    document.querySelector(".if-empty-basket ._peach").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._peach").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -363,11 +366,11 @@ function addToBasket(){
                     addCart(closest,counter15(),price);
                 } else {
 
-                    counter15=makeCounter(Number(document.querySelector(".if-empty-basket ._kiwi").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._kiwi").children[2].children[1].value=counter15();
+                    counter15=makeCounter(Number(document.querySelector(".if-empty-basket ._kiwi").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._kiwi").children[1].children[1].children[1].value=counter15();
 
                     totalPrice=price*(counter15()-1);
-                    document.querySelector(".if-empty-basket ._kiwi").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._kiwi").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -378,11 +381,11 @@ function addToBasket(){
                     addCart(closest,counter16(),price);
                 } else {
 
-                    counter16=makeCounter(Number(document.querySelector(".if-empty-basket ._avocado").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._avocado").children[2].children[1].value=counter16();
+                    counter16=makeCounter(Number(document.querySelector(".if-empty-basket ._avocado").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._avocado").children[1].children[1].children[1].value=counter16();
 
                     totalPrice=price*(counter16()-1);
-                    document.querySelector(".if-empty-basket ._avocado").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._avocado").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -393,11 +396,11 @@ function addToBasket(){
                     addCart(closest,counter17(),price);
                 } else {
 
-                    counter17=makeCounter(Number(document.querySelector(".if-empty-basket ._watermelon").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._watermelon").children[2].children[1].value=counter17();
+                    counter17=makeCounter(Number(document.querySelector(".if-empty-basket ._watermelon").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._watermelon").children[1].children[1].children[1].value=counter17();
 
                     totalPrice=price*(counter17()-1);
-                    document.querySelector(".if-empty-basket ._watermelon").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._watermelon").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -408,11 +411,11 @@ function addToBasket(){
                     addCart(closest,counter18(),price);
                 } else {
 
-                    counter18=makeCounter(Number(document.querySelector(".if-empty-basket ._tangerine").children[2].children[1].value)+1);
-                    document.querySelector(".if-empty-basket ._tangerine").children[2].children[1].value=counter18();
+                    counter18=makeCounter(Number(document.querySelector(".if-empty-basket ._tangerine").children[1].children[1].children[1].value)+1);
+                    document.querySelector(".if-empty-basket ._tangerine").children[1].children[1].children[1].value=counter18();
 
                     totalPrice=price*(counter18()-1);
-                    document.querySelector(".if-empty-basket ._tangerine").children[3].innerHTML=totalPrice.toFixed(2)+"&nbspUSD";
+                    document.querySelector(".if-empty-basket ._tangerine").children[1].children[2].innerHTML=totalPrice.toFixed(2)+"&nbsp"+"&#36";
                 }
 
                 break;
@@ -426,172 +429,160 @@ var sumTotal=0;
 
 function showModal() {
 
-//     console.log(isNaN(parseFloat(document.querySelector(".total-total").textContent)));
-
-    // if (Number.isNaN(parseFloat(document.querySelector(".total-total").textContent)) ){
-    //     document.querySelector(".text-total").classList.add("hide");
-    //     console.log("hi");
-    // } else {
-    //     document.querySelector(".text-total").classList.remove("hide");
-    //     console.log("bye");
-    // }
-
-
-
     //изменение количества товара в корзине
 if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
 
     document.querySelectorAll(".if-empty-basket .chips .quantity_inner").forEach(function(element){
 
         //уменьшение товара
-
+        //  console.log(element.closest(".chips").children[1].children[1]);
         element.children[0].onclick=function(){
             switch (true) {
 
-                case element.closest(".chips").children[1].textContent === "carrot":
+                case element.closest(".chips").children[1].children[0].textContent === "carrot":
 
                     var counterMinus=minus(element.children[1].value);
                     element.children[1].value=counterMinus();
                     // console.log(element.children[1].value);
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".carrot_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".carrot_").textContent)).toFixed(2)+"&nbsp"+"&#36";
 
                     break;
 
-                case element.closest(".chips").children[1].textContent === "potato":
+                case element.closest(".chips").children[1].children[0].textContent === "potato":
 
                     var counterMinus2=minus(element.children[1].value);
                     element.children[1].value=counterMinus2();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".potato_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".potato_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "pumpkin":
+                case element.closest(".chips").children[1].children[0].textContent === "pumpkin":
 
                     var counterMinus3=minus(element.children[1].value);
                     element.children[1].value=counterMinus3();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".pumpkin_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".pumpkin_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "cucumber":
+                case element.closest(".chips").children[1].children[0].textContent === "cucumber":
 
                     var counterMinus4=minus(element.children[1].value);
                     element.children[1].value=counterMinus4();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".cucumber_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".cucumber_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "onion":
+                case element.closest(".chips").children[1].children[0].textContent === "onion":
 
                     var counterMinus5=minus(element.children[1].value);
                     element.children[1].value=counterMinus5();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".onion_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".onion_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "beet":
+                case element.closest(".chips").children[1].children[0].textContent === "beet":
 
                     var counterMinus6=minus(element.children[1].value);
                     element.children[1].value=counterMinus6();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".beet_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".beet_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "pepper":
+                case element.closest(".chips").children[1].children[0].textContent === "pepper":
 
                     var counterMinus7=minus(element.children[1].value);
                     element.children[1].value=counterMinus7();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".pepper_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".pepper_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "corn":
+                case element.closest(".chips").children[1].children[0].textContent === "corn":
 
                     var counterMinus8=minus(element.children[1].value);
                     element.children[1].value=counterMinus8();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".corn_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".corn_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "tomato":
+                case element.closest(".chips").children[1].children[0].textContent === "tomato":
 
                     var counterMinus9=minus(element.children[1].value);
                     element.children[1].value=counterMinus9();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".tomato_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".tomato_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "apple":
+                case element.closest(".chips").children[1].children[0].textContent === "apple":
 
                     var counterMinus10=minus(element.children[1].value);
                     element.children[1].value=counterMinus10();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".apple_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".apple_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "banana":
+                case element.closest(".chips").children[1].children[0].textContent === "banana":
 
                     var counterMinus11=minus(element.children[1].value);
                     element.children[1].value=counterMinus11();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".banana_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".banana_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "pear":
+                case element.closest(".chips").children[1].children[0].textContent === "pear":
 
                     var counterMinus12=minus(element.children[1].value);
                     element.children[1].value=counterMinus12();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".pear_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".pear_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "plum":
+                case element.closest(".chips").children[1].children[0].textContent === "plum":
 
                     var counterMinus13=minus(element.children[1].value);
                     element.children[1].value=counterMinus13();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".plum_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".plum_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "peach":
+                case element.closest(".chips").children[1].children[0].textContent === "peach":
 
                     var counterMinus14=minus(element.children[1].value);
                     element.children[1].value=counterMinus14();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".peach_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".peach_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "kiwi":
+                case element.closest(".chips").children[1].children[0].textContent === "kiwi":
 
                     var counterMinus15=minus(element.children[1].value);
                     element.children[1].value=counterMinus15();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".kiwi_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".kiwi_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "avocado":
+                case element.closest(".chips").children[1].children[0].textContent === "avocado":
 
                     var counterMinus16=minus(element.children[1].value);
                     element.children[1].value=counterMinus16();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".avocado_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".avocado_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "watermelon":
+                case element.closest(".chips").children[1].children[0].textContent === "watermelon":
 
                     var counterMinus17=minus(element.children[1].value);
                     element.children[1].value=counterMinus17();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".watermelon_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".watermelon_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
 
-                case element.closest(".chips").children[1].textContent === "tangerine":
+                case element.closest(".chips").children[1].children[0].textContent === "tangerine":
 
                     var counterMinus18=minus(element.children[1].value);
                     element.children[1].value=counterMinus18();
-                    element.closest(".chips").children[3].innerHTML=
-                    (element.children[1].value*parseFloat(document.querySelector(".tangerine_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    (element.children[1].value*parseFloat(document.querySelector(".tangerine_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     break;
             }
 
@@ -608,7 +599,7 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
                sumTotal+=Number(price);
 
             })
-            document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbspUSD";
+            document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbsp"+"&#36";
             sumTotal=0;
 
         }
@@ -619,146 +610,146 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
             document.querySelector(".basket").innerHTML=countBasket;
             switch (true){
 
-                case element.closest(".chips").children[1].textContent==="carrot":
+                case element.closest(".chips").children[1].children[0].textContent==="carrot":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".carrot_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".carrot_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="potato":
+                case element.closest(".chips").children[1].children[0].textContent==="potato":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".potato_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".potato_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter2=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter2();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="pumpkin":
+                case element.closest(".chips").children[1].children[0].textContent==="pumpkin":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".pumpkin_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".pumpkin_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter3=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter3();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="cucumber":
+                case element.closest(".chips").children[1].children[0].textContent==="cucumber":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".cucumber_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".cucumber_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter4=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter4();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="onion":
+                case element.closest(".chips").children[1].children[0].textContent==="onion":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".onion_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".onion_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter5=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter5();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="beet":
+                case element.closest(".chips").children[1].children[0].textContent==="beet":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".beet_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".beet_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter6=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter6();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="pepper":
+                case element.closest(".chips").children[1].children[0].textContent==="pepper":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".pepper_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".pepper_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter7=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter7();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="corn":
+                case element.closest(".chips").children[1].children[0].textContent==="corn":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".corn_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".corn_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter8=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter8();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="tomato":
+                case element.closest(".chips").children[1].children[0].textContent==="tomato":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".tomato_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".tomato_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter9=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter9();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="apple":
+                case element.closest(".chips").children[1].children[0].textContent==="apple":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".apple_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".apple_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter10=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter10();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="banana":
+                case element.closest(".chips").children[1].children[0].textContent==="banana":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".banana_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".banana_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter11=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter11();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="pear":
+                case element.closest(".chips").children[1].children[0].textContent==="pear":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".pear_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".pear_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter12=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter12();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="plum":
+                case element.closest(".chips").children[1].children[0].textContent==="plum":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".plum_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".plum_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter13=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter13();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="peach":
+                case element.closest(".chips").children[1].children[0].textContent==="peach":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".peach_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".peach_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter14=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter14();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="kiwi":
+                case element.closest(".chips").children[1].children[0].textContent==="kiwi":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".kiwi_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".kiwi_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter15=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter15();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="avocado":
+                case element.closest(".chips").children[1].children[0].textContent==="avocado":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".avocado_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".avocado_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter16=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter16();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="watermelon":
+                case element.closest(".chips").children[1].children[0].textContent==="watermelon":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".watermelon_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".watermelon_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter17=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter17();
                     break;
 
-                case element.closest(".chips").children[1].textContent==="tangerine":
+                case element.closest(".chips").children[1].children[0].textContent==="tangerine":
 
-                    element.closest(".chips").children[3].innerHTML=
-                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".tangerine_").textContent)).toFixed(2)+"&nbspUSD";
+                    element.closest(".chips").children[1].children[2].innerHTML=
+                    ((Number(element.children[1].value)+1)*parseFloat(document.querySelector(".tangerine_").textContent)).toFixed(2)+"&nbsp"+"&#36";
                     counter18=makeCounter(Number(element.children[1].value)+1);
                     element.children[1].value=counter18();
                     break;
@@ -768,7 +759,7 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
                 let price=parseFloat(element.textContent).toFixed(2);
                 sumTotal+=Number(price);
             })
-            document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbspUSD";
+            document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbsp"+"&#36";
             sumTotal=0;
 
         }
@@ -778,7 +769,7 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
             let price=parseFloat(element.textContent).toFixed(2);
             sumTotal+=Number(price);
         })
-        document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbspUSD";
+        document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbsp"+"&#36";
         sumTotal=0;
     })
 
@@ -869,14 +860,14 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
                     let price=parseFloat(element.textContent).toFixed(2);
                     sumTotal+=Number(price);
                 })
-                document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbspUSD";
+                document.querySelector(".total-total").innerHTML=sumTotal.toFixed(2)+"&nbsp"+"&#36";
                 sumTotal=0;
 
                 if (parseFloat(document.querySelector(".total-total").textContent)===0){
 
                     document.querySelector(".total-total").parentElement.style.display="none";
                     document.querySelector(".total-total").innerHTML="1";
-                    document.querySelector(".modal").style.height="350px";
+                    document.querySelector(".my-modal").style.height="350px";
                     document.querySelector(".empty-basket").style.height="210px";
 
                 } else {
@@ -886,12 +877,10 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
         })
     }
 
-    console.log(document.querySelector(".total-total").textContent);
     if (parseFloat(document.querySelector(".total-total").textContent)===1 ){
 
         document.querySelector(".total-total").parentElement.style.display="none";
-        document.querySelector(".total-total").innerHTML="1";
-        document.querySelector(".modal").style.height="350px";
+        document.querySelector(".my-modal").style.height="350px";
         document.querySelector(".empty-basket").style.height="210px";
 
     } else {
@@ -899,13 +888,15 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
     }
 
     document.body.style.overflow = 'hidden';
-    let widthTwo = document.documentElement.clientWidth;
-    let diff = widthTwo - widthOne;
-    if ((diff) >= 0) {
-       document.body.style.paddingRight = diff + "px";
-        document.querySelector(".header").style.left=Math.round(-diff/2)+ "px";
+    // let widthTwo = document.documentElement.clientWidth;
+    // let diff = widthTwo - widthOne;
+    // if ((diff) >= 0) {
+    //    document.body.style.paddingRight = diff + "px";
+    //     document.querySelector(".header").style.left=Math.round(-diff/2)+ "px";
+    // }
+    if( (window.innerWidth || document.documentElement.clientWidth) >=1200) {
+        document.body.style.paddingRight = "17px";
     }
-
     let modalId = this.dataset.modal;
     document.querySelector(modalId).parentElement.classList.remove('hide');
     document.querySelector(modalId).classList.remove('hide');

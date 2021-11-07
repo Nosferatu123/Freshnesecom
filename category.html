@@ -2,15 +2,21 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
       xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freshness</title>
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/modal.css">
-  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<!--  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.css">-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script defer="defer" src="js/script.js"></script>
   <script defer="defer" src="js/stars.js"></script>
   <script defer="defer" src="js/modal.js"></script>
   <script defer="defer" src="https://kit.fontawesome.com/43d7cb34d7.js" crossorigin="anonymous"></script>
+
 
 </head>
 <body>
@@ -18,13 +24,12 @@
 <header class="header">
   <div class="container ">
     <div class="modal-wrap hide">
-      <div class="modal hide " id="sign-id">
+      <div class="my-modal hide " id="sign-id">
         <div >
 
           <div class="view-box-cart">
             <div class="cart-text">Shopping cart</div>
             <div >
-              <!--                <button class="modal-close close-text" data-modal="#sign-id">close</button>-->
               <button class="modal-close close-x " data-modal="#sign-id">
                 <span class="close-text">close</span>
                 <span class="fas fa-times"></span>
@@ -36,33 +41,40 @@
             <div class="fas fa-shopping-basket"></div>
             <div class="cart-text4">Shopping cart is empty!</div>
 
-            <div class="chips hide view-box position">
+            <div class="chips hide view-box position" >
 
-              <div class="cover-cart col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"> </div>
-              <div class="product col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
-              <div class="quantity_inner col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <div class="cover-cart col-4 col-sm-2 col-md-2 col-lg-2 col-xl-2"> </div>
+
+               <div class="test col-7 col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+
+                <div class="product col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+
+                <div class="quantity_inner col-12 col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
                   <button class="bt-minus"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
                   <input type="number" value="1"  class="quantity" >
                   <button class="bt-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
                 </div>
-              <div class="total-price col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></div>
-              <div  class="fas fa-trash-alt col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+
+                <div class="total-price col-12 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"></div>
+
+               </div>
+
+
+              <div  class="fas fa-trash-alt col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style="display: flex;justify-content: flex-end"></div>
 
             </div>
           </div>
 
           <div class="if-empty-basket hide"></div>
           <div class="text-total view-box" style="display: none" >
-            <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></span>
-            <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="display: flex;justify-content: center">Total:</span>
-            <span class="total-total col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" >1</span> </div>
-            <span class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></span>
+            <span class=" col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></span>
+            <span class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="display: flex;justify-content: center">Total:</span>
+            <span class="total-total col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" >1</span> </div>
+            <span class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></span>
         </div>
 
         <div class="view-box-cart top-border">
-          <button class="cart-text2">
-            Continue shopping
-          </button>
+          <button class="modal-close cart-text2" data-modal="#sign-id"> Continue shopping</button>
           <button class="cart-text3">
             Go to Checkout
           </button>
@@ -71,7 +83,7 @@
 
       </div>
     </div>
-    <div  class="header-part-one header-content">
+    <div  class="header-part-one header-content  ">
 
       <div  class="header-left-part-one header-item">
         <p>Chat with us</p>
@@ -88,34 +100,49 @@
 
 
 
-    <div class="header-part-two header-content">
-      <div class="header-item">
-        <a href="index.html"><img src="img/fresh.png"  width="177" height="18" alt=".."></a>
+    <div class="header-part-two  header-content ">
+
+
+      <div class="icon-box hide col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2"> <div class="fas fa-bars "></div></div>
+
+      <div class="header-item cover2 col-9 col-sm-9 col-md-4 col-lg-4 col-xl-4">
+        <a href="index.html"><img src="img/fresh.png"   alt=".."></a>
       </div>
 
-      <div class="header-item">
-        <div class="header-search">
 
-          <div class="category-box">
-            <p>All categories</p>
-            <span class="fas fa-chevron-down"></span>
-          </div>
-          <form>
-            <input class="search-input" type="search"  name="name" placeholder="Search Products,categories..." >
+        <div class="header-search  col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4"  >
+
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 header-search-text view-box" >All categories  <div class="fas fa-chevron-down " style="display:flex;align-items: center"></div> </div>
+
+          <form class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 view-box" style="align-items: center; ">
+            <input class="search-input col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" type="search"  name="name" placeholder="Search Products,categories..." >
           </form>
-
-          <img class="search-img" src="img/search.png" width=15 height="15" alt="..">
+          <div class="fas fa-search  col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style="display:flex;justify-content: flex-end"></div>
 
         </div>
-      </div>
 
-      <div class="header-item " id="fix">
+
+
+      <div class="header-item col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style="justify-content: flex-end" >
+
         <div class="icon-box"><img src="img/user.png"  width="24" height="24" alt=".."></div>
 
         <div class="icon-box view-box basket-relative modal-show" data-modal="#sign-id">
           <div class="hide basket" ></div>
           <img src="img/basket.png"  width="24" height="24" alt="..">
         </div>
+
+      </div>
+
+
+      <div class="header-mobile   col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"  >
+
+        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 header-search-text view-box" >All categories  <div class="fas fa-chevron-down " style="display:flex;align-items: center"></div> </div>
+
+        <form class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 view-box" style="align-items: center; ">
+          <input class="search-input col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" type="search"  name="name" placeholder="Search Products,categories..." >
+        </form>
+        <div class="fas fa-search  col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" ></div>
 
       </div>
 
@@ -129,45 +156,40 @@
   <div class="container">
     <div class="menu-content">
 
-      <div class="menu-box">
-        <a href="#"><p>Bakery</p></a>
-        <span class="fas fa-chevron-down"></span>
+      <div class="menu-box  view-box" style="align-items: center;justify-content: space-between">
+        <a href="#"><div>Bakery <div class="fas fa-chevron-down"></div></div></a>
+        <div class="navigation" >  <div class="fas fa-times " ></div></div>
+
       </div>
 
       <div class="menu-box fruitVegetables">
-        <p>Fruit and vegetables</p>
-        <span class="fas fa-chevron-down"></span>
+        <div>Fruit and vegetables <div class="fas fa-chevron-down"></div></div>
       </div>
 
-      <div class="menu-box">
-        <a href="#"><p >Meat and fish</p></a>
-        <span class="fas fa-chevron-down"></span>
+      <div class="menu-box  ">
+        <a href="#"><div>Meat and fish  <div class="fas fa-chevron-down"></div></div></a>
       </div>
 
-      <div class="menu-box">
-        <a href="#"><p >Drinks</p></a>
-        <span class="fas fa-chevron-down"></span>
+      <div class="menu-box  ">
+        <a href="#"><div>Drinks  <div class="fas fa-chevron-down"></div></div></a>
       </div>
 
-      <div class="menu-box">
-        <a href="#"><p >Kitchen</p></a>
-        <span class="fas fa-chevron-down"></span>
+      <div class="menu-box ">
+        <a href="#"><div>Kitchen   <div class="fas fa-chevron-down"></div></div></a>
       </div>
 
-      <div class="menu-box">
-        <a href="#"><p >Special nutrition</p></a>
-        <span class="fas fa-chevron-down"></span>
+      <div class="menu-box  ">
+        <a href="#"><div>Special nutrition  <div class="fas fa-chevron-down"></div></div></a>
       </div>
 
-      <div class="menu-box">
-        <a href="#"><p >Baby</p></a>
-        <span class="fas fa-chevron-down"></span>
+      <div class="menu-box ">
+        <a href="#"><div>Baby <div class="fas fa-chevron-down"></div></div></a>
       </div>
 
-      <div class="menu-box">
-        <a href="#"><p >Pharmacy</p></a>
-        <span class="fas fa-chevron-down"></span>
+      <div class="menu-box ">
+        <a href="#"><div>Pharmacy <div class="fas fa-chevron-down"></div> </div></a>
       </div>
+
     </div>
   </div>
 </section>
@@ -175,11 +197,11 @@
 <section>
   <div class="container">
     <div class="breadcrumbs">
-      <p class="breadcrumbs-text">
+      <div class="breadcrumbs-text">
         <span class="gray">Homepage &nbsp/</span>
         <span class="fruitVegetables">&nbsp Fruits and vegetables &nbsp</span>
         <span class="hide">/&nbsp Carrots from Tommisy Farm</span>
-      </p>
+      </div>
     </div>
   </div>
 </section>
@@ -187,13 +209,16 @@
 <section class="vegetable">
   <div class="container">
     <div class="fruit-vegetable-contain">
-      <p class="fruit-vegetable-text">Fruit and vegetables</p>
-        <div class=" list-group view-box content">
+      <div class="fruit-vegetable-text">Fruit and vegetables</div>
+        <div class=" list ">
 
-          <button class="btn  filter"><span class="fas fa-filter"></span><span > &nbsp Filters</span></button>
-          <button class="btn btn-active" id="grid-view" ><span class="fas fa-border-all"></span> <span> &nbsp Grid view</span></button>
-          <button class="btn" id="list-view" ><span class="fas fa-bars"></span> <span>  &nbsp List view</span></button>
-            <div > <span class="total-products ">18</span> Products</div>
+          <button class="button btn-active" id="grid-view" ><span class="fas fa-border-all"></span> <span class="buttons_"> &nbsp Grid view</span></button>
+          <button class="button" id="list-view" ><span class="fas fa-list-ul"></span> <span class="buttons_">  &nbsp List view</span></button>
+            <div class="total-products-xs view-box " style="align-items: center">
+              <div class="total-products ">18</div>
+              <div>Products</div>
+            </div>
+          <button class="button  filter"><span class="fas  fa-filter"></span><span class="buttons_" > &nbsp Filters</span></button>
 
       </div>
     </div>
@@ -205,7 +230,7 @@
     <div class=" view-content ">
 
       <div class="description-content " style="display:none">
-        <div class="description col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="description col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 
           <div class="cover">
             <img class="description-img" src="img/carrot1.png"  alt="...">
@@ -221,7 +246,7 @@
 
         </div>
 
-        <div class="carrot-box col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="carrot-box col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 
           <div class="carrot-text">Carrots from Tomissy Farm</div>
 
@@ -383,7 +408,7 @@
 
       </div>
 
-       <div class=" side-bar col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+       <div class=" side-bar  col-7 col-sm-3 col-md-3 col-lg-3 col-xl-3 hide">
 
 <!--         <div class="categories">-->
 <!--           <p class="categories-text">Categories</p>-->
@@ -489,37 +514,37 @@
           </form>
         </div>
 
-         <div  >
+         <div class="price">
 
            <p class="categories-text ">Price</p>
 
-           <div >
-             <input  id="min-range" type="range"   min="0" max="1000" step="1" value="0" >
-             <input  id="max-range" type="range"   min="0" max="1000" step="1" value="1000" >
+           <div  >
+             <input class="col-11 col-sm-2 col-md-2 col-lg-2 col-xl-2"  id="min-range" type="range"   min="0" max="1000" step="1" value="0" >
+             <input class="col-11 col-sm-2 col-md-2 col-lg-2 col-xl-2"  id="max-range" type="range"   min="0" max="1000" step="1" value="1000" >
            </div>
 
            <div class="view-box   min-max-box " style="flex-wrap: wrap">
 
-             <div class="view-box col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-               <div class="text-min-max col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">Min</div>
-               <div class="text-min-max col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">Max</div>
+             <div class="view-box col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <div class="text-min-max col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">Min</div>
+               <div class="text-min-max col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">Max</div>
              </div>
 
-             <div class="view-box col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-               <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                 <input class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="min-field" type="number" value="0"  oninput="validity.valid||(value='')" >
+             <div class="view-box col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <div class="col-5 col-sm-5 col-md-5 col-lg-4 col-xl-4">
+                 <input class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="min-field" type="number" value="0"  oninput="validity.valid||(value='')" >
                </div>
 
-               <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 view-box content gray" style="justify-content: center">-</div>
+               <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 view-box content gray" style="justify-content: center">-</div>
 
-               <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                 <input class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="max-field" type="number" value="1000"  oninput="validity.valid||(value='')" >
+               <div class="col-5 col-sm-5 col-md-5 col-lg-4 col-xl-4">
+                 <input class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" id="max-field" type="number" value="1000"  oninput="validity.valid||(value='')" >
                </div>
              </div>
 
            </div>
 
-           <div>
+           <div style="display: flex;flex-wrap: nowrap;align-items: center;margin-top: 20px">
              <button class="apply">Apply</button>
              <button class="reset">Reset</button>
            </div>
@@ -528,19 +553,19 @@
 
        </div>
 
-            <div class="columns">
+            <div class="columns col-12 col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 ">
 
-              <div class="column first-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
-                <div class=" view-card">
+                <div class="view-card">
 
-                  <div class="view-box card box">
+                  <div class=" card-card ">
 
                     <div class="cover equal-part ">
                       <img class="carrot"src="img/carrot1.png"   alt="...">
                     </div>
 
-                    <div class="equal-part">
+                    <div class="equal-part ">
 
                       <div>
 
@@ -548,38 +573,38 @@
                         <div class="view-text2 ">Space for a small product description </div>
 
                         <div class="stars " >
-                          <span class="star active fas fa-star"></span>
-                          <span class="star active fas fa-star"></span>
-                          <span class="star active fas fa-star"></span>
-                          <span class="star  far fa-star"></span>
-                          <span class="star  far fa-star "></span>
+                          <span class="star active fas fa-star "></span>
+                          <span class="star active fas fa-star "></span>
+                          <span class="star active fas fa-star "></span>
+                          <span class="star  far fa-star  "></span>
+                          <span class="star  far fa-star  "></span>
                         </div>
 
                       </div>
 
-                     <div class="hidden hide">
+                     <div class="hidden hide xs">
 
                        <ul class="view-text1">
-                         <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                         <li class="view-box" style="flex-wrap: wrap" ><span class=" col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class=" col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                          </li>
 
-                         <li class="view-box">
-                           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                         <li class="view-box" style="flex-wrap: wrap">
+                           <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                           <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                          </li>
 
                          <li class="view-box">
-                           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                           <div class=" col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                           <div class=" col- 6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                          </li>
 
                          <li class="view-box">
-                           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                           <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                           <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                          </li>
 
                        </ul>
@@ -590,32 +615,32 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div>
-                          <div class="categories-text search-price">1.99 USD</div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">1.99&nbsp&#36</div>
                           <div class="view-text2"><del>2.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4  modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                        <div>
 
-                         <div class="button-box product-detail carrot" >
-                           <p>Product Detail</p>
-                           <span class="fas fa-chevron-right"></span>
+                         <div class="button-box product-detail carrot">Product Detail
+                           <div class="fas fa-chevron-right"></div>
                          </div>
 
-                         <div class="button-box wish-list">
-                           <span class="far fa-heart"></span>
-                           <p >Add to wish list</p>
-                         </div>
+
+                           <div class="button-box wish-list unselectable">
+                             <div class="far fa-heart"></div>
+                             <span class="xs">Add to wish list</span>
+                           </div>
 
                        </div>
 
@@ -629,11 +654,11 @@
 
              </div>
 
-              <div class="column first-page col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class=" card-card">
 
                     <div class="equal-part cover">
                       <img class="potato" src="img/potato.png"  alt="...">
@@ -656,29 +681,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class=" col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -689,31 +714,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">0.99 USD</div>
-                          <div class="view-text2 "><del>1.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">0.99&nbsp&#36</div>
+                          <div class="view-text2"><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot ">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -728,11 +753,11 @@
 
               </div>
 
-              <div class="column first-page col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class=" card-card">
 
                     <div class="equal-part cover">
                       <img class="pumpkin" src="img/pumpkin.png"   alt="...">
@@ -755,29 +780,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box"style="flex-wrap: wrap" ><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -788,31 +813,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">2.99 USD</div>
-                          <div class="view-text2 "><del>3.49</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">2.99&nbsp&#36</div>
+                          <div class="view-text2"><del>3.49</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -828,11 +853,11 @@
               </div>
 
 
-              <div class="column first-page col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                  <div class=" view-card">
 
-                   <div class="view-box card box">
+                   <div class=" card-card">
 
                      <div class=" cover equal-part">
                        <img class="cucumber" src="img/cucumber.jpg"   alt="...">
@@ -855,29 +880,29 @@
 
                        </div>
 
-                       <div class="hidden hide">
+                       <div class="hidden hide xs">
 
                          <ul class="view-text1">
-                           <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                           <li class="view-box" style="flex-wrap: wrap" ><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                             <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                <span class="color-text ">New</span>
                                <span>(Extra fresh)</span>
                              </div>
                            </li>
 
-                           <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                           <li class="view-box" style="flex-wrap: wrap">
+                             <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                             <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                            </li>
 
                            <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                             <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                             <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                            </li>
 
                            <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                             <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                             <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                            </li>
 
                          </ul>
@@ -888,31 +913,31 @@
 
                      <div class="equal-part">
 
-                       <div class="view-box position">
-                         <div >
-                           <div class="categories-text search-price">0.99 USD</div>
-                           <div class="view-text2 "><del>1.99</del></div>
+                       <div class="view-box position " style="flex-wrap: wrap">
+                         <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                           <div class="categories-text search-price">0.99&nbsp&#36</div>
+                           <div class="view-text2"><del>1.99</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                         <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                        </div>
 
-                       <div class="hidden hide">
+                       <div class="hidden hide xs">
 
-                         <div>
+                         <div class="delivery-text">
                            <div class="view-text2">Free shipping</div>
                            <div class="view-text2 ">Delivery in 1 day</div>
                          </div>
 
                          <div>
 
-                           <div class="button-box product-detail carrot">
-                             <p>Product Detail</p>
-                             <span class="fas fa-chevron-right"></span>
+                           <div class="button-box product-detail carrot">Product Detail
+                             <div class="fas fa-chevron-right"></div>
                            </div>
 
-                           <div class="button-box wish-list">
-                             <span class="far fa-heart"></span>
-                             <p >Add to wish list</p>
+
+                           <div class="button-box wish-list unselectable">
+                             <div class="far fa-heart"></div>
+                             <span class="xs">Add to wish list</span>
                            </div>
 
                          </div>
@@ -927,11 +952,11 @@
 
                </div>
 
-              <div class="column first-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="equal-part cover ">
                       <img class="onion" src="img/onion.png"  alt="...">
@@ -954,29 +979,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -987,31 +1012,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">0.99 USD</div>
-                          <div class="view-text2 "><del>1.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">0.99&nbsp&#36</div>
+                          <div class="view-text2"><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -1026,11 +1051,11 @@
 
               </div>
 
-              <div class="column first-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="equal-part cover">
                       <img class="beet" src="img/beet.png"  alt="...">
@@ -1053,29 +1078,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                          <li class="view-box" >
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                          <li class="view-box" >
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -1086,31 +1111,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">2.99 USD</div>
-                          <div class="view-text2 "><del>3.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">2.99&nbsp&#36</div>
+                          <div class="view-text2"><del>3.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -1126,11 +1151,11 @@
               </div>
 
 
-              <div class="column first-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                  <div class=" view-card">
 
-                   <div class="view-box card box">
+                   <div class="card-card">
 
                      <div class=" cover equal-part ">
                        <img class="pepper" src="img/pepper.jpg"   alt="...">
@@ -1153,29 +1178,29 @@
 
                        </div>
 
-                       <div class="hidden hide">
+                       <div class="hidden hide xs">
 
                          <ul class="view-text1">
-                           <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                           <li class="view-box" style="flex-wrap: wrap" ><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                             <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                <span class="color-text ">New</span>
                                <span>(Extra fresh)</span>
                              </div>
                            </li>
 
-                           <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                           <li class="view-box" style="flex-wrap: wrap">
+                             <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                             <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                            </li>
 
                            <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                             <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                             <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                            </li>
 
                            <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                             <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                             <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                            </li>
 
                          </ul>
@@ -1186,31 +1211,31 @@
 
                      <div class="equal-part">
 
-                       <div class="view-box position">
-                         <div >
-                           <div class="categories-text search-price">3.99 USD</div>
-                           <div class="view-text2 "><del>4.99</del></div>
+                       <div class="view-box position " style="flex-wrap: wrap">
+                         <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                           <div class="categories-text search-price">3.99&nbsp&#36</div>
+                           <div class="view-text2"><del>4.99</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                         <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                        </div>
 
-                       <div class="hidden hide">
+                       <div class="hidden hide xs">
 
-                         <div>
+                         <div class="delivery-text">
                            <div class="view-text2">Free shipping</div>
                            <div class="view-text2 ">Delivery in 1 day</div>
                          </div>
 
                          <div>
 
-                           <div class="button-box product-detail carrot">
-                             <p>Product Detail</p>
-                             <span class="fas fa-chevron-right"></span>
+                           <div class="button-box product-detail carrot">Product Detail
+                             <div class="fas fa-chevron-right"></div>
                            </div>
 
-                           <div class="button-box wish-list">
-                             <span class="far fa-heart"></span>
-                             <p >Add to wish list</p>
+
+                           <div class="button-box wish-list unselectable">
+                             <div class="far fa-heart"></div>
+                             <span class="xs">Add to wish list</span>
                            </div>
 
                          </div>
@@ -1225,11 +1250,11 @@
 
                </div>
 
-              <div class="column first-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                  <div class=" view-card">
 
-                   <div class="view-box card box">
+                   <div class="card-card">
 
                      <div class=" cover equal-part ">
                        <img class="corn" src="img/corn.jpg"   alt="...">
@@ -1252,29 +1277,29 @@
 
                        </div>
 
-                       <div class="hidden hide">
+                       <div class="hidden hide xs">
 
                          <ul class="view-text1">
-                           <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                           <li class="view-box" style="flex-wrap: wrap" ><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                             <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                <span class="color-text ">New</span>
                                <span>(Extra fresh)</span>
                              </div>
                            </li>
 
-                           <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                           <li class="view-box" style="flex-wrap: wrap">
+                             <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                             <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                            </li>
 
                            <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                             <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                             <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                            </li>
 
                            <li class="view-box">
-                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                             <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                             <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                            </li>
 
                          </ul>
@@ -1285,31 +1310,31 @@
 
                      <div class="equal-part">
 
-                       <div class="view-box position">
-                         <div >
-                           <div class="categories-text search-price">0.99 USD</div>
-                           <div class="view-text2 "><del>1.49</del></div>
+                       <div class="view-box position " style="flex-wrap: wrap">
+                         <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                           <div class="categories-text search-price">0.99&nbsp&#36</div>
+                           <div class="view-text2"><del>1.49</del></div>
                          </div>
-                         <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                         <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                        </div>
 
-                       <div class="hidden hide">
+                       <div class="hidden hide xs">
 
-                         <div>
+                         <div class="delivery-text">
                            <div class="view-text2">Free shipping</div>
                            <div class="view-text2 ">Delivery in 1 day</div>
                          </div>
 
                          <div>
 
-                           <div class="button-box product-detail carrot">
-                             <p>Product Detail</p>
-                             <span class="fas fa-chevron-right"></span>
+                           <div class="button-box product-detail carrot">Product Detail
+                             <div class="fas fa-chevron-right"></div>
                            </div>
 
-                           <div class="button-box wish-list">
-                             <span class="far fa-heart"></span>
-                             <p >Add to wish list</p>
+
+                           <div class="button-box wish-list unselectable">
+                             <div class="far fa-heart"></div>
+                             <span class="xs">Add to wish list</span>
                            </div>
 
                          </div>
@@ -1324,12 +1349,12 @@
 
                </div>
 
-              <div class="column first-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column first-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="equal-part cover ">
                       <img class="tomato" src="img/tomato.png"  alt="...">
@@ -1352,29 +1377,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box"  style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -1385,31 +1410,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">0.99 USD</div>
-                          <div class="view-text2 "><del>1.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">0.99&nbsp&#36</div>
+                          <div class="view-text2"><del>1.99</del></div>
                         </div>
-                        <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -1426,11 +1451,11 @@
 
 <!--------------------------------------------------------------------------------------------->
 
-              <div class="column second-page col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="cover equal-part ">
                       <img class="apple"src="img/apples.jpg"   alt="...">
@@ -1453,29 +1478,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -1486,31 +1511,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div>
-                          <div class="categories-text search-price">2.99 USD</div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">2.99&nbsp&#36</div>
                           <div class="view-text2"><del>4.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -1525,11 +1550,11 @@
 
               </div>
 
-              <div class="column second-page col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="equal-part cover ">
                       <img class="banana" src="img/banana.jpg"  alt="...">
@@ -1552,29 +1577,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -1585,34 +1610,32 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">1.99 USD</div>
-                          <div class="view-text2 "><del>2.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">1.99&nbsp&#36</div>
+                          <div class="view-text2"><del>2.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
-                          </div>
 
-                        </div>
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
+                          </div>
 
                         </div>
 
@@ -1620,15 +1643,17 @@
 
                     </div>
 
+                    </div>
+
                   </div>
 
                 </div>
 
-              <div class="column second-page col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="equal-part cover ">
                       <img class="pear" src="img/pear.jpg"   alt="...">
@@ -1651,29 +1676,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -1684,31 +1709,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">0.99 USD</div>
-                          <div class="view-text2 "><del>1.49</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">0.99&nbsp&#36</div>
+                          <div class="view-text2"><del>1.49</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -1724,11 +1749,11 @@
               </div>
 
 
-              <div class="column second-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class=" cover equal-part ">
                       <img class="plum" src="img/plum.jpg"   alt="...">
@@ -1751,29 +1776,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap:wrap "><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap:wrap ">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -1784,31 +1809,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">1.49 USD</div>
-                          <div class="view-text2 "><del>1.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">1.49&nbsp&#36</div>
+                          <div class="view-text2"><del>1.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -1823,11 +1848,11 @@
 
               </div>
 
-              <div class="column second-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="equal-part cover ">
                       <img class="peach" src="img/peach.jpg"  alt="...">
@@ -1850,29 +1875,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -1883,31 +1908,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">2.99 USD</div>
-                          <div class="view-text2 "><del>3.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">2.99&nbsp&#36</div>
+                          <div class="view-text2"><del>3.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -1922,11 +1947,11 @@
 
               </div>
 
-              <div class="column second-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="equal-part cover ">
                       <img class="kiwi" src="img/kiwi.jpg"  alt="...">
@@ -1949,29 +1974,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -1982,31 +2007,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">0.99 USD</div>
-                          <div class="view-text2 "><del>1.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">0.99&nbsp&#36</div>
+                          <div class="view-text2"><del>1.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -2022,11 +2047,11 @@
               </div>
 
 
-              <div class="column second-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box ">
+                  <div class="card-card">
 
                     <div class=" cover equal-part ">
                       <img class="avocado" src="img/avocado.jpg"   alt="...">
@@ -2049,29 +2074,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -2082,31 +2107,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">2.99 USD</div>
-                          <div class="view-text2 "><del>3.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">2.99&nbsp&#36</div>
+                          <div class="view-text2"><del>3.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -2121,11 +2146,11 @@
 
               </div>
 
-              <div class="column second-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class=" cover equal-part ">
                       <img class="watermelon" src="img/watermelon.jpg"   alt="...">
@@ -2148,29 +2173,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -2181,31 +2206,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">1.99 USD</div>
-                          <div class="view-text2 "><del>2.49</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">1.99&nbsp&#36</div>
+                          <div class="view-text2"><del>2.49</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -2220,12 +2245,12 @@
 
               </div>
 
-              <div class="column second-page  col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+              <div class="column second-page col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
 
 
                 <div class=" view-card">
 
-                  <div class="view-box card box">
+                  <div class="card-card">
 
                     <div class="equal-part cover ">
                       <img class="tangerine" src="img/tangerine.jpg"  alt="...">
@@ -2248,29 +2273,29 @@
 
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
                         <ul class="view-text1">
-                          <li class="view-box" ><span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                          <li class="view-box" style="flex-wrap: wrap"><span class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Fresheness</span>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                               <span class="color-text ">New</span>
                               <span>(Extra fresh)</span>
                             </div>
                           </li>
 
-                          <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
+                          <li class="view-box" style="flex-wrap: wrap">
+                            <div class="col-12 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Farm</div>
+                            <div class="col-12 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Grocery Tarm Fields</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Delivery</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">Europe</div>
                           </li>
 
                           <li class="view-box">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
+                            <div class="col-6 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">Stoc</div>
+                            <div class="col-6 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 color-text">320</div>
                           </li>
 
                         </ul>
@@ -2281,31 +2306,31 @@
 
                     <div class="equal-part">
 
-                      <div class="view-box position">
-                        <div >
-                          <div class="categories-text search-price">2.99 USD</div>
-                          <div class="view-text2 "><del>3.99</del></div>
+                      <div class="view-box position " style="flex-wrap: wrap">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                          <div class="categories-text search-price">2.99&nbsp&#36</div>
+                          <div class="view-text2"><del>3.99</del></div>
                         </div>
-                          <figcaption class="card-banner-text4 hide-two modal-show unselectable" data-modal="#sign-id">Buy now</figcaption>
+                        <div class="card-banner-text4 hide-two modal-show unselectable col-12 col-sm-7 col-md-6 col-lg-6 col-xl-5 " data-modal="#sign-id">Buy now</div>
                       </div>
 
-                      <div class="hidden hide">
+                      <div class="hidden hide xs">
 
-                        <div>
+                        <div class="delivery-text">
                           <div class="view-text2">Free shipping</div>
                           <div class="view-text2 ">Delivery in 1 day</div>
                         </div>
 
                         <div>
 
-                          <div class="button-box product-detail carrot">
-                            <p>Product Detail</p>
-                            <span class="fas fa-chevron-right"></span>
+                          <div class="button-box product-detail carrot">Product Detail
+                            <div class="fas fa-chevron-right"></div>
                           </div>
 
-                          <div class="button-box wish-list">
-                            <span class="far fa-heart"></span>
-                            <p >Add to wish list</p>
+
+                          <div class="button-box wish-list unselectable">
+                            <div class="far fa-heart"></div>
+                            <span class="xs">Add to wish list</span>
                           </div>
 
                         </div>
@@ -2404,6 +2429,7 @@
     </div>
   </div>
 </footer>
+<div class="arrow-top "><span class="fas fa-arrow-up"></span></div>
 <div>
 </div>
 </body>

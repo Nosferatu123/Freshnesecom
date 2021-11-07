@@ -1,124 +1,289 @@
+//кнопка вверх
+let arrowTop=document.querySelector(".arrow-top");
+arrowTop.onclick = function() {
+    window.scrollTo(pageXOffset, 0);
+    // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
+};
+
+window.addEventListener('scroll', function() {
+    arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+});
+let filterHeight=document.querySelector(".header").offsetHeight+document.querySelector(".breadcrumbs").offsetHeight;
+window.addEventListener('scroll', function() {
+
+    if (pageYOffset>=filterHeight && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
+        document.querySelector(".vegetable").style.position="fixed";
+        document.querySelector(".vegetable").style.top="0";
+        document.querySelector(".vegetable").style.right="0";
+        document.querySelector(".vegetable").style.left="0";
+        document.querySelector(".vegetable").style.backgroundColor="#FFFFFF";
+        document.querySelector(".vegetable").style.borderBottom="1px solid darkgray";
+
+    }
+    if (pageYOffset<=filterHeight && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
+        document.querySelector(".vegetable").style.position="static";
+        document.querySelector(".vegetable").style.borderBottom="";
+    }
+});
+//
+if( (window.innerWidth || document.documentElement.clientWidth) <=576) {
+    document.querySelector(".menu-content").classList.add("hide");
+    document.querySelectorAll(".menu-box").forEach(function(element){
+        element.classList.add("col-9");
+    })
+    document.querySelector(".side-bar").classList.add("hide");
+    document.querySelector(".fa-bars").parentElement.classList.remove("hide");
+}
+else {
+    // document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
+    document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
+    document.querySelector(".menu-content").style.position="static";
+    document.querySelector(".side-bar").classList.remove("hide","animate__animated","animate__fadeInLeft","animate__fadeOutLeft");
+    document.querySelectorAll(".menu-box").forEach(function(element){
+        element.classList.remove("col-9");
+    })
+    document.querySelector(".fa-bars").parentElement.classList.add("hide");
+
+}
+
+window.addEventListener("resize", function() {
+    if (window.matchMedia("(min-width: 576px)").matches) {
+        // document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
+        document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
+        document.querySelector(".menu-content").style.position="static";
+        document.querySelector(".side-bar").classList.remove("hide","animate__animated","animate__fadeInLeft","animate__fadeOutLeft");
+        document.querySelectorAll(".menu-box").forEach(function(element){
+            element.classList.remove("col-9");
+        })
+        document.querySelector(".fa-bars").parentElement.classList.add("hide");
+        if (document.querySelector(".list").children[0].classList.contains("btn-active")){
+            document.querySelectorAll('.view-card').forEach(function (element) {
+                element.style.padding="16px";
+            });
+        }
+        if (document.querySelector(".list").children[1].classList.contains("btn-active")){
+            document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
+                element.style.height="280px";
+            });
+            document.querySelectorAll('.card-banner-text4').forEach(function(element){
+                element.classList.add("hide");
+            })
+        }
+        document.querySelector(".vegetable").style.position="";
+        document.querySelector(".vegetable").style.top="";
+        document.querySelector(".vegetable").style.right="";
+        document.querySelector(".vegetable").style.left="";
+        document.querySelector(".vegetable").style.borderBottom="";
+
+    } else {
+        if (document.querySelector(".list").children[0].classList.contains("btn-active")){
+            document.querySelectorAll('.view-card').forEach(function (element) {
+                    element.style.padding="8px";
+            });
+        }
+        if (document.querySelector(".list").children[1].classList.contains("btn-active")){
+            document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
+                element.style.height="140px";
+            });
+            document.querySelectorAll('.card-banner-text4').forEach(function(element){
+                element.classList.remove("hide");
+            })
+        }
+        document.querySelector(".menu-content").classList.add("hide");
+        document.querySelectorAll(".menu-box").forEach(function(element){
+            element.classList.add("col-9");
+        })
+        document.querySelector(".side-bar").classList.add("hide");
+        document.querySelector(".fa-bars").parentElement.classList.remove("hide");
+
+
+    }
+});
+//nav меню на маленьком экране
+document.querySelector(".fa-bars").onclick=function(){
+    document.querySelector(".menu-content").classList.remove("hide");
+    document.querySelector(".menu-content").classList.remove("animate__slideOutUp");
+    document.querySelector(".menu-content").classList.add("animate__animated","animate__slideInDown");
+    document.querySelector(".menu-content").style.position="fixed";
+    document.querySelector(".menu-content").style.top="0";
+    document.querySelector(".menu-content").style.left="0";
+    document.querySelector(".menu-content").style.zIndex="3";
+    // document.querySelector(".menu-content").style.height="100%";
+    // document.querySelector(".menu-content").style.background="#F9F9F9";
+    // document.querySelectorAll('.menu-box').forEach(function(element){
+    //     // element.style.background="#F9F9F9";
+    //     element.classList.add("animate__animated","animate__fadeInDown");
+    // })
+    document.querySelectorAll('.menu-box').forEach(function(element){
+            element.style.background="#F9F9F9";
+            element.style.border="1px solid #F9F9F9";
+        })
+}
+//закрытие nav меню
+document.querySelector(".navigation").children[0].onclick=function(){
+
+    document.querySelector(".menu-content").classList.remove("animate__slideInDown");
+    document.querySelector(".menu-content").classList.add("animate__animated","animate__slideOutUp");
+
+    setTimeout( del,1000);
+    function del(){
+        document.querySelector(".menu-content").classList.add("hide");
+    }
+}
 // скрытие сайд-бара
+
     let sideBar=document.querySelector(".side-bar");
     document.querySelector(".filter").onclick=function sideBarVisible(){
 
             if (sideBar.classList.contains("hide")){
                 sideBar.classList.remove("hide");
-                setTimeout(function(){
-                    sideBar.classList.remove("visually-hidden");
-                },20);
+                sideBar.classList.remove("animate__fadeOutLeft");
+                sideBar.classList.add("animate__animated","animate__fadeInLeft");
+
             } else {
-                sideBar.classList.add("visually-hidden");
+                sideBar.classList.remove("animate__fadeInLeft");
+                sideBar.classList.add("animate__animated","animate__fadeOutLeft");
+                setTimeout( del2,1000);
+                function del2(){
                     sideBar.classList.add("hide");
+                }
             }
+
     }
 
 
-let listView=document.querySelector('#list-view');
-let gridView=document.querySelector('#grid-view');
+
 //поставить лайк товару
 document.querySelectorAll('.wish-list').forEach(function(element){
-  element.children[0].addEventListener("click",function(element){
-    element.target.classList.toggle("far");
-      element.target.classList.toggle("fas");
+
+  element.addEventListener("click",function(element){
+
+      let heart=element.target;
+
+      if (heart.classList.contains("fa-heart")){
+          heart.classList.toggle("far");
+          heart.classList.toggle("fas");
+      }else if (heart.children[0]){
+          heart.children[0].classList.toggle("far");
+          heart.children[0].classList.toggle("fas");
+      } else if(heart.parentElement.children[0]){
+          heart.parentElement.children[0].classList.toggle("far");
+          heart.parentElement.children[0].classList.toggle("fas");
+      }
+
   })
 })
+
+let listView=document.querySelector('#list-view');
+let gridView=document.querySelector('#grid-view');
 
 // List View
     listView.onclick = function () {
 
-        document.querySelector('.fa-bars').style.color="#6A983C";
+        document.querySelector('.fa-list-ul').style.color="#6A983C";
         document.querySelector('.fa-border-all').style.color="#A9A9A9";
         listView.classList.add("btn-active");
         gridView.classList.remove("btn-active");
+
+        document.querySelectorAll('.card-card').forEach(function(element){
+
+            element.classList.add("box");
+            element.children[0].classList.add("col-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+            element.children[1].classList.add("col-5", "col-sm-5", "col-md-5", "col-lg-5","col-xl-5");
+            element.children[2].classList.add("col-3", "col-sm-3", "col-md-3", "col-lg-3","col-xl-3");
+        });
 
         document.querySelectorAll('.hidden').forEach(function (element) {
             element.classList.remove('hide');
         });
 
-        document.querySelectorAll('.card').forEach(function (element) {
-            element.classList.remove('box');
-        });
-
         document.querySelectorAll('.column').forEach(function(element){
-            element.classList.remove("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
-            element.classList.add("col-xs-12", "col-sm-12", "col-md-12", "col-lg-12","col-xl-12");
+            element.classList.remove("col-6", "col-sm-6", "col-md-6", "col-lg-4", "col-xl-4");
+            element.classList.add("col-12", "col-sm-12", "col-md-12", "col-lg-12","col-xl-12");
         });
 
         document.querySelector(".view-content").style.flexWrap="nowrap";
 
-        document.querySelectorAll('.card').forEach(function(element){
-            element.children[0].classList.add("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
-            element.children[1].classList.add("col-xs-5", "col-sm-5", "col-md-5", "col-lg-5","col-xl-5");
-            element.children[2].classList.add("col-xs-3", "col-sm-3", "col-md-3", "col-lg-3","col-xl-3");
-            // element.children[2].style.paddingLeft="20px";
-        });
 
         document.querySelectorAll('.product-detail').forEach(function(element){
-            element.classList.add("col-xs-11", "col-sm-11", "col-md-11", "col-lg-11","col-xl-11");
+            element.classList.add("col-11", "col-sm-11", "col-md-11", "col-lg-11","col-xl-11");
         });
         document.querySelectorAll('.wish-list').forEach(function(element){
-            element.classList.add("col-xs-11", "col-sm-11", "col-md-11", "col-lg-11","col-xl-11");
+            element.classList.add("col-11", "col-sm-11", "col-md-11", "col-lg-11","col-xl-11");
         });
 
 
-        document.querySelectorAll('.hide-two').forEach(function (element) {
-            element.classList.add('hide');
-        });
+        document.querySelectorAll('.card-banner-text4').forEach(function(element){
+            if( (window.innerWidth || document.documentElement.clientWidth) >576){
+                element.classList.add("hide");
+            }
+            element.classList.remove('col-12');
+            element.classList.add('col-11');
+        })
 
         document.querySelectorAll('.view-card').forEach(function (element) {
             element.style.padding="0";
-        });
-        document.querySelectorAll('.cover img').forEach(function (element) {
-            element.style.marginLeft="-8px";
+
         });
 
+
         document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
-            element.style.height="220px";
+            if( (window.innerWidth || document.documentElement.clientWidth) <=576){
+                element.style.height="140px";
+            } else {
+                element.style.height="280px";
+            }
+
             element.style.display="flex";
             element.style.flexDirection="column";
             element.style.justifyContent="center";
         });
+
+
 
     }
 
 // Grid View
     gridView.onclick = function () {
 
-        document.querySelector('.fa-bars').style.color="#A9A9A9";
+        document.querySelector('.fa-list-ul').style.color="#A9A9A9";
         document.querySelector('.fa-border-all').style.color="#6A983C";
         listView.classList.remove("btn-active");
         gridView.classList.add("btn-active");
 
         document.querySelectorAll('.column').forEach(function(element){
-            element.classList.remove("col-xs-12", "col-sm-12", "col-md-12", "col-lg-12","col-xl-12");
-            element.classList.add("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+            element.classList.remove("col-12", "col-sm-12", "col-md-12", "col-lg-12","col-xl-12");
+            element.classList.add("col-6", "col-sm-6", "col-md-6", "col-lg-4", "col-xl-4");
         });
 
         document.querySelectorAll('.hidden').forEach(function (element) {
             element.classList.add('hide');
         });
-        document.querySelectorAll('.card').forEach(function (element) {
-            element.classList.add('box');
+
+
+        document.querySelectorAll('.card-card').forEach(function(element){
+            element.classList.remove("box");
+            element.children[0].classList.remove("col-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
+            element.children[1].classList.remove("col-5", "col-sm-5", "col-md-5", "col-lg-5","col-xl-5");
+            element.children[2].classList.remove("col-3", "col-sm-3", "col-md-3", "col-lg-3","col-xl-3");
+            // element.children[2].style.paddingLeft="";
         });
 
-        document.querySelectorAll('.card').forEach(function(element){
-            element.children[0].classList.remove("col-xs-4", "col-sm-4", "col-md-4", "col-lg-4","col-xl-4");
-            element.children[1].classList.remove("col-xs-5", "col-sm-5", "col-md-5", "col-lg-5","col-xl-5");
-            element.children[2].classList.remove("col-xs-3", "col-sm-3", "col-md-3", "col-lg-3","col-xl-3");
-            element.children[2].style.paddingLeft="";
-        });
-
-        document.querySelectorAll('.hide-two').forEach(function (element) {
-            element.classList.remove('hide');
-        });
+        document.querySelectorAll('.card-banner-text4').forEach(function(element){
+            if( (window.innerWidth || document.documentElement.clientWidth) >576){
+                element.classList.remove("hide");
+            }
+            element.classList.remove('col-11');
+            element.classList.add('col-12');
+        })
 
         document.querySelectorAll('.view-card').forEach(function (element) {
-            element.style.padding="16px";
-        });
+            if( (window.innerWidth || document.documentElement.clientWidth) <=576){
+                element.style.padding="8px";
+            } else {
+                element.style.padding="16px";
+            }
 
-        document.querySelectorAll('.cover img').forEach(function (element) {
-            element.style.marginLeft="";
         });
 
         document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
