@@ -1,3 +1,5 @@
+
+
 //кнопка вверх
 let arrowTop=document.querySelector(".arrow-top");
 arrowTop.onclick = function() {
@@ -8,41 +10,96 @@ arrowTop.onclick = function() {
 window.addEventListener('scroll', function() {
     arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
 });
-let filterHeight=document.querySelector(".header").offsetHeight+document.querySelector(".breadcrumbs").offsetHeight;
-window.addEventListener('scroll', function() {
 
-    if (pageYOffset>=filterHeight && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
-        document.querySelector(".vegetable").style.position="fixed";
-        document.querySelector(".vegetable").style.top="0";
-        document.querySelector(".vegetable").style.right="0";
-        document.querySelector(".vegetable").style.left="0";
-        document.querySelector(".vegetable").style.backgroundColor="#FFFFFF";
-        document.querySelector(".vegetable").style.borderBottom="1px solid darkgray";
+// let filterHeight=document.querySelector(".header").offsetHeight+document.querySelector(".breadcrumbs").offsetHeight;
+let filterHeight=182;
+if (document.querySelector(".side-bar")!==null){
+    window.addEventListener('scroll', function() {
 
+        if (pageYOffset>=130 && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
+
+            document.querySelector(".side-bar").style.top="0";
+            // document.querySelector(".side-bar").style.position="fixed";
+
+
+        }
+        if (pageYOffset<130 && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
+            let scroll=130-pageYOffset;
+            document.querySelector(".side-bar").style.top=scroll+"px";
+            // document.querySelector(".side-bar").style.position="fixed";
+
+        }
+
+        if (pageYOffset>=filterHeight && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
+
+            document.querySelector(".vegetable").style.position="fixed";
+            document.querySelector(".vegetable").style.top="0";
+            document.querySelector(".vegetable").style.right="0";
+            document.querySelector(".vegetable").style.left="0";
+            document.querySelector(".vegetable").style.backgroundColor="#FFFFFF";
+            document.querySelector(".vegetable").style.borderBottom="1px solid darkgray";
+            document.querySelector(".view-content").style.marginTop=document.querySelector(".vegetable").offsetHeight+"px";
+
+        }
+        if (pageYOffset<=filterHeight && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
+            document.querySelector(".vegetable").style.position="static";
+            document.querySelector(".vegetable").style.borderBottom="";
+            document.querySelector(".view-content").style.marginTop="";
+        }
+    });
+}
+
+//открытие footer навигации
+
+document.querySelectorAll(".accordion").forEach(function(element){
+    if( (window.innerWidth || document.documentElement.clientWidth) <=576){
+        element.onclick = function () {
+            var panel=element.nextElementSibling;
+
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                element.children[0].children[0].style.transform = 'rotate(0deg)';
+
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+               element.children[0].children[0].style.transform = 'rotate(180deg)';
+
+
+                // element.children[0].classList.remove("fa-chevron-down");
+                // element.children[0].classList.add("fa-chevron-up");
+            }
+
+        }
     }
-    if (pageYOffset<=filterHeight && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
-        document.querySelector(".vegetable").style.position="static";
-        document.querySelector(".vegetable").style.borderBottom="";
-    }
-});
+
+
+})
 //
 if( (window.innerWidth || document.documentElement.clientWidth) <=576) {
     document.querySelector(".menu-content").classList.add("hide");
     document.querySelectorAll(".menu-box").forEach(function(element){
         element.classList.add("col-9");
     })
-    document.querySelector(".side-bar").classList.add("hide");
+    if (document.querySelector(".side-bar")!==null){
+        document.querySelector(".side-bar").classList.add("hide");
+    }
     document.querySelector(".fa-bars").parentElement.classList.remove("hide");
 }
 else {
     // document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
     document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
     document.querySelector(".menu-content").style.position="static";
-    document.querySelector(".side-bar").classList.remove("hide","animate__animated","animate__fadeInLeft","animate__fadeOutLeft");
+    if ( document.querySelector(".side-bar")!=null){
+        document.querySelector(".side-bar").classList.remove("hide","animate__animated","animate__fadeInLeft","animate__fadeOutLeft");
+    }
     document.querySelectorAll(".menu-box").forEach(function(element){
         element.classList.remove("col-9");
     })
     document.querySelector(".fa-bars").parentElement.classList.add("hide");
+    if (document.querySelector(".view-content")!=null){
+        document.querySelector(".view-content").style.marginTop="";
+    }
+
 
 }
 
@@ -74,29 +131,55 @@ window.addEventListener("resize", function() {
         document.querySelector(".vegetable").style.right="";
         document.querySelector(".vegetable").style.left="";
         document.querySelector(".vegetable").style.borderBottom="";
+        document.querySelector(".view-content").style.marginTop="";
+
 
     } else {
-        if (document.querySelector(".list").children[0].classList.contains("btn-active")){
-            document.querySelectorAll('.view-card').forEach(function (element) {
-                    element.style.padding="8px";
-            });
-        }
-        if (document.querySelector(".list").children[1].classList.contains("btn-active")){
-            document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
-                element.style.height="140px";
-            });
-            document.querySelectorAll('.card-banner-text4').forEach(function(element){
-                element.classList.remove("hide");
-            })
+        if (document.querySelector(".list")!==null) {
+            if (document.querySelector(".list").children[0].classList.contains("btn-active")) {
+                document.querySelectorAll('.view-card').forEach(function (element) {
+                    element.style.padding = "8px";
+                });
+            }
+            if (document.querySelector(".list").children[1].classList.contains("btn-active")) {
+                document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
+                    element.style.height = "140px";
+                });
+                document.querySelectorAll('.card-banner-text4').forEach(function (element) {
+                    element.classList.remove("hide");
+                })
+            }
         }
         document.querySelector(".menu-content").classList.add("hide");
         document.querySelectorAll(".menu-box").forEach(function(element){
             element.classList.add("col-9");
         })
-        document.querySelector(".side-bar").classList.add("hide");
+
+        if (document.querySelector(".side-bar")!=null){
+            document.querySelector(".side-bar").classList.add("hide");
+        }
         document.querySelector(".fa-bars").parentElement.classList.remove("hide");
 
+        document.querySelectorAll(".accordion").forEach(function(element) {
 
+            element.onclick = function () {
+                var panel = element.nextElementSibling;
+
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                    element.children[0].children[0].style.transform = 'rotate(0deg)';
+
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    element.children[0].children[0].style.transform = 'rotate(180deg)';
+
+
+                    // element.children[0].classList.remove("fa-chevron-down");
+                    // element.children[0].classList.add("fa-chevron-up");
+                }
+
+            }
+        })
     }
 });
 //nav меню на маленьком экране
@@ -133,14 +216,24 @@ document.querySelector(".navigation").children[0].onclick=function(){
 // скрытие сайд-бара
 
     let sideBar=document.querySelector(".side-bar");
-    document.querySelector(".filter").onclick=function sideBarVisible(){
+    if (document.querySelector(".filter")!==null){
+        document.querySelector(".filter").onclick=function sideBarVisible(){
 
             if (sideBar.classList.contains("hide")){
+                if (pageYOffset>=130 && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
+                    document.querySelector(".side-bar").style.top="0";
+
+                }
+                if (pageYOffset<130 && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
+                    let scroll=130-pageYOffset;
+                    document.querySelector(".side-bar").style.top=scroll+"px";
+                }
                 sideBar.classList.remove("hide");
                 sideBar.classList.remove("animate__fadeOutLeft");
                 sideBar.classList.add("animate__animated","animate__fadeInLeft");
 
             } else {
+
                 sideBar.classList.remove("animate__fadeInLeft");
                 sideBar.classList.add("animate__animated","animate__fadeOutLeft");
                 setTimeout( del2,1000);
@@ -149,7 +242,9 @@ document.querySelector(".navigation").children[0].onclick=function(){
                 }
             }
 
+        }
     }
+
 
 
 
@@ -178,6 +273,7 @@ let listView=document.querySelector('#list-view');
 let gridView=document.querySelector('#grid-view');
 
 // List View
+if (listView!=null){
     listView.onclick = function () {
 
         document.querySelector('.fa-list-ul').style.color="#6A983C";
@@ -242,8 +338,11 @@ let gridView=document.querySelector('#grid-view');
 
 
     }
+}
+
 
 // Grid View
+if (gridView!=null){
     gridView.onclick = function () {
 
         document.querySelector('.fa-list-ul').style.color="#A9A9A9";
@@ -293,6 +392,8 @@ let gridView=document.querySelector('#grid-view');
             element.style.justifyContent="";
         });
     }
+}
+
 
 //переход к описанию товара
 let carrot=document.querySelectorAll('.carrot');
@@ -327,21 +428,21 @@ if (!addToCart==0){
 }
 
 
-//переход на страницу category
-let breadcrumbsText=document.querySelector(".breadcrumbs-text");
-document.querySelectorAll(".fruitVegetables").forEach(function(element){
-    element.onclick = function () {
-
-        document.querySelector('.description-content').style.display="none";
-        document.querySelector(".side-bar").classList.remove("hide", "visually-hidden");
-        document.querySelector(".vegetable").classList.remove("hide");
-        document.querySelector(".columns").style.display="";
-
-        breadcrumbsText.children[breadcrumbsText.children.length-1].classList.add("hide");
-        breadcrumbsText.children[breadcrumbsText.children.length-2].classList.remove("gray");
-
-    }
-})
+// переход на страницу category
+// let breadcrumbsText=document.querySelector(".breadcrumbs-text");
+// document.querySelectorAll(".fruitVegetables").forEach(function(element){
+//     element.onclick = function () {
+//
+//         document.querySelector('.description-content').style.display="none";
+//         document.querySelector(".side-bar").classList.remove("hide", "visually-hidden");
+//         document.querySelector(".vegetable").classList.remove("hide");
+//         document.querySelector(".columns").style.display="";
+//
+//         breadcrumbsText.children[breadcrumbsText.children.length-1].classList.add("hide");
+//         breadcrumbsText.children[breadcrumbsText.children.length-2].classList.remove("gray");
+//
+//     }
+// })
 
 
 //ползунки цены
@@ -373,7 +474,7 @@ function deleteSelected() {
 }
 
 // подтверждение выбранных фильтров
-if (!apply==0) {
+if (apply!=null) {
     apply.onclick = applyAll;
     function applyAll(){
 
@@ -410,11 +511,12 @@ if (!apply==0) {
             }
         }
         countChecked=0;
-
+        let counterTotalProducts=0;
         //скрываем карточки при выборе checkbox
         let notSelected=document.querySelectorAll(".column:not(.selected)");
         notSelected.forEach(function(element){
             element.style.display="none";
+
         })
 
 
@@ -438,13 +540,25 @@ if (!apply==0) {
             return price;
         })
         //находим цены подходящие под параметры
+        let counterPrice=0;
+        let counterPrice2=0;
         for (let i = 0; i < price.length; i++) {
             if (!(price[i] >= minField && price[i] <= maxField)) {
+                counterPrice2++;
                  card[i].classList.add("hide");
+
+            } else if (card[i].classList.contains("selected")){
+                counterPrice++;
+
             }
 
         }
+       console.log(counterPrice2);
+        if (counterPrice===0){
+            counterPrice=document.querySelectorAll(".column").length-counterPrice2;
+        }
 
+        document.querySelector(".total-products").innerHTML=counterPrice;
 
 
     }
@@ -464,7 +578,7 @@ function resetAll(){
 
     let uncheck=document.getElementsByTagName('input');
     for(let i=0;i<uncheck.length;i++) {
-        if(uncheck[i].type=='checkbox') {
+        if(uncheck[i].type==='checkbox') {
             uncheck[i].checked=false;
         }
     }
@@ -473,10 +587,11 @@ function resetAll(){
     document.querySelector("#max-field").value='1000';
     document.querySelector("#min-range").value = '0'
     document.querySelector("#max-range").value = '1000';
+    document.querySelector(".total-products").innerHTML=document.querySelectorAll(".column").length;
 }
 //ползуное минимальной цены
 let minRange=document.querySelector('#min-range');
-
+if (minRange!=null){
     minRange.oninput=function(){
         let minField=document.querySelector("#min-field");
         if (Number(minRange.value) < Number(maxRange.value)) {
@@ -486,10 +601,12 @@ let minRange=document.querySelector('#min-range');
             minRange.value = Number(maxRange.value) - 1;
         }
     }
+}
+
 
 //ползунок максимальной цены
 let maxRange=document.querySelector('#max-range');
-
+if (maxRange!=null){
     maxRange.oninput=function(){
         let maxField=document.querySelector("#max-field");
         if (Number(maxRange.value) > Number(minRange.value)) {
@@ -502,25 +619,29 @@ let maxRange=document.querySelector('#max-range');
         maxField.value=maxRange.value;
 
     }
+}
+
 
 //сохраняет последнее число в input при mouseout
 
+if (document.querySelector("#min-field")!=null) {
+    document.querySelector("#min-field").addEventListener("mouseout", function mouseOut(element) {
 
-document.querySelector("#min-field").addEventListener("mouseout",function mouseOut(element){
-
-            document.querySelector("#min-field").value=element.currentTarget.value;
-            if (element.currentTarget.value===""){
-                document.querySelector("#min-field").value=0;
-            }
-});
-
-
-document.querySelector("#max-field").addEventListener("mouseout",function mouseOut(element){
-    document.querySelector("#max-field").value=element.currentTarget.value;;
-    if (element.currentTarget.value===""){
-        document.querySelector("#max-field").value=1000;
-    }
-})
+        document.querySelector("#min-field").value = element.currentTarget.value;
+        if (element.currentTarget.value === "") {
+            document.querySelector("#min-field").value = 0;
+        }
+    });
+}
+if (document.querySelector("#max-field")!=null) {
+    document.querySelector("#max-field").addEventListener("mouseout", function mouseOut(element) {
+        document.querySelector("#max-field").value = element.currentTarget.value;
+        ;
+        if (element.currentTarget.value === "") {
+            document.querySelector("#max-field").value = 1000;
+        }
+    })
+}
 
 
 //-----------------выбор фильтров рейтинга------

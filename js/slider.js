@@ -1,6 +1,6 @@
 let index = 0;
 let amount = 0;//amount of blocks
-let currTransl = []
+let currTransl = [];
 let translationComplete = true;
 let transitionCompleted = function() {
     translationComplete = true;
