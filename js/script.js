@@ -108,30 +108,38 @@ window.addEventListener("resize", function() {
         // document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
         document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
         document.querySelector(".menu-content").style.position="static";
-        document.querySelector(".side-bar").classList.remove("hide","animate__animated","animate__fadeInLeft","animate__fadeOutLeft");
+
+        if (document.querySelector(".side-bar")!=null){
+            document.querySelector(".side-bar").classList.remove("hide","animate__animated","animate__fadeInLeft","animate__fadeOutLeft");
+        }
+
         document.querySelectorAll(".menu-box").forEach(function(element){
             element.classList.remove("col-9");
         })
         document.querySelector(".fa-bars").parentElement.classList.add("hide");
-        if (document.querySelector(".list").children[0].classList.contains("btn-active")){
-            document.querySelectorAll('.view-card').forEach(function (element) {
-                element.style.padding="16px";
-            });
+
+        if (document.querySelector(".list")!=null) {
+            if (document.querySelector(".list").children[0].classList.contains("btn-active")) {
+                document.querySelectorAll('.view-card').forEach(function (element) {
+                    element.style.padding = "16px";
+                });
+            }
+            if (document.querySelector(".list").children[1].classList.contains("btn-active")) {
+                document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
+                    element.style.height = "280px";
+                });
+                document.querySelectorAll('.card-banner-text4').forEach(function (element) {
+                    element.classList.add("hide");
+                })
+            }
+
+            document.querySelector(".vegetable").style.position = "";
+            document.querySelector(".vegetable").style.top = "";
+            document.querySelector(".vegetable").style.right = "";
+            document.querySelector(".vegetable").style.left = "";
+            document.querySelector(".vegetable").style.borderBottom = "";
+            document.querySelector(".view-content").style.marginTop = "";
         }
-        if (document.querySelector(".list").children[1].classList.contains("btn-active")){
-            document.querySelectorAll('.view-card .equal-part').forEach(function (element) {
-                element.style.height="280px";
-            });
-            document.querySelectorAll('.card-banner-text4').forEach(function(element){
-                element.classList.add("hide");
-            })
-        }
-        document.querySelector(".vegetable").style.position="";
-        document.querySelector(".vegetable").style.top="";
-        document.querySelector(".vegetable").style.right="";
-        document.querySelector(".vegetable").style.left="";
-        document.querySelector(".vegetable").style.borderBottom="";
-        document.querySelector(".view-content").style.marginTop="";
 
 
     } else {

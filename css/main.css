@@ -787,7 +787,7 @@ ul li{
     flex-wrap: wrap;
     padding-top: 57px;
     min-height:460px;
-    /*justify-content: space-between;*/
+    justify-content: space-between;
 }
 /*.column2{*/
 /*    display: flex;*/
@@ -837,7 +837,7 @@ ul li{
     font-weight: bold;
     font-size: 15px;
     line-height: 22px;
-    margin-right: 10px;
+
 }
 .more-box .fa-chevron-right{
     font-size: 10px;
@@ -1509,6 +1509,14 @@ input[type='range']::-webkit-slider-thumb {
     height: 18px;
     display: flex;
     cursor: pointer;
+}
+.cover3 img{
+    object-fit: cover;
+    width:100%;
+    min-height: 280px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 12px;
 }
 .buttons{
     z-index: 0;
