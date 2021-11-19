@@ -619,6 +619,7 @@ ul li{
 .footer-menu{
  display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .footer-chevron{
     display: none;
@@ -961,9 +962,9 @@ ul li{
     border:1px solid #D1D1D1;
     padding:16px;
 }
-/*.view-card :hover{*/
-/*    box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
-/*}*/
+.view-card:first-child:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 
 
 
@@ -1151,9 +1152,6 @@ input[type='range'] {
     margin-left: 5px;
 }
 @media  screen and (max-width: 576px) {
-    /*input[type='range']{*/
-    /*    width:210px;*/
-    /*}*/
 
     .view-card {
         margin-right: 4px;
@@ -1263,14 +1261,9 @@ input[type='range'] {
     }
 
 
-
-
-
 }
 @media (min-width: 576px) and (max-width: 768px) {
-    /*input[type='range']{*/
-    /*    width:130px;*/
-    /*}*/
+
     .header-part-one,
     .buttons_{
         display: none;
@@ -1295,9 +1288,7 @@ input[type='range'] {
 
 }
 @media (min-width: 768px) and (max-width: 992px) {
-    /*input[type='range']{*/
-    /*    width:176px;*/
-    /*}*/
+
     .chips{
         height: 90px;
     }
@@ -1313,9 +1304,7 @@ input[type='range'] {
 
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-    /*input[type='range']{*/
-    /*    width:198px;*/
-    /*}*/
+
     .chips{
         height: 90px;
     }
@@ -1331,9 +1320,7 @@ input[type='range'] {
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
-    /*input[type='range']{*/
-    /*    width:230px;*/
-    /*}*/
+
     .chips{
         height: 90px;
     }
@@ -1348,9 +1335,7 @@ input[type='range'] {
     }
 }
 @media (min-width: 1400px) {
-    /*input[type='range']{*/
-    /*    width:270px;*/
-    /*}*/
+
     .chips{
         height: 90px;
     }
@@ -1636,29 +1621,6 @@ table{
     margin-bottom: 20px;
 }
 
-/*@media screen and (max-width: 1000px) {*/
-/*    !*.view-text1{*!*/
-/*    !*    font-size: 20px;*!*/
-/*    !*}*!*/
-/*    .view-text2{*/
-/*        font-size: 20px;*/
-/*    }*/
-/*    .product-detail p{*/
 
-/*        font-size:15px;*/
-/*        line-height: 15px;*/
-/*    }*/
-/*    .wish-list p{*/
-/*        !*font-size: 21px;*!*/
-/*        font-size:15px;*/
-/*        line-height: 15px;*/
-/*    }*/
-/*    .categories-text{*/
-/*        font-size: 24px;*/
-/*    }*/
-/*    .star{*/
-/*        font-size: 22px;*/
-/*    }*/
-/*}*/
 
 
