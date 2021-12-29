@@ -1,10 +1,8 @@
 
-
 //кнопка вверх
 let arrowTop=document.querySelector(".arrow-top");
 arrowTop.onclick = function() {
     window.scrollTo(pageXOffset, 0);
-    // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
 };
 
 window.addEventListener('scroll', function() {
@@ -17,16 +15,11 @@ if (document.querySelector(".side-bar")!==null){
     window.addEventListener('scroll', function() {
 
         if (pageYOffset>=130 && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
-
             document.querySelector(".side-bar").style.top="0";
-            // document.querySelector(".side-bar").style.position="fixed";
-
-
         }
         if (pageYOffset<130 && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
             let scroll=130-pageYOffset;
             document.querySelector(".side-bar").style.top=scroll+"px";
-            // document.querySelector(".side-bar").style.position="fixed";
 
         }
 
@@ -52,7 +45,7 @@ if (document.querySelector(".side-bar")!==null){
 //открытие footer навигации
 
 document.querySelectorAll(".accordion").forEach(function(element){
-    if( (window.innerWidth || document.documentElement.clientWidth) <=576){
+    if( (window.innerWidth || document.documentElement.clientWidth) <576){
         element.onclick = function () {
             var panel=element.nextElementSibling;
 
@@ -64,9 +57,6 @@ document.querySelectorAll(".accordion").forEach(function(element){
                 panel.style.maxHeight = panel.scrollHeight + "px";
                element.children[0].children[0].style.transform = 'rotate(180deg)';
 
-
-                // element.children[0].classList.remove("fa-chevron-down");
-                // element.children[0].classList.add("fa-chevron-up");
             }
 
         }
@@ -74,20 +64,21 @@ document.querySelectorAll(".accordion").forEach(function(element){
 
 
 })
-//
+
+// mobile version
 
 if( (window.innerWidth || document.documentElement.clientWidth) <=576) {
     document.querySelector(".menu-content").classList.add("hide");
     document.querySelectorAll(".menu-box").forEach(function(element){
-        element.classList.add("col-9");
+        element.classList.add("col-12");
     })
+
     if (document.querySelector(".side-bar")!==null){
         document.querySelector(".side-bar").classList.add("hide");
     }
     document.querySelector(".fa-bars").parentElement.classList.remove("hide");
 }
 else {
-    // document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
 
     document.querySelector(".menu-content").classList.remove("hide","animate__animated","animate__slideInDown","animate__slideOutUp");
     document.querySelector(".menu-content").style.position="static";
@@ -95,7 +86,7 @@ else {
         document.querySelector(".side-bar").classList.remove("hide","animate__animated","animate__fadeInLeft","animate__fadeOutLeft");
     }
     document.querySelectorAll(".menu-box").forEach(function(element){
-        element.classList.remove("col-9");
+        element.classList.remove("col-12");
     })
     document.querySelector(".fa-bars").parentElement.classList.add("hide");
     if (document.querySelector(".view-content")!=null){
@@ -104,7 +95,6 @@ else {
 
 
 }
-
 
 window.addEventListener("resize", function() {
 
@@ -117,14 +107,10 @@ window.addEventListener("resize", function() {
 
         if (document.querySelector(".side-bar")!=null){
             document.querySelector(".side-bar").classList.remove("hide","animate__animated","animate__fadeInLeft","animate__fadeOutLeft");
-            document.querySelector("#min-range").style.width=document.querySelector(".min-max").children[0].offsetWidth+document.querySelector(".min-max").children[1].offsetWidth+document.querySelector(".min-max").children[2].offsetWidth+"px";
-            document.querySelector("#max-range").style.width=document.querySelector(".min-max").children[0].offsetWidth+document.querySelector(".min-max").children[1].offsetWidth+document.querySelector(".min-max").children[2].offsetWidth+"px";
-            document.querySelector("#min-range").classList.remove("col-11");
-            document.querySelector("#min-range").classList.remove("col-11");
         }
 
         document.querySelectorAll(".menu-box").forEach(function(element){
-            element.classList.remove("col-9");
+            element.classList.remove("col-12");
         })
         document.querySelector(".fa-bars").parentElement.classList.add("hide");
 
@@ -170,21 +156,17 @@ window.addEventListener("resize", function() {
         }
         document.querySelector(".menu-content").classList.add("hide");
         document.querySelectorAll(".menu-box").forEach(function(element){
-            element.classList.add("col-9");
+            element.classList.add("col-12");
         })
 
         if (document.querySelector(".side-bar")!=null){
             document.querySelector(".side-bar").classList.add("hide");
-            document.querySelector("#min-range").classList.add("col-11");
-            document.querySelector("#max-range").classList.add("col-11");
-            document.querySelector("#min-range").style.width="";
-            document.querySelector("#max-range").style.width="";
         }
         document.querySelector(".fa-bars").parentElement.classList.remove("hide");
 
         document.querySelectorAll(".accordion").forEach(function(element) {
 
-            element.onclick = function () {
+            element.onclick = function() {
                 var panel = element.nextElementSibling;
 
                 if (panel.style.maxHeight) {
@@ -195,7 +177,6 @@ window.addEventListener("resize", function() {
                     panel.style.maxHeight = panel.scrollHeight + "px";
                     element.children[0].children[0].style.transform = 'rotate(180deg)';
 
-
                     // element.children[0].classList.remove("fa-chevron-down");
                     // element.children[0].classList.add("fa-chevron-up");
                 }
@@ -205,10 +186,9 @@ window.addEventListener("resize", function() {
     }
 });
 
-document.querySelector("#min-range").style.width = document.querySelector(".min-max").children[0].offsetWidth + document.querySelector(".min-max").children[1].offsetWidth + document.querySelector(".min-max").children[2].offsetWidth + "px";
-document.querySelector("#max-range").style.width = document.querySelector(".min-max").children[0].offsetWidth + document.querySelector(".min-max").children[1].offsetWidth + document.querySelector(".min-max").children[2].offsetWidth + "px";
-//nav меню на маленьком экране
+//nav menu on mobile screen
 document.querySelector(".fa-bars").onclick=function(){
+    document.body.style.overflowY="hidden";
     document.querySelector(".menu-content").classList.remove("hide");
     document.querySelector(".menu-content").classList.remove("animate__slideOutUp");
     document.querySelector(".menu-content").classList.add("animate__animated","animate__slideInDown");
@@ -216,12 +196,6 @@ document.querySelector(".fa-bars").onclick=function(){
     document.querySelector(".menu-content").style.top="0";
     document.querySelector(".menu-content").style.left="0";
     document.querySelector(".menu-content").style.zIndex="3";
-    // document.querySelector(".menu-content").style.height="100%";
-    // document.querySelector(".menu-content").style.background="#F9F9F9";
-    // document.querySelectorAll('.menu-box').forEach(function(element){
-    //     // element.style.background="#F9F9F9";
-    //     element.classList.add("animate__animated","animate__fadeInDown");
-    // })
     document.querySelectorAll('.menu-box').forEach(function(element){
             element.style.background="#F9F9F9";
             element.style.border="1px solid #F9F9F9";
@@ -230,6 +204,7 @@ document.querySelector(".fa-bars").onclick=function(){
 //закрытие nav меню
 document.querySelector(".navigation").children[0].onclick=function(){
 
+    document.body.style.overflowY="";
     document.querySelector(".menu-content").classList.remove("animate__slideInDown");
     document.querySelector(".menu-content").classList.add("animate__animated","animate__slideOutUp");
 
@@ -243,7 +218,6 @@ document.querySelector(".navigation").children[0].onclick=function(){
     let sideBar=document.querySelector(".side-bar");
     if (document.querySelector(".filter")!==null){
         document.querySelector(".filter").onclick=function sideBarVisible(){
-
 
             if (sideBar.classList.contains("hide")){
                 if (pageYOffset>=130 && ((window.innerWidth || document.documentElement.clientWidth) <=576)){
@@ -270,8 +244,6 @@ document.querySelector(".navigation").children[0].onclick=function(){
 
         }
     }
-
-
 
 
 //поставить лайк товару
@@ -453,24 +425,6 @@ if (!addToCart==0){
         }
 }
 
-
-// переход на страницу category
-// let breadcrumbsText=document.querySelector(".breadcrumbs-text");
-// document.querySelectorAll(".fruitVegetables").forEach(function(element){
-//     element.onclick = function () {
-//
-//         document.querySelector('.description-content').style.display="none";
-//         document.querySelector(".side-bar").classList.remove("hide", "visually-hidden");
-//         document.querySelector(".vegetable").classList.remove("hide");
-//         document.querySelector(".columns").style.display="";
-//
-//         breadcrumbsText.children[breadcrumbsText.children.length-1].classList.add("hide");
-//         breadcrumbsText.children[breadcrumbsText.children.length-2].classList.remove("gray");
-//
-//     }
-// })
-
-
 //ползунки цены
 
 let apply=document.querySelector('.apply');
@@ -647,7 +601,6 @@ if (maxRange!=null){
     }
 }
 
-
 //сохраняет последнее число в input при mouseout
 
 if (document.querySelector("#min-field")!=null) {
@@ -671,8 +624,6 @@ if (document.querySelector("#max-field")!=null) {
 
 
 //-----------------выбор фильтров рейтинга------
-
-
 
 select.forEach(function(element){
    element.onchange=function(element){
@@ -775,21 +726,4 @@ select.forEach(function(element){
 
 })
 
-//переход на другие страницы товаров
-// document.querySelector("#page-one").onclick=function(){
-//     document.querySelectorAll(".second-page").forEach(function(element){
-//         element.classList.add("hide");
-//     })
-//     document.querySelectorAll(".first-page").forEach(function(element){
-//         element.classList.remove("hide");
-//     })
-// }
-// document.querySelector("#page-two").onclick=function(){
-//     document.querySelectorAll(".first-page").forEach(function(element){
-//         element.classList.add("hide");
-//     })
-//     document.querySelectorAll(".second-page").forEach(function(element){
-//         element.classList.remove("hide");
-//     })
-// }
 

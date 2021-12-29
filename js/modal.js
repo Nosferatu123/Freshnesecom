@@ -888,12 +888,6 @@ if (document.querySelector(" .if-empty-basket .chips .quantity_inner")!==null){
     }
 
     document.body.style.overflow = 'hidden';
-    // let widthTwo = document.documentElement.clientWidth;
-    // let diff = widthTwo - widthOne;
-    // if ((diff) >= 0) {
-    //    document.body.style.paddingRight = diff + "px";
-    //     document.querySelector(".header").style.left=Math.round(-diff/2)+ "px";
-    // }
     if( (window.innerWidth || document.documentElement.clientWidth) >=1200) {
         document.body.style.paddingRight = "17px";
     }
